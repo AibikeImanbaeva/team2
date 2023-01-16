@@ -32,14 +32,14 @@ function reducer(state = INIT_STATE, action) {
   }
 }
 
-const API = "http://34.125.224.223/api/v1";
+const API = "http://34.125.224.223";
 
 const PostsContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   async function getPost() {
     try {
-      const tokens = JSON.parse(localStorage.getItem("tokens"));
+      const tokens = JSON.parse(localStorage.getItem("token"));
       const Authorization = `Bearer ${tokens.access}`;
       const config = {
         headers: {
@@ -63,7 +63,7 @@ const PostsContextProvider = ({ children }) => {
 
   async function createPost(newProduct, navigate) {
     try {
-      const tokens = JSON.parse(localStorage.getItem("tokens"));
+      const tokens = JSON.parse(localStorage.getItem("token"));
       const Authorization = `Bearer ${tokens.access}`;
       const config = {
         headers: {
@@ -81,7 +81,7 @@ const PostsContextProvider = ({ children }) => {
 
   async function getCategories() {
     try {
-      const tokens = JSON.parse(localStorage.getItem("tokens"));
+      const tokens = JSON.parse(localStorage.getItem("token"));
       const Authorization = `Bearer ${tokens.access}`;
       const config = {
         headers: {
@@ -100,7 +100,7 @@ const PostsContextProvider = ({ children }) => {
 
   async function deletePost(id) {
     try {
-      const tokens = JSON.parse(localStorage.getItem("tokens"));
+      const tokens = JSON.parse(localStorage.getItem("token"));
       const Authorization = `Bearer ${tokens.access}`;
       const config = {
         headers: {

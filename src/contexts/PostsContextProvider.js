@@ -18,7 +18,7 @@ function reducer(state = INIT_STATE, action) {
       return {
         ...state,
         posts: action.payload.results,
-        pages: Math.ceil(action.payload.count / 5),
+        // pages: Math.ceil(action.payload.count / 5),
       };
     case "GET_CATEGORIES":
       return {
@@ -72,7 +72,7 @@ const PostsContextProvider = ({ children }) => {
       };
       const res = await axios.post(`${API}/fanfic/`, newProduct, config); //RAUF
       console.log(res);
-    //   navigate("/products");
+      navigate("/");
       getPost();
     } catch (err) {
       console.log(err);

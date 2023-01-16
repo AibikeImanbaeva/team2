@@ -31,10 +31,11 @@ const AddPost = () => {
    
     newProduct.append("title", title);
     newProduct.append("image", image )
-    // newProduct.append("description", desc );
-    // newProduct.append("date_created",dataCreated );    
+    newProduct.append("description", desc );
+    newProduct.append("date_created",dataCreated );    
     newProduct.append("genres", genres );
     createPost(newProduct, navigate)
+    console.log(title,image,desc,dataCreated,genres)
   }
   useEffect(()=>{ 
     getPost() 
@@ -65,7 +66,10 @@ const AddPost = () => {
           <option key={item.id} value={item.id}>{item.title}</option>
         ))}
       </select> */}
-      <input type="file" name="photo"  id=''  multiple accept="image/*,image/jpeg" onChange={e=> setImage(e.target.files[0])}/>
+       <input type="text" name="" id="" placeholder='desc'  value={desc} onChange={(e)=> setDesc(e.target.value)} />
+       <input type="text" name="" id="" placeholder='genres'  value={genres} onChange={(e)=> setGenres(e.target.value)} />
+       <input type="date" name="" id="" value={dataCreated} onChange={(e)=> setDataCreated(e.target.value)} />
+      <input type="file" name="photo"  id=''  multiple accept="image/*" onChange={e=> setImage(e.target.files[0])}/>
         <input type='submit' onClick={handleSave} value="Отправить"></input>
         
     </div>

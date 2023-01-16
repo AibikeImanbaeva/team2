@@ -44,15 +44,15 @@ const AuthContextProvider = ({ children }) => {
       setLoading(false);
     }
   }
-  const getProfile = async () => {
-    const Authorization = `Bearer ${token.access}`;
+  // const getProfile = async () => {
+  //   const Authorization = `Bearer ${token.access}`;
 
-    await axios(`${API}user_account/profile/`, {
-      headers: { Authorization },
-    }).then((res) => {
-      setUser(res.data);
-    });
-  };
+  //   await axios(`${API}user_account/profile/`, {
+  //     headers: { Authorization },
+  //   }).then((res) => {
+  //     setUser(res.data);
+  //   });
+  // };
 
   function handleLogout(navigate) {
     localStorage.removeItem("token");

@@ -8,13 +8,19 @@ const AddPost = () => {
     const navigate = useNavigate();
 
     const { getPost, categories, getCategories,createPost} = useContext(postContext);
-  const [id, setId] = useState('');
-  const [owner, setOwner] = useState('');
+ 
   const [title, setTitle] = useState('');
   const [image, setImage] = useState(null);
+  const [genres, setGenres] = useState('');
   const [desc, setDesc] = useState('');
   const [dataCreated, setDataCreated] = useState('')
   const [searchParams , setSearchParams] = useSearchParams(); 
+
+
+  // function getDate(e){
+  //   dataCreated = date.now()
+  //   setDataCreated(dataCreated.toString())
+  // }
   
 //   useEffect(()=>{
 //   getCategories()
@@ -22,18 +28,21 @@ const AddPost = () => {
   
   function handleSave(){
     let newProduct = new FormData();
-    newProduct.append("id", id);
-    newProduct.append("owner", owner);
+   
     newProduct.append("title", title);
     newProduct.append("image", image )
-    newProduct.append("description", desc );
-    newProduct.append("date_created",dataCreated );    
+    // newProduct.append("description", desc );
+    // newProduct.append("date_created",dataCreated );    
+    newProduct.append("genres", genres );
     createPost(newProduct, navigate)
   }
   useEffect(()=>{ 
     getPost() 
   },[]) 
  
+
+
+
   useEffect(()=>{ 
     getPost(); 
  
@@ -49,9 +58,15 @@ const AddPost = () => {
   <>
   
   <div className="text-field">
-        <input type="text" name="" id="" placeholder='Что у вас нового?'  value={title} onChange={(e)=> setTitle(e.target.value)} />
-      <input type="file" name="photo"  id=''  multiple accept="image/*,image/jpeg"/>
-        <input type='submit' value="Отправить"></input>
+        <input type="text" name="" id="" placeholder='Добавить фанфик'  value={title} onChange={(e)=> setTitle(e.target.value)} />
+        {/* <select value={genres}  onChange={(e)=> setCategory(e.target.value)}>
+        <option value="">choose category</option>
+        {categories?.map(item=>(
+          <option key={item.id} value={item.id}>{item.title}</option>
+        ))}
+      </select> */}
+      <input type="file" name="photo"  id=''  multiple accept="image/*,image/jpeg" onChange={e=> setImage(e.target.files[0])}/>
+        <input type='submit' onClick={handleSave} value="Отправить"></input>
         
     </div>
   

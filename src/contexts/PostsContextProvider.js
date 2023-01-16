@@ -20,11 +20,11 @@ function reducer(state = INIT_STATE, action) {
         posts: action.payload.results,
         pages: Math.ceil(action.payload.count / 5),
       };
-    // case "GET_CATEGORIES":
-    //   return {
-    //     ...state,
-    //     categories: action.payload,
-    //   };
+    case "GET_CATEGORIES":
+      return {
+        ...state,
+        categories: action.payload,
+      };
     case "GET_ONE_POST":
       return { ...state, onePost: action.payload };
     default:
@@ -79,24 +79,24 @@ const PostsContextProvider = ({ children }) => {
     }
   }
 
-  // async function getCategories() {
-  //   try {
-  //     const tokens = JSON.parse(localStorage.getItem("tokens"));
-  //     const Authorization = `Bearer ${tokens.access}`;
-  //     const config = {
-  //       headers: {
-  //         Authorization,
-  //       },
-  //     };
-  //     const res = await axios(`${API}/category/list/`, config);  //RAUF
-  //     dispatch({
-  //       type: "GET_CATEGORIES",
-  //       payload: res.data.results,
-  //     });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }
+  async function getCategories() {
+    try {
+      const tokens = JSON.parse(localStorage.getItem("tokens"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+      const res = await axios(`${API}/category/list/`, config);  //RAUF
+      dispatch({
+        type: "GET_CATEGORIES",
+        payload: res.data.results,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   async function deletePost(id) {
     try {
@@ -141,7 +141,7 @@ const PostsContextProvider = ({ children }) => {
 
         getPost,
         createPost,
-        // getCategories,
+        getCategories,
         deletePost,
         
       }}

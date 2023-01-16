@@ -3,6 +3,13 @@ import { Routes, Route } from "react-router-dom";
 import RegistrationPage from "./pages/RegistrationPage";
 import HomePage from "./pages/HomePage"
 import LoginPage from './pages/LoginPage';
+import NewsPage from './pages/NewsPage';
+import MangaPage from './pages/MangaPage';
+import FanficPage from './pages/FanficPage';
+import FriendsPage from './pages/FriendsPage';
+import ChatPage from './pages/ChatPage';
+import AnimePage from './pages/AnimePage';
+import ProfilePage from './pages/ProfilePage';
 
 
 const MainRoutes = () => {
@@ -21,7 +28,41 @@ const MainRoutes = () => {
           link: "/login",
           element: <LoginPage />,
           id:2
-      }
+      },    {
+        link: "/News",
+        element: <NewsPage />,
+        id:3
+    },
+    {
+      link: "/manga",
+      element: <MangaPage />,
+      id:4
+  },
+  {
+    link: "/fanfic",
+    element: <FanficPage />,
+    id:5
+},
+{
+  link: "/friends",
+  element: <FriendsPage />,
+  id:6
+},
+{
+  link: "/chat",
+  element: <ChatPage />,
+  id:7
+},
+{
+  link: "/anime",
+  element: <AnimePage />,
+  id:8
+},
+{
+  link: "/profile",
+  element: <ProfilePage />,
+  id:9
+}
     ]
   return (
     <Routes>

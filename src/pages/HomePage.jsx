@@ -1,8 +1,16 @@
 import React from 'react'
 
+
+import '../stylse/HomePage.css'
+import Navbar from '../components/Navbar'
+import Saidbar from '../components/Saidbar'
+
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div>
+      <Navbar/>
+      <Saidbar/>
+    </div>
   )
 }
 

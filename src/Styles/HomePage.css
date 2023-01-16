@@ -1,0 +1,400 @@
+body{
+    background-color: #202020;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.homePage__container{
+    margin: auto 80px;
+    margin-left: 260px;
+}
+.homePage__AllNews-FanfAnime{
+    display: flex;
+}
+
+.HomePage-BackgroundImg{
+    position: absolute;
+    height: 600px;
+    width: 520px;
+    top: 140px;
+    right: 25px;
+    z-index: -5;
+}
+
+
+/* News */
+.News__contaniner{
+    width: 800px;
+}
+
+.NewsTitle{
+    display: flex;
+    width: 800px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.newsTitle{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    color: #FCFF62;
+}
+.newsLine{
+    width: 633px;
+    height: 1px;
+    background-color: #8F8F8F;
+}
+
+
+.newsContent{
+    position: relative;
+    width: 800px;
+    height: 325px;
+    display: flex;
+    background: #414141;
+}
+.NewsContent__items{
+    height: 325px;
+    width: 235px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.newsImg{
+    height: 325px;
+    width: 235px;
+    position: absolute;
+    box-shadow: 50px 0 50px -50px #000 inset, -50px 0 50px -50px #000 inset;
+}
+.newEpisodes{
+    height: 100%;
+    width: 95px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hotNews{
+    transform:rotate(-90deg);
+}
+.newsFireIcon{
+    position: absolute;
+    left: 25px;
+    width: 50px;
+    height: 50px;
+}
+.episodes-title{
+    font-family: 'Inter';
+    font-style: normal;
+    width: 210px;
+    height: 30px;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    color: #D2D2D2;
+}
+.news__episode-data{
+    position: relative;
+    top:16px;
+    left: 17px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+.news__episode-title{
+    position: relative;
+    bottom: 50px;
+    left: 17px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px; 
+    color: #FFFFFF;
+}
+
+
+
+/* All news container */
+
+.AllNewsMainTitle{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+}
+.allNewsContainer{
+    width: 740px;
+    height: 825px;
+    background: #414141;
+    border-radius: 10px;
+    padding:5px 30px ;
+}
+
+.allnewsData{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px auto;
+}
+.newsdata{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+    opacity: 0.5;
+}
+
+.allnewsDataLine{
+    height: 1px;
+    width: 640px;
+    background: #FFFFFF;
+    opacity: 0.5;
+}
+
+.allnewsContentCard{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.newsCardDesc{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.AllnewsTitle{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+
+.allnewsDesc{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+.AllnewsCardBottom{
+    display: flex;
+    justify-content: space-between;
+}
+.AllnewsReadButton{
+    background: #414141;
+    width: 110px;
+    height: 32px;
+    border: 1px solid #FFFFFF;
+    border-radius: 20px;
+    color: white
+}
+
+.allnewsLikeComments{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 120px;
+}
+
+.allnewsCommentIcon, .Allnewslikeicon{
+    width: 15px;
+    height: 15px;
+}
+.AllnewsCommentCount, .allNewsLikeCount{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: right;
+    color: #FFFFFF;
+    opacity: 0.5;
+}
+.AllnewsCommentCount{
+    margin-left: 10px;
+}
+
+
+
+
+
+/* fancics */
+.hp_fanfics-Cont{
+    margin-left: 15px;
+}
+.hp_fanfics{
+    width: 285px;
+    height: 260px;
+    background: #414141;
+    border-radius: 10px;
+
+}
+.hp_fanfics-cont{
+  margin-top: 18px;
+  margin-left: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hp_fanfecs-hesh, .hp_fandics-User, .hp_fandics-LikeCount, .hp_fandics-CommentCount{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+    opacity: 0.5;
+    margin-top: 12px;
+}
+.hp_fanfics-desc{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+    margin-top: 10px;
+}
+
+
+.hp_fanfics-mainImg{
+    width: 250px;
+}
+.hp_fandics-CardBottom{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 28px;
+    align-items: center;
+    margin-top: 13px;
+}
+.hp-fanfics-account{
+    display: flex;
+    align-items: center;
+}
+.hp_fandics-User{
+    margin-left: 5px;
+}
+.hp_fandics-accImg{
+    width: 28px;
+    height: 28px;
+}
+.hp_fandics-LikeComment{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+}
+.hp_fandics-User, .hp_fandics-LikeCount, .hp_fandics-CommentCount{
+    margin-top: 0;
+}
+
+
+/* anime */
+.hp_anime-cont{
+    margin:  25px 0 0 15px;  
+}
+
+.hp_anime-title{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.hp_anime-card{
+    width: 284px;
+    height: 363px;
+    border-radius: 10px;
+}
+
+.hp_animeImg{
+    width: 284px;
+    height: 363px;
+    margin-top: 10px;
+}
+
+
+
+.animeContent__items{
+    height: 325px;
+    width: 235px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.hp_Anime-Content{
+    position: relative;
+    bottom: 50px;
+}
+
+.hp_Anime-title{
+    left: 17px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px; 
+    color: #FFFFFF;
+}
+    .animeImg{
+        height: 325px;
+        width: 235px;
+        box-shadow: 50px 0 50px -50px #000 inset, -50px 0 50px -50px #000 inset;
+    }
+
+.hp_Anime-subButton{
+    width: 50px;
+    height: 25px;
+    background: #676900;
+    border: 0px;
+    border-radius: 10px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+}
+.hp_Anime-bottomItems{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hp_Anime-EpMinCont{
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+}
+.hp_Anime-EpMin{
+    position: absolute;
+    width: 60px;
+    height: 25px;
+    background: #2D2D2D;
+    border-radius: 10px;
+}

@@ -20,12 +20,12 @@ const MainRoutes = () => {
         {
           link: "/login",
           element: <LoginPage />,
-          id:2
+          id:3
       },
       {
         link: "/user",
         element: <UserPage />,
-        id:3
+        id:4
     }
     ]
   return (

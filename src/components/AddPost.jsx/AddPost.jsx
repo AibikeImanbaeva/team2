@@ -36,17 +36,17 @@ const AddPost = () => {
     createPost(newProduct, navigate)
     console.log(title,image,desc,dataCreated,genres)
   }
-  useEffect(()=>{ 
-    getPost() 
-  },[]) 
+  // useEffect(()=>{ 
+  //   getPost() 
+  // },[]) 
  
 
 
 
-  useEffect(()=>{ 
-    getPost(); 
+  // useEffect(()=>{ 
+  //   getPost(); 
  
-  },[searchParams]) 
+  // },[searchParams]) 
  
 //   useEffect(()=>{ 
 //     setSearchParams({ 

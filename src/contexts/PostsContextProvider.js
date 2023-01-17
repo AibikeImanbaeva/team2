@@ -37,7 +37,7 @@ const API = "http://34.125.224.223";
 const PostsContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
-  async function getPost() {
+  async function getPost(){
     try {
       const tokens = JSON.parse(localStorage.getItem("token"));
       const Authorization = `Bearer ${tokens.access}`;
@@ -59,6 +59,7 @@ const PostsContextProvider = ({ children }) => {
     } catch (err) {
       console.log(err);
     }
+
   }
 
   async function createPost(newProduct, navigate) {
@@ -72,31 +73,31 @@ const PostsContextProvider = ({ children }) => {
       };
       const res = await axios.post(`${API}/fanfic/`, newProduct, config); //RAUF
       console.log(res);
-      navigate("/");
+      // navigate("/");
       getPost();
     } catch (err) {
       console.log(err);
     }
   }
 
-  async function getCategories() {
-    try {
-      const tokens = JSON.parse(localStorage.getItem("token"));
-      const Authorization = `Bearer ${tokens.access}`;
-      const config = {
-        headers: {
-          Authorization,
-        },
-      };
-      const res = await axios(`${API}/category/list/`, config);  //RAUF
-      dispatch({
-        type: "GET_CATEGORIES",
-        payload: res.data.results,
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  }
+  // async function getCategories() {
+  //   try {
+  //     const tokens = JSON.parse(localStorage.getItem("token"));
+  //     const Authorization = `Bearer ${tokens.access}`;
+  //     const config = {
+  //       headers: {
+  //         Authorization,
+  //       },
+  //     };
+  //     const res = await axios(`${API}/category/list/`, config);  //RAUF
+  //     dispatch({
+  //       type: "GET_CATEGORIES",
+  //       payload: res.data.results,
+  //     });
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // }
 
   async function deletePost(id) {
     try {
@@ -107,29 +108,29 @@ const PostsContextProvider = ({ children }) => {
           Authorization,
         },
       };
-      await axios.delete(`${API}/posts/${id}/`, config); //RAUF
+      await axios.delete(`${API}/fanfic/${id}/`, config); //RAUF
       getPost();
     } catch (err) {
       console.log(err);
     }
   }
 
-//   async function toggleLike(id) {
-//     try {
-//       const tokens = JSON.parse(localStorage.getItem("tokens"));
-//       const Authorization = `Bearer ${tokens.access}`;
-//       const config = {
-//         headers: {
-//           Authorization,
-//         },
-//       };
+  async function toggleLike(id) {
+    try {
+      const tokens = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
 
-//       const res = await axios(`${API}/products/${id}/toggle_like/`, config);
-//       getProducts();
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   }
+      const res = await axios(`${API}/fanfic/${id}/likes/`, config);
+      getPost();
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   return (
     <postContext.Provider
@@ -141,8 +142,9 @@ const PostsContextProvider = ({ children }) => {
 
         getPost,
         createPost,
-        getCategories,
+        // getCategories,
         deletePost,
+        toggleLike
         
       }}
     >

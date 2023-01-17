@@ -17,7 +17,7 @@ function reducer(state = INIT_STATE, action) {
     case "GET_POST":
       return {
         ...state,
-        posts: action.payload.results,
+        posts: action.payload,
         // pages: Math.ceil(action.payload.count / 5),
       };
     case "GET_CATEGORIES":
@@ -51,6 +51,7 @@ const PostsContextProvider = ({ children }) => {
         `${API}/fanfic/${window.location.search}`,  //RAUF
         config
       );
+      console.log('qwertyu')
 
       dispatch({
         type: "GET_POST",
@@ -59,6 +60,7 @@ const PostsContextProvider = ({ children }) => {
     } catch (err) {
       console.log(err);
     }
+    console.log('jessica')
 
   }
 

@@ -35,7 +35,10 @@ const AddPost = () => {
     newProduct.append("genre", genres );
     createPost(newProduct, navigate)
     console.log(title,image,desc,dataCreated,genres)
+    
   }
+
+
   // useEffect(()=>{ 
   //   getPost() 
   // },[]) 

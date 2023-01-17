@@ -1,4 +1,4 @@
-import React, { useReducer} from "react";
+import React, { useReducer } from "react";
 import axios from "axios";
 
 
@@ -8,7 +8,7 @@ export const postContext = React.createContext();
 const INIT_STATE = {
   posts: [],
   pages: 0,
-//   categories: [],
+  //   categories: [],
   onePost: null,
 };
 
@@ -37,7 +37,7 @@ const API = "http://34.125.224.223";
 const PostsContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
-  async function getPost(){
+  async function getPost() {
     try {
       const tokens = JSON.parse(localStorage.getItem("token"));
       const Authorization = `Bearer ${tokens.access}`;
@@ -134,6 +134,23 @@ const PostsContextProvider = ({ children }) => {
     }
   }
 
+  async function editFanficPost(edittedProduct, id) {
+    try {
+      const tokens = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+
+      await axios.patch(`${API}/fanfic/${id}/`, edittedProduct, config);
+      getPost();
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <postContext.Provider
       value={{
@@ -146,8 +163,8 @@ const PostsContextProvider = ({ children }) => {
         createPost,
         // getCategories,
         deletePost,
-        toggleLike
-        
+        toggleLike,
+        editFanficPost
       }}
     >
       {children}

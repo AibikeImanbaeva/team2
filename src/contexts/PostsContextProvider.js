@@ -6,7 +6,7 @@ export const postContext = React.createContext();
 // export const usePost = useContext(postContext)
 
 const INIT_STATE = {
-  posts: [],
+  fanfic: [],
   pages: 0,
   //   categories: [],
   onePost: null,
@@ -17,7 +17,7 @@ function reducer(state = INIT_STATE, action) {
     case "GET_POST":
       return {
         ...state,
-        posts: action.payload,
+        fanfic: action.payload,
         // pages: Math.ceil(action.payload.count / 5),
       };
     case "GET_CATEGORIES":
@@ -117,7 +117,7 @@ const PostsContextProvider = ({ children }) => {
     }
   }
 
-  async function toggleLike(id) {
+  async function toggleLike(likedProduct, id) {
     try {
       const tokens = JSON.parse(localStorage.getItem("token"));
       const Authorization = `Bearer ${tokens.access}`;
@@ -126,8 +126,34 @@ const PostsContextProvider = ({ children }) => {
           Authorization,
         },
       };
+      
+      const res = await axios.post(`${API}/fanfic/${id}/likes/`,likedProduct, config);
+      console.log(res)
+      
+      
+      const { data } = await axios(`${API}/fanfic/${id}/`)
+      console.log(data);
 
-      const res = await axios(`${API}/fanfic/${id}/likes/`, config);
+      getPost();
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async function deleteLike(unLike, id){
+    try {
+      const tokens = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+      
+      const res = await axios.delete(`${API}/fanfic/${id}/likes/`,unLike, config);
+      console.log(res)
+
+
       getPost();
     } catch (err) {
       console.log(err);
@@ -154,7 +180,7 @@ const PostsContextProvider = ({ children }) => {
   return (
     <postContext.Provider
       value={{
-        posts: state.posts,
+        fanfic: state.fanfic,
         pages: state.pages,
         categories: state.categories,
         onePost: state.onePost,
@@ -164,7 +190,8 @@ const PostsContextProvider = ({ children }) => {
         // getCategories,
         deletePost,
         toggleLike,
-        editFanficPost
+        editFanficPost,
+        deleteLike
       }}
     >
       {children}

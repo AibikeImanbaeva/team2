@@ -1,27 +1,27 @@
-import React, { useContext, useState } from 'react';
-import { postContext } from '../../contexts/PostsContextProvider';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
+import React, { useContext, useState } from "react";
+import { postContext } from "../../contexts/PostsContextProvider";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
 
 // Modal
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  bgcolor: "background.paper",
+  border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
 // Modal
 
 const PostCard = ({ fanfic }) => {
-  const { editFanficPost } = useContext(postContext)
-
+  const { editFanficPost } = useContext(postContext);
+  const { deletePost, toggleLike, deleteLike } = useContext(postContext);
   // Modal
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -35,8 +35,6 @@ const PostCard = ({ fanfic }) => {
   const [genre, setGenre] = useState(fanfic.genre || "");
   const [image, setImage] = useState(null);
 
-
-
   const handleEditInp = () => {
     let edittedFanficPost = new FormData();
 
@@ -45,12 +43,44 @@ const PostCard = ({ fanfic }) => {
     edittedFanficPost.append("description", desc);
     edittedFanficPost.append("genre", genre);
 
-    editFanficPost(edittedFanficPost, fanfic.id)
+    editFanficPost(edittedFanficPost, fanfic.id);
+  };
+
+  // like
+
+  const [like, setLike] = useState(true);
+
+
+
+  // function handleLike() {
+  //   let likedProduct = new FormData();
+
+  //   likedProduct.append("title", title);
+
+  //   toggleLike(likedProduct, fanfic.id);
+  // }
+
+
+  function handleLike(){
+    if (!like) {
+      let likedProduct = new FormData();
+
+      likedProduct.append("title", title);
+  
+      toggleLike(likedProduct, fanfic.id);
+      setLike(true)
+    } else {
+      let  unLike = new FormData();
+      // unLike.append("title", title);
+
+     deleteLike(unLike, fanfic.id)
+     setLike(false)
+    }
   }
 
   // Edit
 
-  const { deletePost, toggleLike } = useContext(postContext)
+  // const { deletePost, toggleLike } = useContext(postContext)
   return (
     <>
       <div className="card mb-3">
@@ -60,7 +90,9 @@ const PostCard = ({ fanfic }) => {
           <h5 className="card-title">{fanfic.genre}</h5>
           <p className="card-text">{fanfic.description}</p>
           <button>Details</button>
-          <button onClick={() => toggleLike(fanfic.id)}>Like</button>
+          <button onClick={() => handleLike()}>
+            {like ? <p> лайкнуто ежже</p> : <p> не лайкнуто ежже</p>}
+          </button>
           {/* {fanfic.is_author ? ( */}
           <>
             <Button onClick={handleOpen}>Open modal</Button>
@@ -75,10 +107,32 @@ const PostCard = ({ fanfic }) => {
                   Text in a modal
                 </Typography>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  <input type="text" placeholder='title' value={title} onChange={(e) => setTitle(e.target.value)} />
-                  <input type="text" placeholder='desc' value={desc} onChange={(e) => setDesc(e.target.value)} />
-                  <input type="text" placeholder='genre' value={genre} onChange={(e) => setGenre(e.target.value)} />
-                  <input type="file" name="photo" id='' multiple accept=".jpg" onChange={e => setImage(e.target.files[0])} />
+                  <input
+                    type="text"
+                    placeholder="title"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                  />
+                  <input
+                    type="text"
+                    placeholder="desc"
+                    value={desc}
+                    onChange={(e) => setDesc(e.target.value)}
+                  />
+                  <input
+                    type="text"
+                    placeholder="genre"
+                    value={genre}
+                    onChange={(e) => setGenre(e.target.value)}
+                  />
+                  <input
+                    type="file"
+                    name="photo"
+                    id=""
+                    multiple
+                    accept=".jpg"
+                    onChange={(e) => setImage(e.target.files[0])}
+                  />
                   <button onClick={handleEditInp}>Сохранить</button>
                 </Typography>
               </Box>
@@ -90,9 +144,8 @@ const PostCard = ({ fanfic }) => {
       )} */}
         </div>
       </div>
-
     </>
-  )
-}
+  );
+};
 
-export default PostCard
+export default PostCard;

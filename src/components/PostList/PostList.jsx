@@ -4,12 +4,12 @@ import { postContext } from '../../contexts/PostsContextProvider';
 import PostCard from '../PostCard/PostCard';
 
 const PostList = () => {
-  const { getPost, posts } = useContext(postContext)
+  const { getPost, fanfic} = useContext(postContext)
 
   const [searchParams, setSearchParams] = useSearchParams();
   useEffect(() => {
     getPost();
-    console.log(posts)
+    console.log(fanfic)
   }, [])
 
   // useEffect(()=>{
@@ -25,7 +25,7 @@ const PostList = () => {
   return (
    <>
 
-{posts?.map(fanfic => (
+{fanfic?.map(fanfic => (
         <PostCard key={fanfic.id} fanfic={fanfic}></PostCard>
       ))}
 

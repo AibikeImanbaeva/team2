@@ -23,13 +23,13 @@ const PostList = () => {
   }, [searchParams])
 
   return (
-    <>
+   <>
 
-      {posts?.map(fanfic => (
+{posts?.map(fanfic => (
         <PostCard key={fanfic.id} fanfic={fanfic}></PostCard>
       ))}
 
-    </>
+   </>
   )
 }
 

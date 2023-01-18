@@ -16,16 +16,6 @@ const AddPost = () => {
   const [dataCreated, setDataCreated] = useState('')
   const [searchParams, setSearchParams] = useSearchParams();
 
-
-  // function getDate(e){
-  //   dataCreated = date.now()
-  //   setDataCreated(dataCreated.toString())
-  // }
-
-  //   useEffect(()=>{
-  //   getCategories()
-  //   },[])
-
   function handleSave() {
     let newProduct = new FormData();
 
@@ -37,25 +27,6 @@ const AddPost = () => {
     console.log(title, image, desc, dataCreated, genres)
 
   }
-
-
-  // useEffect(()=>{ 
-  //   getPost() 
-  // },[]) 
-
-
-
-
-  // useEffect(()=>{ 
-  //   getPost(); 
-
-  // },[searchParams]) 
-
-  //   useEffect(()=>{ 
-  //     setSearchParams({ 
-  //       page:currentPage 
-  //     }) 
-  //   },[currentPage]) 
 
   return (
     <>

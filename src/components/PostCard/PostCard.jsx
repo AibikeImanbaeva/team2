@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import { postContext } from "../../contexts/PostsContextProvider";
+import {fanficContext} from "../../contexts/FanficContextProvider"
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-
+import { useNavigate } from "react-router-dom";
 // Modal
 const style = {
   position: "absolute",
@@ -19,7 +20,8 @@ const style = {
 };
 // Modal
 
-const PostCard = ({ fanfic }) => {
+const PostCard = ({ post }) => {
+  const {getFanfic } = useContext(fanficContext)
   const { editFanficPost } = useContext(postContext);
   const { deletePost, toggleLike, deleteLike } = useContext(postContext);
   // Modal
@@ -30,9 +32,9 @@ const PostCard = ({ fanfic }) => {
 
   // Edit
   // Edit states
-  const [title, setTitle] = useState(fanfic.title || "");
-  const [desc, setDesc] = useState(fanfic.description || "");
-  const [genre, setGenre] = useState(fanfic.genre || "");
+  const [title, setTitle] = useState(post.title || "");
+  const [desc, setDesc] = useState(post.description || "");
+  const [genre, setGenre] = useState(post.genre || "");
   const [image, setImage] = useState(null);
 
   const handleEditInp = () => {
@@ -43,7 +45,7 @@ const PostCard = ({ fanfic }) => {
     edittedFanficPost.append("description", desc);
     edittedFanficPost.append("genre", genre);
 
-    editFanficPost(edittedFanficPost, fanfic.id);
+    editFanficPost(edittedFanficPost, post.id);
   };
 
   // like
@@ -67,29 +69,39 @@ const PostCard = ({ fanfic }) => {
 
       likedProduct.append("title", title);
   
-      toggleLike(likedProduct, fanfic.id);
+      toggleLike(likedProduct, post.id);
       setLike(true)
     } else {
-      let  unLike = new FormData();
-      // unLike.append("title", title);
 
-     deleteLike(unLike, fanfic.id)
+     deleteLike(post.id)
      setLike(false)
     }
   }
 
   // Edit
 
-  // const { deletePost, toggleLike } = useContext(postContext)
+
+function readFanfic(){
+  let getRead =  new FormData();
+  getRead.append("title", title)
+  getFanfic(getRead, post.id)
+  console.log(getRead, post.id)
+  navigate('/fanficpage')
+}
+
+
+  //navigate 
+const navigate =  useNavigate()
+
   return (
     <>
       <div className="card mb-3">
-        <img src={fanfic.image} className="card-img-top" alt="..." />
+        <img src={post.image} className="card-img-top" alt="..." />
         <div className="card-body">
-          <h5 className="card-title">{fanfic.title}</h5>
-          <h5 className="card-title">{fanfic.genre}</h5>
-          <p className="card-text">{fanfic.description}</p>
-          <button>Details</button>
+          <h5 className="card-title">{post.title}</h5>
+          <h5 className="card-title">{post.genre}</h5>
+          <p className="card-text">{post.description}</p>
+          <button onClick={()=>readFanfic(post.id)}>Начать читать</button>
           <button onClick={() => handleLike()}>
             {like ? <p> лайкнуто ежже</p> : <p> не лайкнуто ежже</p>}
           </button>
@@ -137,7 +149,7 @@ const PostCard = ({ fanfic }) => {
                 </Typography>
               </Box>
             </Modal>
-            <button onClick={() => deletePost(fanfic.id)}>Delete</button>
+            <button onClick={() => deletePost(post.id)}>Delete</button>
           </>
           {/* ) : (
         null

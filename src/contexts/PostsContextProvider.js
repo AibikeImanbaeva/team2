@@ -6,7 +6,7 @@ export const postContext = React.createContext();
 // export const usePost = useContext(postContext)
 
 const INIT_STATE = {
-  fanfic: [],
+  post: [],
   pages: 0,
   //   categories: [],
   onePost: null,
@@ -17,7 +17,7 @@ function reducer(state = INIT_STATE, action) {
     case "GET_POST":
       return {
         ...state,
-        fanfic: action.payload,
+        post: action.payload,
         // pages: Math.ceil(action.payload.count / 5),
       };
     case "GET_CATEGORIES":
@@ -126,21 +126,18 @@ const PostsContextProvider = ({ children }) => {
           Authorization,
         },
       };
-      
       const res = await axios.post(`${API}/fanfic/${id}/likes/`,likedProduct, config);
       console.log(res)
-      
-      
+  
       const { data } = await axios(`${API}/fanfic/${id}/`)
-      console.log(data);
-
+      console.log(data)
       getPost();
     } catch (err) {
       console.log(err);
     }
   }
 
-  async function deleteLike(unLike, id){
+  async function deleteLike( id){
     try {
       const tokens = JSON.parse(localStorage.getItem("token"));
       const Authorization = `Bearer ${tokens.access}`;
@@ -149,11 +146,8 @@ const PostsContextProvider = ({ children }) => {
           Authorization,
         },
       };
-      
-      const res = await axios.delete(`${API}/fanfic/${id}/likes/`,unLike, config);
+      const res = await axios.delete(`${API}/fanfic/${id}/likes/`, config);
       console.log(res)
-
-
       getPost();
     } catch (err) {
       console.log(err);
@@ -180,7 +174,7 @@ const PostsContextProvider = ({ children }) => {
   return (
     <postContext.Provider
       value={{
-        fanfic: state.fanfic,
+        post: state.post,
         pages: state.pages,
         categories: state.categories,
         onePost: state.onePost,

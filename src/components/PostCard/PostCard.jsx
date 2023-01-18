@@ -48,6 +48,17 @@ const PostCard = ({ fanfic }) => {
     editFanficPost(edittedFanficPost, fanfic.id)
   }
 
+
+const handeLike = ()=>{
+  let likePost = new FormData()
+  likePost.append("title", title);
+  likePost.append("image", image);
+  likePost.append("description", desc);
+  likePost.append("genre", genre);
+
+   toggleLike(likePost,fanfic.id)
+}
+ 
   // Edit
 
   const { deletePost, toggleLike } = useContext(postContext)

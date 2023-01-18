@@ -31,9 +31,10 @@ const AuthContextProvider = ({ children }) => {
     setLoading(true);
     try {
       const res = await axios.post(`${API}/accounts/login/`, formData);
-      localStorage.setItem("token", JSON.stringify(res.data));
+      localStorage.setItem("token", JSON.stringify(res.data))
+      console.log(res.data)
       localStorage.setItem("username", username);
-      // localStorage.setItem("user_state", executor);
+    
       setCurrentUser(username);
       navigate("/");
       console.log(res);
@@ -43,6 +44,7 @@ const AuthContextProvider = ({ children }) => {
     } finally {
       setLoading(false);
     }
+    
   }
   // const getProfile = async () => {
   //   const Authorization = `Bearer ${token.access}`;

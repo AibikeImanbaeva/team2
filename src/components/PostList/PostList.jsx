@@ -24,10 +24,9 @@ const PostList = () => {
 
   return (
    <>
-   
-   {posts?.map(fanfic=>( 
-        <PostCard key={fanfic.id} item={fanfic}></PostCard> 
-      ))} 
+     {posts?.map(fanfic => (
+        <PostCard key={fanfic.id} fanfic={fanfic}></PostCard>
+      ))}
    
    </>
   )

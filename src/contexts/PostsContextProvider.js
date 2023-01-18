@@ -117,6 +117,24 @@ const PostsContextProvider = ({ children }) => {
     }
   }
 
+  
+  async function editFanficPost(edittedProduct, id) {
+    try {
+      const tokens = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+      
+      await axios.patch(`${API}/fanfic/${id}/`, edittedProduct, config);
+      getPost();
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
   async function toggleLike(id) {
     try {
       const tokens = JSON.parse(localStorage.getItem("token"));
@@ -127,29 +145,31 @@ const PostsContextProvider = ({ children }) => {
         },
       };
 
-      const res = await axios(`${API}/fanfic/${id}/likes/`, config);
+      await axios.post(`${API}/fanfic/${id}/likes/`, config);
       getPost();
     } catch (err) {
       console.log(err);
     }
   }
+// async function addComments(com) {
+//   try {
+//     const tokens = JSON.parse(localStorage.getItem("token"));
+//     const Authorization = `Bearer ${tokens.access}`;
+//     const config = {
+//       headers: {
+//         Authorization,
+//       },
+//     };
 
-  async function editFanficPost(edittedProduct, id) {
-    try {
-      const tokens = JSON.parse(localStorage.getItem("token"));
-      const Authorization = `Bearer ${tokens.access}`;
-      const config = {
-        headers: {
-          Authorization,
-        },
-      };
+//     await axios.post(`${API}/fanfic/${id}/comment/`,com, config);
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }
 
-      await axios.patch(`${API}/fanfic/${id}/`, edittedProduct, config);
-      getPost();
-    } catch (error) {
-      console.log(error)
-    }
-  }
+
+
+
 
   return (
     <postContext.Provider
@@ -159,6 +179,8 @@ const PostsContextProvider = ({ children }) => {
         categories: state.categories,
         onePost: state.onePost,
 
+
+        // addComments,
         getPost,
         createPost,
         // getCategories,

@@ -59,8 +59,8 @@ const PostCard = ({ fanfic }) => {
           <h5 className="card-title">{fanfic.title}</h5>
           <h5 className="card-title">{fanfic.genre}</h5>
           <p className="card-text">{fanfic.description}</p>
-          <button>Details</button>
-          <button onClick={() => toggleLike(fanfic.id)}>Like</button>
+          <Button>Details</Button>
+          <Button onClick={() => toggleLike(fanfic.id)}>Like</Button>
           {/* {fanfic.is_author ? ( */}
           <>
             <Button onClick={handleOpen}>Open modal</Button>
@@ -79,6 +79,7 @@ const PostCard = ({ fanfic }) => {
                   <input type="text" placeholder='desc' value={desc} onChange={(e) => setDesc(e.target.value)} />
                   <input type="text" placeholder='genre' value={genre} onChange={(e) => setGenre(e.target.value)} />
                   <input type="file" name="photo" id='' multiple accept=".jpg" onChange={e => setImage(e.target.files[0])} />
+                  Like: {fanfic.likes}
                   <button onClick={handleEditInp}>Сохранить</button>
                 </Typography>
               </Box>

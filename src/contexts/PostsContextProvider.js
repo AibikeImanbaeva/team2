@@ -117,7 +117,7 @@ const PostsContextProvider = ({ children }) => {
     }
   }
 
-  async function toggleLike(id) {
+  async function toggleLike(likedProduct, id) {
     try {
       const tokens = JSON.parse(localStorage.getItem("token"));
       const Authorization = `Bearer ${tokens.access}`;
@@ -126,8 +126,14 @@ const PostsContextProvider = ({ children }) => {
           Authorization,
         },
       };
+      
+      const res = await axios.post(`${API}/fanfic/${id}/likes/`, likedProduct, config);
+      console.log(res)
+      
+      
+      const { data } = await axios(`${API}/fanfic/${id}/`)
+      console.log(data);
 
-      const res = await axios(`${API}/fanfic/${id}/likes/`, config);
       getPost();
     } catch (err) {
       console.log(err);

@@ -48,6 +48,14 @@ const PostCard = ({ fanfic }) => {
     editFanficPost(edittedFanficPost, fanfic.id)
   }
 
+  const handleLike = () => {
+    let likedProduct = new FormData();
+
+    likedProduct.append("title", title);
+
+    toggleLike(likedProduct, fanfic.id)
+  }
+
   // Edit
 
   const { deletePost, toggleLike } = useContext(postContext)
@@ -60,7 +68,7 @@ const PostCard = ({ fanfic }) => {
           <h5 className="card-title">{fanfic.genre}</h5>
           <p className="card-text">{fanfic.description}</p>
           <button>Details</button>
-          <button onClick={() => toggleLike(fanfic.id)}>Like</button>
+          <button onClick={handleLike}>Like</button>
           {/* {fanfic.is_author ? ( */}
           <>
             <Button onClick={handleOpen}>Open modal</Button>

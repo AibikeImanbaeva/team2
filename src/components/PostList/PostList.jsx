@@ -26,7 +26,7 @@ console.log(posts)
    <>
    
    {posts?.map(fanfic=>( 
-        <PostCard key={fanfic.id} item={fanfic}></PostCard> 
+        <PostCard key={fanfic.id} fanfic={fanfic}></PostCard> 
       ))} 
    
    </>

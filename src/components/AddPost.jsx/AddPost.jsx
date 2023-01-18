@@ -30,12 +30,12 @@ const AddPost = () => {
     let newProduct = new FormData();
    
     newProduct.append("title", title);
-    // newProduct.append("image", image )
+    newProduct.append("image", image )
     newProduct.append("description", desc );  
     newProduct.append("genre", genres );
     createPost(newProduct, navigate)
     console.log(title,image,desc,dataCreated,genres)
-    
+
   }
 
 

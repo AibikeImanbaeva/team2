@@ -140,7 +140,7 @@ const PostsContextProvider = ({ children }) => {
     }
   }
 
-  async function deleteLike(unLike, id){
+  async function deleteLike(id){
     try {
       const tokens = JSON.parse(localStorage.getItem("token"));
       const Authorization = `Bearer ${tokens.access}`;
@@ -150,7 +150,7 @@ const PostsContextProvider = ({ children }) => {
         },
       };
       
-      const res = await axios.delete(`${API}/fanfic/${id}/likes/`,unLike, config);
+      const res = await axios.delete(`${API}/fanfic/${id}/likes/`, config);
       console.log(res)
 
 

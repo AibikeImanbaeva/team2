@@ -70,10 +70,8 @@ const PostCard = ({ fanfic }) => {
       toggleLike(likedProduct, fanfic.id);
       setLike(true)
     } else {
-      let  unLike = new FormData();
-      // unLike.append("title", title);
 
-     deleteLike(unLike, fanfic.id)
+     deleteLike(fanfic.id)
      setLike(false)
     }
   }

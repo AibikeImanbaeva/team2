@@ -117,7 +117,7 @@ const PostsContextProvider = ({ children }) => {
     }
   }
 
-  async function toggleLike(likedProduct, id) {
+  async function toggleLike(id) {
     try {
       const tokens = JSON.parse(localStorage.getItem("token"));
       const Authorization = `Bearer ${tokens.access}`;
@@ -126,34 +126,8 @@ const PostsContextProvider = ({ children }) => {
           Authorization,
         },
       };
-      
-      const res = await axios.post(`${API}/fanfic/${id}/likes/`,likedProduct, config);
-      console.log(res)
-      
-      
-      const { data } = await axios(`${API}/fanfic/${id}/`)
-      console.log(data);
 
-      getPost();
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
-  async function deleteLike(unLike, id){
-    try {
-      const tokens = JSON.parse(localStorage.getItem("token"));
-      const Authorization = `Bearer ${tokens.access}`;
-      const config = {
-        headers: {
-          Authorization,
-        },
-      };
-      
-      const res = await axios.delete(`${API}/fanfic/${id}/likes/`,unLike, config);
-      console.log(res)
-
-
+      const res = await axios(`${API}/fanfic/${id}/likes/`, config);
       getPost();
     } catch (err) {
       console.log(err);

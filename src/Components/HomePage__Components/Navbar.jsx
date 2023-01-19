@@ -13,7 +13,7 @@ const Navbar = () => {
         <div>
              <header >
         <ul className='navbar'>
-          <li><img src={logo} alt="" /></li>
+          <li className='Navbar__logo'><img src={logo} alt="" /></li>
           <li><input type="text" placeholder='Поиск аниме,манга,фанфики' /></li>
         
           <li className='soc'><img src={FaceBook} alt="" />

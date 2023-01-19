@@ -5,8 +5,12 @@ function Animes() {
             <div className='hp_anime-cont'>
                 <h2 className='hp_anime-title'>Топ аниме</h2>
 
+
+
+
                <div className='hp_anime-card'>
-               <img src="/img10.png" alt=""  className='hp_animeImg'/>
+                 <img src="/img10.png" alt=""  className='hp_animeImg'/>
+                  <div className='hp_Anime-shadowBottom'></div>
 
                   <div className='hp_Anime-Content'>
                     <p className='hp_Anime-title'>Атака Титанов</p>
@@ -22,11 +26,17 @@ function Animes() {
                   </div>
                 </div>
 
+
+
+
+
                 <div className='hp_anime-card'>
                <img src="/img11.png" alt=""  className='hp_animeImg'/>
+               <div className='hp_Anime-shadowBottom'></div>
+
 
                   <div className='hp_Anime-Content'>
-                    <p className='hp_Anime-title'>Атака Титанов</p>
+                    <p className='hp_Anime-title'>Ванпанчмен</p>
 
                     <div className='hp_Anime-bottomItems'>
                       <button className='hp_Anime-subButton'>SUB</button>

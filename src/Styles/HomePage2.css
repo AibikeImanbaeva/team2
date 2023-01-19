@@ -34,6 +34,9 @@ right: 45%;
 input:focus{
   outline: none;
 }
+.Navbar__logo{
+  margin-left: 3%;
+}
 .soc
 {
   display: flex;

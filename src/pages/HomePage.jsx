@@ -18,12 +18,12 @@ const HomePage = () => {
       <News/>
       <div className='homePage__AllNews-FanfAnime'>
       <AllNews/>
-        <div>
+      </div>
+    </div>
+      <div className='FanficsAndAnime F-A_HomePage'>
           <Fanfics/>
           <Animes/>
         </div>
-      </div>
-    </div>
     <Saidbar/>
     </>
   )

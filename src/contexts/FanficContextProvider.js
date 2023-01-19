@@ -28,7 +28,7 @@ const API = "http://34.125.224.223";
 const FanficContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
-  async function getFanfic(id, getRead) {
+  async function getFanfic(id) {
     try {
       const tokens = JSON.parse(localStorage.getItem("token"));
       const Authorization = `Bearer ${tokens.access}`;
@@ -37,15 +37,18 @@ const FanficContextProvider = ({ children }) => {
           Authorization,
         },
       };
-
+console.log(id)                                           
       const res = await axios(
-        `${API}/fanfic/${id}/pages/${window.location.search}`, getRead, config);
+        `${API}/fanfic/${id}/pages/${window.location.search}`,config);
       console.log('qwertyu')
-
+   
       dispatch({
         type: "GET_FANFIC",
         payload: res.data,
       });
+
+      const { data } = await axios(`${API}/fanfic/${id}/pages/`)
+      console.log(data)
     } catch (err) {
       console.log(err);
     }

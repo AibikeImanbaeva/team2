@@ -71,8 +71,8 @@ const PostCard = ({ post }) => {
   
       toggleLike(likedProduct, post.id);
       setLike(true)
+      console.log(likedProduct, post.id)
     } else {
-
      deleteLike(post.id)
      setLike(false)
     }
@@ -82,10 +82,11 @@ const PostCard = ({ post }) => {
 
 
 function readFanfic(){
-  let getRead =  new FormData();
-  getRead.append("title", title)
-  getFanfic(getRead, post.id)
-  console.log(getRead, post.id)
+  // let getRead =  new FormData();
+
+  getFanfic(post.id)
+  console.log(getFanfic)
+
   navigate('/fanficpage')
 }
 
@@ -101,7 +102,7 @@ const navigate =  useNavigate()
           <h5 className="card-title">{post.title}</h5>
           <h5 className="card-title">{post.genre}</h5>
           <p className="card-text">{post.description}</p>
-          <button onClick={()=>readFanfic(post.id)}>Начать читать</button>
+          <button onClick={readFanfic}>Начать читать</button>
           <button onClick={() => handleLike()}>
             {like ? <p> лайкнуто ежже</p> : <p> не лайкнуто ежже</p>}
           </button>

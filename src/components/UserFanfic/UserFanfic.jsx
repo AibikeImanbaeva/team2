@@ -3,6 +3,8 @@ import { useSearchParams, useParams } from 'react-router-dom';
 import { fanficContext } from '../../contexts/FanficContextProvider';
 import FanficCard from '../FanficCard/FanficCard';
 import { postContext } from '../../contexts/PostsContextProvider';
+import CommentCard from '../CommentCard/CommentCard';
+import  {postContext} from "../../contexts/PostsContextProvider"
 
 const UserFanfic= () => {
 
@@ -21,7 +23,15 @@ const { fanficDetails, setFanficDetails} =  useState({})
     getPostDetails(id)
   },[])
 
+const [comment, setComment] = useState('')
 
+  const {addComment} = postContext(useContext)
+
+  function handleCom(){
+    let newCom = new FormData()
+    newCom.append("title", comment),
+    addComment(newCom, id)
+  }
 
   return (
     <>
@@ -36,8 +46,16 @@ const { fanficDetails, setFanficDetails} =  useState({})
 
 
     {onePost?.map(post => (
+          <>
             <FanficCard key={post.id} post={post}></FanficCard>
+            
+            <div className='comments'>
+
+          <CommentCard key={post.id}/>
+          </div>
+            </>
           ))}
+         
     
        </>
   )

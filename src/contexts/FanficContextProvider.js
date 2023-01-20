@@ -74,12 +74,34 @@ console.log(id)
     }
   }
 
+  
+  const addComment = async (comment, id) => {
+    try {
+      const tokens = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+      let res = await axios.post(`${API}/${id}/comment/`, comment, config)
+      console.log(res);
+      getFanfic();
+    } catch (err) {
+      console.log(err);
+    }
+   
+  }
+
+
+
   return (
     <fanficContext.Provider
       value={{
       fanfic: state.fanfic,
       createFanfic,
-      getFanfic
+      getFanfic,
+      addComment
       }}
     >
       {children}

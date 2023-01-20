@@ -11,6 +11,8 @@ import ChatPage from './pages/ChatPage';
 import AnimePage from './pages/AnimePage';
 import ProfilePage from './pages/ProfilePage';
 
+import AdminPage from './pages/AdminPage';
+
 
 const MainRoutes = () => {
     const ROUTES = [
@@ -27,7 +29,7 @@ const MainRoutes = () => {
         {
           link: "/login",
           element: <LoginPage />,
-          id:2
+          id:10
       },    {
         link: "/News",
         element: <NewsPage />,
@@ -62,7 +64,12 @@ const MainRoutes = () => {
   link: "/profile",
   element: <ProfilePage />,
   id:9
-}
+},
+{
+  link: "/admin",
+  element: <AdminPage />,
+  id:12
+},
     ]
   return (
     <Routes>

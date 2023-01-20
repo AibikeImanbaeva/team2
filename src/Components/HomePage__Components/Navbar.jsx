@@ -6,14 +6,20 @@ import Twitter from '../../assets/Twitter.png'
 import Instagram from '../../assets/Instagram.png'
 import Settings from '../../assets/Settings.png'
 import Ellipse from '../../assets/Ellipse 1.png'
+import { Link } from 'react-router-dom'
+
+
 import '../../Styles/HomePage2.css'
 
 const Navbar = () => {
+
     return (
         <div>
              <header >
         <ul className='navbar'>
+        <Link to="/Admin">
           <li className='Navbar__logo'><img src={logo} alt="" /></li>
+          </Link>
           <li><input type="text" placeholder='Поиск аниме,манга,фанфики' /></li>
         
           <li className='soc'><img src={FaceBook} alt="" />

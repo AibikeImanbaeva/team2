@@ -19,6 +19,7 @@ function News() {
                <img src="/img1.png" alt=""  className='newsImg'/>
              <div className='NewsContent__items'>
                 <p className='news__episode-data'>23 июня 2022</p>
+                <button className='news__episode-readButton'>Читать</button>
                 <p className='news__episode-title'>Выход 3 сезона Моб Психо 100 уже скоро</p>
              </div>
                   <div className='news__episode-shadowTop'></div>
@@ -29,6 +30,7 @@ function News() {
                <img src="/img2.png" alt=""  className='newsImg'/>
              <div className='NewsContent__items'>
                 <p className='news__episode-data'>23 июня 2022</p>
+                <button className='news__episode-readButton'>Читать</button>
                 <p className='news__episode-title'>Последний сезон атаки титанов</p>
              </div>
                    <div className='news__episode-shadowTop'></div>
@@ -39,6 +41,7 @@ function News() {
                <img src="/img3.png" alt=""  className='newsImg'/>
              <div className='NewsContent__items'>
                 <p className='news__episode-data'>23 июня 2022</p>
+                <button className='news__episode-readButton'>Читать</button>
                 <p className='news__episode-title'>Что значит концовка Киберпанка?</p>
              </div>
                   <div className='news__episode-shadowTop'></div>

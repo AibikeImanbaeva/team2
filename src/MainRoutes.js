@@ -29,7 +29,7 @@ const MainRoutes = () => {
       id: 4,
     },
     {
-      link: "/fanficpage",
+      link: "/fanficpage:id",
       element: <FanficPage />,
       id: 5,
     },

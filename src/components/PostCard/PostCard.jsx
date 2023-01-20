@@ -81,14 +81,14 @@ const PostCard = ({ post }) => {
   // Edit
 
 
-function readFanfic(){
-  // let getRead =  new FormData();
+// function readFanfic(){
+//   // let getRead =  new FormData();
 
-  getFanfic(post.id)
-  console.log(getFanfic)
+//   getFanfic(post.id)
+//   console.log(getFanfic)
 
-  navigate('/fanficpage')
-}
+//   navigate('/fanficpage')
+// }
 
 
   //navigate 
@@ -102,7 +102,7 @@ const navigate =  useNavigate()
           <h5 className="card-title">{post.title}</h5>
           <h5 className="card-title">{post.genre}</h5>
           <p className="card-text">{post.description}</p>
-          <button onClick={readFanfic}>Начать читать</button>
+          <button onClick={()=>navigate(`/fanficpage/${post.id}`)}>Начать читать</button>
           <button onClick={() => handleLike()}>
             {like ? <p> лайкнуто ежже</p> : <p> не лайкнуто ежже</p>}
           </button>

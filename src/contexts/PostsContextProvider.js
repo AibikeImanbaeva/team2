@@ -1,5 +1,6 @@
 import React, { useReducer } from "react";
 import axios from "axios";
+import { ContactSupportOutlined } from "@mui/icons-material";
 
 
 export const postContext = React.createContext();
@@ -172,6 +173,19 @@ const PostsContextProvider = ({ children }) => {
     }
   }
 
+
+  const getPostDetails = async (id) => {
+    const { data } = await axios(`${API}}/${id}`);
+    dispatch({
+      type: "GET_ONE_POST",
+      payload: data,
+    });
+
+    console.log(data)
+  };
+
+
+
   return (
     <postContext.Provider
       value={{
@@ -179,6 +193,7 @@ const PostsContextProvider = ({ children }) => {
         pages: state.pages,
         categories: state.categories,
         onePost: state.onePost,
+        getPostDetails,
 
         getPost,
         createPost,

@@ -20,6 +20,14 @@ const MangaNewEpisodes = () => {
                 
                <div className='Manga__newEpisodesCard'>
                    <img src="/Newepisodes1.png" alt="" className='Manga__NE-cardImg' />
+                    
+                    <div className='Hover-readCont'>
+                         <button className='Hover-readButton'>Читать</button>
+                   </div>
+                   
+                   <div className='Hover-readCont'>
+                         <button className='Hover-readButton'>Читать</button>
+                   </div>
 
                    <div className='Mange__NE-DataTitleRange'>
                         <p className='Manga__NE-cardData'>23 Июля 2023</p>
@@ -38,7 +46,11 @@ const MangaNewEpisodes = () => {
 
                <div className='Manga__newEpisodesCard'>
                    <img src="/Newepisodes1.png" alt="" className='Manga__NE-cardImg' />
-
+                    
+                    <div className='Hover-readCont'>
+                         <button className='Hover-readButton'>Читать</button>
+                   </div>
+                   
                    <div className='Mange__NE-DataTitleRange'>
                         <p className='Manga__NE-cardData'>23 Июля 2023</p>
                         <div className='Manga__NE-cardTitleCont'>
@@ -56,7 +68,11 @@ const MangaNewEpisodes = () => {
 
                <div className='Manga__newEpisodesCard'>
                    <img src="/Newepisodes1.png" alt="" className='Manga__NE-cardImg' />
-
+                    
+                    <div className='Hover-readCont'>
+                         <button className='Hover-readButton'>Читать</button>
+                   </div>
+                   
                    <div className='Mange__NE-DataTitleRange'>
                         <p className='Manga__NE-cardData'>23 Июля 2023</p>
                         <div className='Manga__NE-cardTitleCont'>
@@ -74,7 +90,11 @@ const MangaNewEpisodes = () => {
 
                <div className='Manga__newEpisodesCard'>
                    <img src="/Newepisodes1.png" alt="" className='Manga__NE-cardImg' />
-
+                    
+                    <div className='Hover-readCont'>
+                         <button className='Hover-readButton'>Читать</button>
+                   </div>
+                   
                    <div className='Mange__NE-DataTitleRange'>
                         <p className='Manga__NE-cardData'>23 Июля 2023</p>
                         <div className='Manga__NE-cardTitleCont'>
@@ -92,7 +112,11 @@ const MangaNewEpisodes = () => {
 
                <div className='Manga__newEpisodesCard'>
                    <img src="/Newepisodes1.png" alt="" className='Manga__NE-cardImg' />
-
+                    
+                    <div className='Hover-readCont'>
+                         <button className='Hover-readButton'>Читать</button>
+                   </div>
+                   
                    <div className='Mange__NE-DataTitleRange'>
                         <p className='Manga__NE-cardData'>23 Июля 2023</p>
                         <div className='Manga__NE-cardTitleCont'>
@@ -110,7 +134,11 @@ const MangaNewEpisodes = () => {
 
                <div className='Manga__newEpisodesCard'>
                    <img src="/Newepisodes1.png" alt="" className='Manga__NE-cardImg' />
-
+                    
+                    <div className='Hover-readCont'>
+                         <button className='Hover-readButton'>Читать</button>
+                   </div>
+                   
                    <div className='Mange__NE-DataTitleRange'>
                         <p className='Manga__NE-cardData'>23 Июля 2023</p>
                         <div className='Manga__NE-cardTitleCont'>
@@ -128,7 +156,11 @@ const MangaNewEpisodes = () => {
 
                <div className='Manga__newEpisodesCard'>
                    <img src="/Newepisodes1.png" alt="" className='Manga__NE-cardImg' />
-
+                    
+                    <div className='Hover-readCont'>
+                         <button className='Hover-readButton'>Читать</button>
+                   </div>
+                   
                    <div className='Mange__NE-DataTitleRange'>
                         <p className='Manga__NE-cardData'>23 Июля 2023</p>
                         <div className='Manga__NE-cardTitleCont'>
@@ -146,7 +178,11 @@ const MangaNewEpisodes = () => {
 
                <div className='Manga__newEpisodesCard'>
                    <img src="/Newepisodes1.png" alt="" className='Manga__NE-cardImg' />
-
+                    
+                    <div className='Hover-readCont'>
+                         <button className='Hover-readButton'>Читать</button>
+                   </div>
+                   
                    <div className='Mange__NE-DataTitleRange'>
                         <p className='Manga__NE-cardData'>23 Июля 2023</p>
                         <div className='Manga__NE-cardTitleCont'>
@@ -164,7 +200,11 @@ const MangaNewEpisodes = () => {
 
                <div className='Manga__newEpisodesCard'>
                    <img src="/Newepisodes1.png" alt="" className='Manga__NE-cardImg' />
-
+                    
+                    <div className='Hover-readCont'>
+                         <button className='Hover-readButton'>Читать</button>
+                   </div>
+                   
                    <div className='Mange__NE-DataTitleRange'>
                         <p className='Manga__NE-cardData'>23 Июля 2023</p>
                         <div className='Manga__NE-cardTitleCont'>
@@ -182,7 +222,11 @@ const MangaNewEpisodes = () => {
 
                <div className='Manga__newEpisodesCard'>
                    <img src="/Newepisodes1.png" alt="" className='Manga__NE-cardImg' />
-
+                    
+                    <div className='Hover-readCont'>
+                         <button className='Hover-readButton'>Читать</button>
+                   </div>
+                   
                    <div className='Mange__NE-DataTitleRange'>
                         <p className='Manga__NE-cardData'>23 Июля 2023</p>
                         <div className='Manga__NE-cardTitleCont'>

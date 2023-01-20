@@ -55,6 +55,7 @@
 }
 
 .Manga__newEpisodesCard{
+    position: relative;
     margin-top: 1.5%;
     width: 18%;
     height: 200px;
@@ -63,38 +64,33 @@
 .Manga__NE-cardImg{
     position: absolute;
     z-index: 1;
-    object-fit: cover;
-    width: 150px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     
 }
 .Manga__NE-shadowTop{
     width: 100%;
     height: 100%;
-    bottom: 100%;
-    position: relative;
+    position: absolute;
     z-index: 2;
     box-shadow: inset 0px 25px 25px 0px rgba(0,0,0,0.9);
 }
 .Manga__NE-shadowBottom{
     width: 100%;
     height: 100%;
-    bottom: 200%;
-    position: relative;
-    z-index: 3;
+    position: absolute;
+    z-index: 2;
     box-shadow: inset 0px -70px 25px 1px rgba(0,0,0,0.8);
 }
 .Mange__NE-DataTitleRange{
-    position: relative;
-    bottom: 100%;
+    position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 4;
+    z-index: 3;
 }
 
 .Manga__NE-cardData{
-    position: relative;
-    top: 101%;
+    position: absolute;
     left: 10%;
     width: 90%;
     font-family: 'Inter';
@@ -106,10 +102,10 @@
 }
 
 .Manga__NE-cardTitleCont{
-    position: relative;
-    top: 145%;
+    position: absolute;
     height: 30%;
     left: 10%;
+    top: 50%;
     width: 80%;
     display: flex;
     align-items: flex-end;
@@ -126,9 +122,9 @@
 }
 
 .Manga__NE-rating{
-    position: relative;
-    top: 145%;
+    position: absolute;
     left: 10%;
+    top: 80%;
     width: 90%;
     background-color:  rgba(0, 0, 0, 0.4);
     width: 80%;
@@ -195,6 +191,7 @@
 }
 
 .Manga__CatalogCard{
+    position: relative;
     margin-top: 1.5%;
     width: 18%;
     height: 100%;
@@ -203,29 +200,70 @@
 .Manga__Catalog-cardImg{
     position: absolute;
     z-index: 1;
-    object-fit:contain;
-    width: 150px;
-    height: 200px;
-    
-}
-.Manga__Catalog-DataTitleRange{
-    position: relative;
-    bottom: 100%;
     width: 100%;
     height: 100%;
-    z-index: 4;
+    
+}
+
+.Hover-readCont{
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Hover-readButton{
+    width: 50%;
+    height: 30px;
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    background-color: #808080;
+    color: black;
+    border-radius: 3rem;
+}
+
+
+.Hover-readCont:hover{
+    background-color: rgba(0,0,0,0.5);
+}
+.Hover-readCont:hover .Hover-readButton{
+    opacity: 1;
+}
+
+.Hover-readButton:active{
+    color:white;
+    background-color: #424242;
+}
+
+
+.Manga__Catalog-DataTitleRange{
+    position: absolute;
+    width: 80%;
+    height: 90%;
+    left: 10%;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
 
 
 .Manga__Catalog-cardTitleCont{
-    position: relative;
-    top: 145%;
+    /* position: absolute; */
     height: 30%;
+    top: 50%;
     left: 10%;
     width: 80%;
     display: flex;
     align-items: flex-end;
     margin-bottom: 5px;
+    z-index: 2;
 }
 
 .Manga__Catalog-cardTitle{
@@ -238,8 +276,8 @@
 }
 
 .Manga__Catalog-rating{
-    position: relative;
-    top: 145%;
+    /* position: absolute; */
+    top: 80%;
     left: 10%;
     width: 90%;
     background-color:  rgba(0, 0, 0, 0.4);
@@ -249,17 +287,15 @@
 .Manga__Catalog-shadowTop{
     width: 100%;
     height: 100%;
-    bottom: 100%;
-    position: relative;
-    z-index: 2;
+    position: absolute;
+    z-index:2;
     box-shadow: inset 0px 25px 25px 0px rgba(0,0,0,0.9);
 }
 .Manga__Catalog-shadowBottom{
     width: 100%;
     height: 100%;
-    bottom: 200%;
-    position: relative;
-    z-index: 3;
+    position: absolute;
+    z-index: 2;
     box-shadow: inset 0px -70px 25px 1px rgba(0,0,0,0.8);
 }
 
@@ -270,9 +306,9 @@
 }
 
 .Manga__Catalog-ChaptersCont{
-    position: relative;
-    top: -200%;
+    position: absolute;
     margin-top: 1.5%;
+    top: 100%;
     width: 100%;
     height: 40%;
     background: #414141;

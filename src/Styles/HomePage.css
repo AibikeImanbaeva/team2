@@ -148,7 +148,6 @@ body{
 .news__episode-readButton:active{
     width: 55%;
     background-color: #424242;
-    color: white;
 }
 
 .news__episode-shadowTop{

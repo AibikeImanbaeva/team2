@@ -1,63 +1,81 @@
-import React, {useEffect, useContext, useState} from 'react';
-import { useSearchParams, useParams } from 'react-router-dom';
+import { Box, CircularProgress } from '@mui/material';
+import React, { useEffect, useContext, useState } from 'react';
+import { useSearchParams, useParams, useNavigate } from 'react-router-dom';
 import { fanficContext } from '../../contexts/FanficContextProvider';
-import FanficCard from '../FanficCard/FanficCard';
 import { postContext } from '../../contexts/PostsContextProvider';
-import CommentCard from '../CommentCard/CommentCard';
-import  {postContext} from "../../contexts/PostsContextProvider"
+import CommentList from '../CommentCard/CommentList';
+import CreateComment from '../CommentCard/CreateComment';
+import FanficChapterCreate from '../FanficChapters/FanficChapterCreate';
+import FanficChaptersList from '../FanficChapters/FanficChaptersList';
+import AddIcon from '@mui/icons-material/Add';
 
-const UserFanfic= () => {
+const UserFanfic = () => {
 
-  const { getFanfic, fanfic} = useContext(fanficContext);
   const [searchParams, setSearchParams] = useSearchParams();
-  const {onePost, getPostDetails} = postContext(useContext)
-const { fanficDetails, setFanficDetails} =  useState({})
-  const {id} = useParams()
-  // useEffect(() => {
-  //   getFanfic(id);
-    
-  // }, [])
+  const { onePost, getPostDetails } = useContext(postContext);
+  const { fanficDetails, setFanficDetails } = useState({})
+  const { id } = useParams()
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    getPostDetails(id);
+  }, [])
 
-  useEffect(()=> {
-    getPostDetails(id)
-  },[])
-
-const [comment, setComment] = useState('')
-
-  const {addComment} = postContext(useContext)
-
-  function handleCom(){
-    let newCom = new FormData()
-    newCom.append("title", comment),
-    addComment(newCom, id)
-  }
+  // function handleCom() {
+  //   let newCom = new FormData()
+  //   newCom.append("title", comment),
+  //     addComment(newCom, id)
+  // }
 
   return (
     <>
+      {/* 
+      <div>
 
-<div>
+        <img src="  " alt="" />
+        <p>{fanficDetails.genre}</p>
+        <p>{fanficDetails.title}</p>
 
-<img src={onePost.image} alt="" />
-<p>{onePost.genre}</p>
-<p>{onePost.title}</p>
-
-</div>
+      </div> */}
 
 
-    {onePost?.map(post => (
+
+
+      {
+        onePost ? (
           <>
-            <FanficCard key={post.id} post={post}></FanficCard>
-            
-            <div className='comments'>
+            <div>
+              <img src={onePost.image} alt="" />
+              <p>{onePost.genre}</p>
+              <p>{onePost.title}</p>
+            </div>
+            <hr />
+            {/* Chapters */}
+            Главы <button onClick={() => navigate(`/fanficpage/${onePost.id}/create-fanfic`)}><AddIcon/></button>
+            <FanficChaptersList />
+            <hr />
 
-          <CommentCard key={post.id}/>
-          </div>
-            </>
-          ))}
-         
-    
-       </>
+            <div className='comments'>
+              <CreateComment key={onePost.id} />
+
+              <div>
+                <CommentList onePost={onePost} />
+              </div>
+            </div>
+          </>
+
+        ) : (
+          <Box sx={{ display: 'flex' }}>
+            <CircularProgress />
+            {/* Прикольная фигня */}
+          </Box>
+        )
+      }
+
+
+
+
+    </>
   )
 }
 

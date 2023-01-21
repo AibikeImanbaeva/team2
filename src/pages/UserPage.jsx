@@ -2,7 +2,7 @@ import React from 'react'
 import AddPost from '../components/AddPost.jsx/AddPost'
 import PostList from '../components/PostList/PostList'
 
-const UserPage = () => {
+const FanficMainPage = () => {
   return (
 <>
 <AddPost />
@@ -13,4 +13,4 @@ const UserPage = () => {
   )
 }
 
-export default UserPage
+export default FanficMainPage

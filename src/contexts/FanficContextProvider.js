@@ -7,6 +7,7 @@ export const fanficContext = React.createContext();
 
 const INIT_STATE = {
   fanfic: [],
+  chapter: {},
   pages: 0,
 };
 
@@ -16,7 +17,11 @@ function reducer(state = INIT_STATE, action) {
       return {
         ...state,
         fanfic: action.payload,
-        // pages: Math.ceil(action.payload.count / 5),
+      };
+    case "GET_FANFIC_CHAPTER":
+      return {
+        ...state,
+        chapter: action.payload,
       };
     default:
       return state;
@@ -37,11 +42,10 @@ const FanficContextProvider = ({ children }) => {
           Authorization,
         },
       };
-console.log(id)                                           
       const res = await axios(
-        `${API}/fanfic/${id}/pages/${window.location.search}`,config);
-      console.log('qwertyu')
-   
+        `${API}/fanfic/${id}/${window.location.search}`, config);
+
+      console.log(res)
       dispatch({
         type: "GET_FANFIC",
         payload: res.data,
@@ -52,9 +56,10 @@ console.log(id)
     } catch (err) {
       console.log(err);
     }
-    console.log('jessica')}
+    // console.log('jessica')
+  }
 
-//   }
+  //   }
 
 
   async function createFanfic(newChapter, id) {
@@ -68,13 +73,15 @@ console.log(id)
       };
       const res = await axios.post(`${API}/fanfic/${id}/pages/`, newChapter, config); //RAUF
       console.log(res);
-      getFanfic();
+
+      // * Удалил getFanfic(), тк он запрашивает только на один
+
     } catch (err) {
       console.log(err);
     }
   }
 
-  
+
   const addComment = async (comment, id) => {
     try {
       const tokens = JSON.parse(localStorage.getItem("token"));
@@ -84,13 +91,113 @@ console.log(id)
           Authorization,
         },
       };
-      let res = await axios.post(`${API}/${id}/comment/`, comment, config)
+
+      let res = await axios.post(`${API}/fanfic/${id}/comment/`, comment, config)  // * Отсутсвовало /fanfic/
       console.log(res);
-      getFanfic();
+      getFanfic(id);
     } catch (err) {
       console.log(err);
     }
-   
+  }
+
+  const deleteComment = async (commentId, fanficId, text) => {
+    try {
+      const tokens = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+
+      let deleteCommentForm = new FormData();
+      // deleteCommentForm.append("id",)
+
+
+      // let { data } = await axios.delete(`${API}/fanfic/${fanficId}/comment/`, deleteCommentForm, config)
+
+      // fetch('https://example.com/profile', {
+      //   method: 'DELETE', // or 'PUT'
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //     "Authorization": Authorization,
+      //   },
+      //   body: JSON.stringify(deleteCommentForm),
+      // })
+
+      // await fetch('http://httpbin.org/delete', {
+      //   method: 'DELETE',
+      //   body: JSON.stringify(deleteCommentForm),
+      //   headers: {
+      //     "Authorization": Authorization
+      //   }
+      // })
+      // await axios.delete(`${API}/fanfic/${fanficId}/comment/`, {
+      //   headers: {
+      //     "Authorization": Authorization,
+      //   },
+      //   body: {
+      //     "text": text,
+      //     "id": `${commentId}`
+      //   }
+      // });
+
+      const data = { "id": commentId };
+
+      await fetch(`${API}/fanfic/${fanficId}/comment/`, {
+        method: 'DELETE', // or 'PUT'
+        headers: {
+          'Content-Type': 'application/json',
+          "Authorization": Authorization,
+        },
+        body: JSON.stringify(data),
+      })
+
+
+      // console.log(data)
+      getFanfic(fanficId)
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const addChapter = async (newPage, id) => {
+    try {
+      const tokens = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+
+      const { data } = await axios.post(`${API}/fanfic/${id}/pages/`, newPage, config);
+
+      console.log(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const getChapter = async (page) => {
+    try {
+      dispatch({
+        type: "GET_FANFIC_CHAPTER",
+        payload: page,
+      })
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const deleteChapter = async (id) => {
+    try {
+
+    } catch (error) {
+
+    }
   }
 
 
@@ -98,10 +205,15 @@ console.log(id)
   return (
     <fanficContext.Provider
       value={{
-      fanfic: state.fanfic,
-      createFanfic,
-      getFanfic,
-      addComment
+        fanfic: state.fanfic,
+        chapter: state.chapter,
+
+        createFanfic,
+        getFanfic,
+        addComment,
+        addChapter,
+        getChapter,
+        deleteComment
       }}
     >
       {children}

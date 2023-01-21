@@ -3,8 +3,10 @@ import { Routes, Route } from "react-router-dom";
 import RegistrationPage from "./pages/RegistrationPage";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
-import UserPage from "./pages/UserPage";
 import FanficPage from "./pages/FanficPage";
+import FanficMainPage from "./pages/UserPage";
+import FanficChapterCreate from "./components/FanficChapters/FanficChapterCreate";
+import FanficChapter from "./components/FanficChapters/FanficChapter";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -24,14 +26,24 @@ const MainRoutes = () => {
       id: 3,
     },
     {
-      link: "/user",
-      element: <UserPage />,
+      link: "/fanfic",
+      element: <FanficMainPage />,
       id: 4,
     },
     {
-      link: "/fanficpage:id",
+      link: "/fanficpage/:id",
       element: <FanficPage />,
       id: 5,
+    },
+    {
+      link: "/fanficpage/:id/create-fanfic",
+      element: <FanficChapterCreate />,
+      id: 6,
+    },
+    {
+      link: "/fanfic/chapter/:chName",
+      element: <FanficChapter />,
+      id: 7,
     },
   ];
   return (

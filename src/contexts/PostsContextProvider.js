@@ -127,9 +127,9 @@ const PostsContextProvider = ({ children }) => {
           Authorization,
         },
       };
-      const res = await axios.post(`${API}/fanfic/${id}/likes/`,likedProduct, config);
+      const res = await axios.post(`${API}/fanfic/${id}/likes/`, likedProduct, config);
       console.log(res)
-  
+
       const { data } = await axios(`${API}/fanfic/${id}/`)
       console.log(data)
       getPost();
@@ -139,7 +139,7 @@ const PostsContextProvider = ({ children }) => {
   }
 
 
-  async function deleteLike( id){
+  async function deleteLike(id) {
     try {
       const tokens = JSON.parse(localStorage.getItem("token"));
       const Authorization = `Bearer ${tokens.access}`;
@@ -175,13 +175,20 @@ const PostsContextProvider = ({ children }) => {
 
 
   const getPostDetails = async (id) => {
-    const { data } = await axios(`${API}}/${id}`);
-    dispatch({
-      type: "GET_ONE_POST",
-      payload: data,
-    });
+    try {
+      console.log(id)
 
-    console.log(data)
+      const { data } = await axios(`${API}/fanfic/${id}`);
+
+      dispatch({
+        type: "GET_ONE_POST",
+        payload: data,
+      });
+
+      console.log(data)
+    } catch (error) {
+      console.log(error)
+    }
   };
 
 
@@ -193,8 +200,8 @@ const PostsContextProvider = ({ children }) => {
         pages: state.pages,
         categories: state.categories,
         onePost: state.onePost,
-        getPostDetails,
 
+        getPostDetails,
         getPost,
         createPost,
         // getCategories,

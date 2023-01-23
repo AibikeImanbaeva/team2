@@ -7,8 +7,7 @@ const CommentCard = ({ comment }) => {
   const { deleteComment } = useContext(fanficContext);
   const { id } = useParams()
   const handleDelete = () => {
-
-    deleteComment(comment.id, id, comment.text);
+    deleteComment(id);
   }
 
   return (

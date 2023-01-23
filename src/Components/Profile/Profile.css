@@ -1,0 +1,47 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300&display=swap');
+
+.prof-page{
+margin: auto;
+
+}
+.newsTitle{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    color: #FC41D3;
+}
+.newsLine{
+    width: 633px;
+    height: 1px;
+    background-color: #8F8F8F;
+}
+.profile-container{
+    width: 55%;
+    margin: 42px auto;
+}
+
+
+.profile-card {
+    margin-top: 20px;
+    padding-top: 40px;
+    background-color: #181818;;
+}
+
+
+.photo-upload {
+ 
+    margin-left: 40px;
+    background-color: antiquewhite;
+    width: 191px;
+    height: 191px;
+    border-radius: 50% ;
+}
+
+
+.photo-upload-inp{
+    margin: 42% 0%;
+}

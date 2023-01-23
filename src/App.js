@@ -4,22 +4,28 @@ import { BrowserRouter } from "react-router-dom";
 import AuthContextProvider from './contexts/AuthContextProvider';
 import PostsContextProvider from './contexts/PostsContextProvider';
 import FanficContextProvider from './contexts/FanficContextProvider';
+import AnimeContextProveder from './contexts/AnimeContextProveder';
+
 
 function App() {
   return (
     <>
-    <FanficContextProvider>
+<AuthContextProvider>
+  <FanficContextProvider>
+  <AnimeContextProveder>
     <PostsContextProvider>
 
-<AuthContextProvider>
-
-<BrowserRouter>
-<MainRoutes />
-</BrowserRouter>
-</AuthContextProvider>
-</PostsContextProvider>
-    </FanficContextProvider>
+    <BrowserRouter>
+    <MainRoutes />
+    </BrowserRouter>
     
+    </PostsContextProvider>
+    </AnimeContextProveder>
+  </FanficContextProvider>
+</AuthContextProvider>
+
+ 
+
     </>
   );
 }

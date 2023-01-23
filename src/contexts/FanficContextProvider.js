@@ -100,7 +100,7 @@ const FanficContextProvider = ({ children }) => {
     }
   }
 
-  const deleteComment = async (commentId, fanficId, text) => {
+  const deleteComment = async ( id) => {
     try {
       const tokens = JSON.parse(localStorage.getItem("token"));
       const Authorization = `Bearer ${tokens.access}`;
@@ -109,8 +109,19 @@ const FanficContextProvider = ({ children }) => {
           Authorization,
         },
       };
+      let res = await axios.delete(`${API}/fanfic/${id}/comment/`,config)  // * Отсутсвовало /fanfic/
+      console.log(res);
+          
 
-      let deleteCommentForm = new FormData();
+            getFanfic(id)
+      
+          } catch (error) {
+            console.log(error)
+          }
+        }
+
+
+      // let deleteCommentForm = new FormData();
       // deleteCommentForm.append("id",)
 
 
@@ -142,25 +153,8 @@ const FanficContextProvider = ({ children }) => {
       //   }
       // });
 
-      const data = { "id": commentId };
-
-      await fetch(`${API}/fanfic/${fanficId}/comment/`, {
-        method: 'DELETE', // or 'PUT'
-        headers: {
-          'Content-Type': 'application/json',
-          "Authorization": Authorization,
-        },
-        body: JSON.stringify(data),
-      })
-
 
       // console.log(data)
-      getFanfic(fanficId)
-
-    } catch (error) {
-      console.log(error)
-    }
-  }
 
   const addChapter = async (newPage, id) => {
     try {
@@ -207,7 +201,7 @@ const FanficContextProvider = ({ children }) => {
       value={{
         fanfic: state.fanfic,
         chapter: state.chapter,
-
+        getFanfic,
         createFanfic,
         getFanfic,
         addComment,

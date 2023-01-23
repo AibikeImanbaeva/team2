@@ -3,10 +3,17 @@ import { Routes, Route } from "react-router-dom";
 import RegistrationPage from "./pages/RegistrationPage";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
-import FanficPage from "./pages/FanficPage";
 import FanficMainPage from "./pages/UserPage";
 import FanficChapterCreate from "./components/FanficChapters/FanficChapterCreate";
 import FanficChapter from "./components/FanficChapters/FanficChapter";
+import NewsPage from './pages/NewsPage';
+import MangaPage from './pages/MangaPage';
+import FanficPage from './pages/FanficPage';
+import FriendsPage from './pages/FriendsPage';
+import ChatPage from './pages/ChatPage';
+import AnimePage from './pages/AnimePage';
+import ProfilePage from './pages/ProfilePage';
+import AdminPage from './pages/AdminPage';
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -45,7 +52,48 @@ const MainRoutes = () => {
       element: <FanficChapter />,
       id: 7,
     },
-  ];
+         {
+        link: "/News",
+        element: <NewsPage />,
+        id:8
+    },
+    {
+      link: "/manga",
+      element: <MangaPage />,
+      id:9
+  },
+//   {
+//     link: "/fanfic",
+//     element: <FanficPage />,
+//     id:10
+// },
+{
+  link: "/friends",
+  element: <FriendsPage />,
+  id:11
+},
+{
+  link: "/chat",
+  element: <ChatPage />,
+  id:12
+},
+{
+  link: "/anime",
+  element: <AnimePage />,
+  id:13
+},
+{
+  link: "/profile",
+  element: <ProfilePage />,
+  id:14
+},
+{
+  link: "/admin",
+  element: <AdminPage />,
+  id:15
+},
+    ]
+
   return (
     <Routes>
       {ROUTES.map((item) => (

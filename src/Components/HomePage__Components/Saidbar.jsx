@@ -106,7 +106,7 @@ const Saidbar = () => {
 </div>
 </Link>
 
-<Link to="Register">
+<Link to="profile">
 <div className='Profile_hover'>
 <svg width="45" height="45" viewBox="0 0 45 45" fill="white" xmlns="http://www.w3.org/2000/svg" 
 // xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -118,7 +118,7 @@ className='Profile'>
 </svg>
 <div className='strelka6'>
 <img src={Profilestrelka} alt="" />
-<span className='Profile' onClick={navigate('/profile')}>Профиль</span>
+<span className='Profile' >Профиль</span>
 </div>
 </div>
 </Link>

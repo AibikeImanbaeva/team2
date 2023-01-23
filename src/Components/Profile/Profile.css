@@ -26,22 +26,60 @@ margin: auto;
 
 
 .profile-card {
-    margin-top: 20px;
-    padding-top: 40px;
-    background-color: #181818;;
+    margin-top: 26px;
+    padding-top: 19px;
+    padding-bottom: 20px;
+    background-color: #181818;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+
 }
 
 
 .photo-upload {
  
     margin-left: 40px;
-    background-color: antiquewhite;
+  
     width: 191px;
     height: 191px;
     border-radius: 50% ;
 }
 
 
-.photo-upload-inp{
-    margin: 42% 0%;
+
+.profile-username {
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 48px;
+
+color: #FFFFFF;
+}
+
+.profile-edit{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    /* padding-right: 7%; */
+}
+
+.addfanfic {
+    display: block;
+    margin: 19px auto;
+;
+    width: 160px;
+height: 48px;
+
+background: #3D83EC;
+border-radius: 25px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+
+color: #FFFFFF;
 }

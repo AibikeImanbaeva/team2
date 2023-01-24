@@ -13,15 +13,15 @@ import '../Styles/HomePage.css'
 const MangaPage = () => {
     return (
         <>
-        <img src="/chainsawman.png" alt="" className='MangaPageChainsawman' />
-        <Navbar/>
-        <Saidbar/>
-        <MangaNewEpisodes/>
-        <MangaCatalog/>
-        <div className='FanficsAndAnime'>
-        <Fanfics/>
-        <Animes/>
-        </div>
+            <img src="/chainsawman.png" alt="" className='MangaPageChainsawman' />
+            <Navbar />
+            <Saidbar />
+            <MangaNewEpisodes />
+            <MangaCatalog />
+            <div className='FanficsAndAnime'>
+                <Fanfics />
+                <Animes />
+            </div>
         </>
     );
 };

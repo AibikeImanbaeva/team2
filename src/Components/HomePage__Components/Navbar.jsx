@@ -18,31 +18,32 @@ const Navbar = () => {
 
 
 
-    return (
-        <div>
-             <header >
+  return (
+    <div>
+      <header >
         <ul className='navbar'>
-        <Link to="/Admin">
-          <li className='Navbar__logo'><img src={logo} alt="" /></li>
+          <Link to="/Admin">
+            <li className='Navbar__logo'><img src={logo} alt="" /></li>
           </Link>
           <li><input type="text" placeholder='Поиск аниме,манга,фанфики' /></li>
-        
+
           <li className='soc'><img src={FaceBook} alt="" />
-          <img src={Twitter} alt="" />
-          <img src={Instagram} alt="" /></li>
-          
+            <img src={Twitter} alt="" />
+            <img src={Instagram} alt="" /></li>
+
           <li className='setting'>
             <img src={Settings} alt="" />
-          <img src={Ellipse} alt="" onClick={() => setModal(true)}/></li>
-     
-     
-    
+            {/* <img src={Ellipse} alt="" onClick={() => setModal(true)} />*/}
+          </li>
+
+
+
 
         </ul>
 
       </header>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Navbar;

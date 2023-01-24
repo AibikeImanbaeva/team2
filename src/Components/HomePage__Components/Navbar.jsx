@@ -49,6 +49,7 @@ function idinah(){
   if (openLog) {
     handleCloselogin()
    handleOpen()
+   navigate('/')
   }
 }
 
@@ -162,20 +163,12 @@ useEffect(() => {
 <label htmlFor="login"className='register-label'>Login</label>
 <input className="inp-login register-inp" placeholder='login' id='login' value={username}
             onChange={(e) => setUsername(e.target.value)}/>
-
-<TextField
-          id="outlined-password-input"
-          label="Password"
-          type="password"
-          autoComplete="current-password"
+<label htmlFor="register-pass" className='register-label'>Введите пароль</label>
+<input type='password'  className=" register-inp" id="register-pass"
           onChange={(e) => setPass(e.target.value)}
         />
-
-<TextField
-          id="outlined-password-input"
-          label="Password Confirm"
-          type="password confirm"
-          autoComplete="current-password"
+<label htmlFor="register-pass" className='register-label'>Подтвердите пароль</label>
+<input type='password' className=" register-inp" id="register-pass"
           onChange={(e) => setPassConfirm(e.target.value)}
         />
 <label htmlFor='secret-word'className='register-label'>Secret Word</label>
@@ -206,10 +199,10 @@ useEffect(() => {
 <input className="inp-login register-inp" placeholder='login' id='login' value={login}
             onChange={(e) => setLogin(e.target.value)}/>
 <label htmlFor="user"className='register-label'>Password</label>
-<input className="inp-userpass-confirm register-inp" placeholder='pass-confirm' id='user-pass-confirm' value={passLog}  
+<input className="inp-userpass-confirm register-inp" placeholder='password' id='user-pass-confirm' type="password" value={passLog}  
 onChange={(e) => setPassLog(e.target.value)}/>
   <button className="custom-btn btn-4" onClick={handleAuth}>
-            <span>Войти</span>
+            <span onClick={()=>setOpenLog(false)}>Войти</span>
           </button>
 <p className='register-h2' onClick={idinah}>Вы еще не зарегистрированы?</p>
 

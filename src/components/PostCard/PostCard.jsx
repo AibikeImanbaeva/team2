@@ -54,13 +54,7 @@ const PostCard = ({ post }) => {
 
 
 
-  // function handleLike() {
-  //   let likedProduct = new FormData();
 
-  //   likedProduct.append("title", title);
-
-  //   toggleLike(likedProduct, fanfic.id);
-  // }
 
 
   function handleLike(){
@@ -81,14 +75,6 @@ const PostCard = ({ post }) => {
   // Edit
 
 
-// function readFanfic(){
-//   // let getRead =  new FormData();
-
-//   getFanfic(post.id)
-//   console.log(getFanfic)
-
-//   navigate('/fanficpage')
-// }
 
 
   //navigate 

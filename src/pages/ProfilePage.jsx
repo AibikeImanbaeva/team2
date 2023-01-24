@@ -1,4 +1,7 @@
 import React from 'react';
+import CommentCard from '../components/CommentCard/CommentCard';
+import CommentList from '../components/CommentCard/CommentList';
+import CreateComment from '../components/CommentCard/CreateComment';
 import Navbar from '../components/HomePage__Components/Navbar';
 import Saidbar from '../components/HomePage__Components/Saidbar';
 import PostList from '../components/PostList/PostList';
@@ -13,8 +16,10 @@ const ProfilePage = () => {
         <Navbar />
         <ProfileCard />
         <Saidbar />
+        <div className="profile-fanfics-card"> 
     <PostList />
-    
+        </div>
+  
 
         
         </>

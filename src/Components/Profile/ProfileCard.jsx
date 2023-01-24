@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import "../Profile/Profile.css";
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 import { postContext } from '../../contexts/PostsContextProvider';

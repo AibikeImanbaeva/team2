@@ -286,7 +286,18 @@ body{
 
 /* fancics */
 .hp_fanfics-Cont{
-    margin-left: 15px;
+    margin: 0 auto;
+   display: inline-block;
+   left: 20%,
+   
+}
+
+.profile-fanfics-card {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
 }
 .hp_fanfics{
     width: 285px;

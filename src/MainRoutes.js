@@ -10,6 +10,7 @@ import FriendsPage from './pages/FriendsPage';
 import ChatPage from './pages/ChatPage';
 import AnimePage from './pages/AnimePage';
 import ProfilePage from './pages/ProfilePage';
+import EditAnimePage from './pages/EditAnimePage'
 
 import AdminPage from './pages/AdminPage';
 
@@ -69,6 +70,11 @@ const MainRoutes = () => {
   link: "/admin",
   element: <AdminPage />,
   id:12
+},
+{
+  link: "/editAnime/:id",
+  element: <EditAnimePage />,
+  id:13
 },
     ]
   return (

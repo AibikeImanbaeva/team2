@@ -6,19 +6,20 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import MangaCard from './MangaCard';
 import { mangaContext } from '../../contexts/MangaContextProvider';
 import { useEffect } from 'react';
+import MangaList from './MangaList';
 
 
 
 
 const MangaCatalog = () => {
 
-     const { getManga } = React.useContext(mangaContext);
+     const { getManga, getGenres, mangaGenres } = React.useContext(mangaContext);
 
      useEffect(() => {
           getManga();
+          getGenres();
      }, [])
 
 
@@ -44,24 +45,22 @@ const MangaCatalog = () => {
                                    autoWidth
                                    label="Жанр"
                               >
-                                   <MenuItem value={"Романтика"}>Романтика</MenuItem>
-                                   <MenuItem value={"Комедии"}>Комедии</MenuItem>
-                                   <MenuItem value={"Фантастика"}>Фантастика</MenuItem>
-                                   <MenuItem value={"История"}>История</MenuItem>
-                                   <MenuItem value={"Ужасы"}>Ужасы</MenuItem>
-                                   <MenuItem value={"Психология"}>Психология</MenuItem>
-                                   <MenuItem value={"Трагедия"}>Трагедия</MenuItem>
-                                   <MenuItem value={"Мистика"}>Мистика</MenuItem>
-                                   <MenuItem value={"Бои Искусств"}>Бои Искусств</MenuItem>
-                                   <MenuItem value={"Приключения"}>Приключения</MenuItem>
+                                   <MenuItem value="">Жанры</MenuItem>
+                                   {
+                                        mangaGenres?.map(genre => <MenuItem value={genre.slug} key={genre.slug}>{genre.title}</MenuItem>)
+                                   }
 
                               </Select>
                          </FormControl>
                     </div>
                </div>
 
+               <div className='Manga__CatalogCardContainer'>
+                    <MangaList />
+               </div>
 
-               <MangaCard />
+
+
 
 
 

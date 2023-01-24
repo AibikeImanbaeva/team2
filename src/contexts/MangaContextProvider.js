@@ -4,16 +4,34 @@ import React, { createContext, useReducer } from 'react';
 export const mangaContext = createContext();
 
 const INIT_STATE = {
-  manga: []
+  mangas: [],
+  mangaGenres: [],
+  mangaDetail: {},
+  mangaChapters: [],
 }
 
 function reducer(state = INIT_STATE, action) {
   switch (action.type) {
-    case "GET_MANGA":
+    case "GET_MANGAS":
       return {
         ...state,
-        manga: action.payload
+        mangas: action.payload
       };
+    case "GET_MANGA_GENRES":
+      return {
+        ...state,
+        mangaGenres: action.payload,
+      }
+    case "GET_MANGA_DETAIL":
+      return {
+        ...state,
+        mangaDetail: action.payload,
+      }
+    case "GET_MANGA_CHAPTER":
+      return {
+        ...state,
+        mangaChapters: action.payload,
+      }
   }
 }
 
@@ -32,13 +50,10 @@ const MangaContextProvider = ({ children }) => {
         },
       };
 
-
       const { data } = await axios(`${API}/manga/`, config);
 
-      console.log(data)
-
       dispatch({
-        type: "GET_MANGA",
+        type: "GET_MANGAS",
         payload: data,
       })
 
@@ -47,10 +62,138 @@ const MangaContextProvider = ({ children }) => {
     }
   }
 
+
+  async function getGenres() {
+    try {
+      const { data } = await axios(`${API}/mangagenres/`);
+
+      dispatch({
+        type: "GET_MANGA_GENRES",
+        payload: data
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
+  async function setMangaDetail(id) {
+    try {
+      const { data } = await axios(`${API}/manga/${id}/`);
+
+      dispatch({
+        type: "GET_MANGA_DETAIL",
+        payload: data
+      })
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function addLikeToManga(likedManga, id) {
+    try {
+      const tokens = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+
+      const res = await axios.post(`${API}/manga/${id}/likes/`, likedManga, config);
+      console.log(res)
+
+      setMangaDetail();
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async function deleteLikeAtManga(id) {
+    try {
+      const tokens = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+
+      const res = await axios.delete(`${API}/manga/${id}/likes/`, config);
+      console.log(res)
+      setMangaDetail();
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async function addComment(newComment, id) {
+    try {
+      const tokens = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+
+      const { data } = await axios.post(`${API}/manga/${id}/comment/`, newComment, config);
+      setMangaDetail();
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  async function deleteComment(comment, id) {
+    try {
+      const tokens = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+
+      const { data } = await axios.delete(`${API}/manga/${id}/comment/`, comment, config);
+      console.log(data)
+      setMangaDetail();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function getMangaChapters(id) {
+    try {
+
+      const { data } = await axios(`${API}/manga/${id}/volumes/`);
+      
+      dispatch({
+        type: "GET_MANGA_CHAPTER",
+        payload: data
+      })
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
   return (
     <mangaContext.Provider
       value={{
+        mangas: state.mangas,
+        mangaGenres: state.mangaGenres,
+        mangaDetail: state.mangaDetail,
+        mangaChapters: state.mangaChapters,
+
         getManga,
+        getGenres,
+        setMangaDetail,
+        addLikeToManga,
+        deleteLikeAtManga,
+        addComment,
+        deleteComment,
+        getMangaChapters
       }}
     >
       {children}

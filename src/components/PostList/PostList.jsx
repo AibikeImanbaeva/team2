@@ -4,7 +4,7 @@ import { postContext } from '../../contexts/PostsContextProvider';
 import PostCard from '../PostCard/PostCard';
 
 const PostList = () => {
-  const { getPost, post} = useContext(postContext)
+  const { getPost, post } = useContext(postContext)
 
   const [searchParams, setSearchParams] = useSearchParams();
   useEffect(() => {
@@ -23,13 +23,13 @@ const PostList = () => {
   }, [searchParams])
 
   return (
-   <>
+    <>
 
-{post?.map(post => (
+      {post?.map(post => (
         <PostCard key={post.id} post={post}></PostCard>
       ))}
 
-   </>
+    </>
   )
 }
 

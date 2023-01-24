@@ -21,24 +21,8 @@ const UserFanfic = () => {
     getPostDetails(id);
   }, [])
 
-  // function handleCom() {
-  //   let newCom = new FormData()
-  //   newCom.append("title", comment),
-  //     addComment(newCom, id)
-  // }
-
   return (
     <>
-      {/* 
-      <div>
-
-        <img src="  " alt="" />
-        <p>{fanficDetails.genre}</p>
-        <p>{fanficDetails.title}</p>
-
-      </div> */}
-
-
 
 
       {

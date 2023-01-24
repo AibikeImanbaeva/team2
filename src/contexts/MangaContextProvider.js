@@ -8,6 +8,7 @@ const INIT_STATE = {
   mangaGenres: [],
   mangaDetail: {},
   mangaChapters: [],
+  mangaChapter: {}
 }
 
 function reducer(state = INIT_STATE, action) {
@@ -32,6 +33,11 @@ function reducer(state = INIT_STATE, action) {
         ...state,
         mangaChapters: action.payload,
       }
+      case "SET_MANGA_CHAPTER_READ":
+        return {
+          ...state,
+          mangaChapter: action.payload,
+        }
   }
 }
 
@@ -103,7 +109,7 @@ const MangaContextProvider = ({ children }) => {
       const res = await axios.post(`${API}/manga/${id}/likes/`, likedManga, config);
       console.log(res)
 
-      setMangaDetail();
+      setMangaDetail(id);
     } catch (err) {
       console.log(err);
     }
@@ -121,7 +127,7 @@ const MangaContextProvider = ({ children }) => {
 
       const res = await axios.delete(`${API}/manga/${id}/likes/`, config);
       console.log(res)
-      setMangaDetail();
+      setMangaDetail(id);
     } catch (err) {
       console.log(err);
     }
@@ -138,7 +144,7 @@ const MangaContextProvider = ({ children }) => {
       };
 
       const { data } = await axios.post(`${API}/manga/${id}/comment/`, newComment, config);
-      setMangaDetail();
+      setMangaDetail(id);
     } catch (error) {
       console.log(error)
     }
@@ -156,7 +162,7 @@ const MangaContextProvider = ({ children }) => {
 
       const { data } = await axios.delete(`${API}/manga/${id}/comment/`, comment, config);
       console.log(data)
-      setMangaDetail();
+      setMangaDetail(id);
     } catch (error) {
       console.log(error);
     }
@@ -185,6 +191,7 @@ const MangaContextProvider = ({ children }) => {
         mangaGenres: state.mangaGenres,
         mangaDetail: state.mangaDetail,
         mangaChapters: state.mangaChapters,
+        mangaChapter: state.mangaChapter,
 
         getManga,
         getGenres,

@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 const MangaChapterCard = ({ chapter }) => {
   const { id } = useParams()
-  console.log(chapter)
   const navigate = useNavigate();
   return (
     <>

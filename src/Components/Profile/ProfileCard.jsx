@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 
 import { postContext } from '../../contexts/PostsContextProvider';
 import { useSearchParams } from 'react-router-dom';
+
 const ProfileCard = () => {
   const { id } = useParams();
 
@@ -23,10 +24,11 @@ const navigate = useNavigate
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 400,
-    bgcolor: 'background.paper',
+    height: 400,
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
+    
   };
 
   const { getPost, categories, getCategories, createPost } = useContext(postContext);
@@ -49,6 +51,10 @@ const navigate = useNavigate
     console.log(title, image, desc, dataCreated, genres)
 
   }
+//   const  modalStyle = {
+// background : "url('./ProfileImg/bg.png')",
+
+//   }
   return (
     <>
       <div className="profile-container">
@@ -77,19 +83,21 @@ const navigate = useNavigate
 
         <button className="addfanfic" onClick={handleOpen}>Фанфики</button>
         <Modal
+       
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        
       >
-        <Box sx={style}>
+        <Box sx={style} >
           <Typography id="modal-modal-title" variant="h6" component="h2">
-          <input type="text" name="" id="" placeholder='Добавить фанфик' value={title} onChange={(e) => setTitle(e.target.value)} />
-<input type="text" name="" id="" placeholder='desc' value={desc} onChange={(e) => setDesc(e.target.value)} />
-<input type="text" name="" id="" placeholder='genres' value={genres} onChange={(e) => setGenres(e.target.value)} />
+          <input className="profile-inp" type="text" name="" id="" placeholder='Добавить фанфик' value={title} onChange={(e) => setTitle(e.target.value)} />
+<input className="profile-inp" type="text" name="" id="" placeholder='desc' value={desc} onChange={(e) => setDesc(e.target.value)} />
+<input className="profile-inp" type="text" name="" id="" placeholder='genres' value={genres} onChange={(e) => setGenres(e.target.value)} />
 {/* <input type="date" name="" id="" value={dataCreated} onChange={(e)=> setDataCreated(e.target.value)} /> */}
-<input type="file" name="photo" id='' multiple accept="image/*" onChange={e => setImage(e.target.files[0])} />
-<input type='submit' onClick={handleSave} value="Отправить"></input>
+<input className="profile-inp" type="file" name="photo" id='' multiple accept="image/*" onChange={e => setImage(e.target.files[0])} />
+<input className="profile-inp btn-submit" type='submit' onClick={handleSave} value="Отправить"></input>
           </Typography>
          
         </Box>

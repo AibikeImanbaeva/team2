@@ -7,21 +7,22 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { useNavigate } from "react-router-dom";
 // Modal
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
 
-function Fanfics({ post }) {
+
+const Fanfics =  ( {post}) => {
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
+  };
   const {getFanfic } = useContext(fanficContext)
-  const { editFanficPost } = useContext(postContext);
+  const { editFanficPost} = useContext(postContext);
   const { deletePost, toggleLike, deleteLike } = useContext(postContext);
   // Modal
   const [open, setOpen] = React.useState(false);
@@ -103,18 +104,18 @@ const navigate =  useNavigate()
   
          <div className='hp_fandics-LikeComment'>
            <p className='hp_fandics-LikeCount'>10к</p>
-           <img src="/LikeIcon.png" alt="" className='Allnewslikeicon'/>
+           {/* <img src="https://cdn-icons-png.flaticon.com/512/4202/4202475.png" alt="" className='Allnewslikeicon'onClick={() => handleLike()} /> */}
+           {like ?  <img src="https://cdn-icons-png.flaticon.com/512/4202/4202475.png"className='Allnewslikeicon' onClick={() => handleLike()} /> :  <img src="https://cdn-icons-png.flaticon.com/512/4202/4202509.png"className='Allnewslikeicon' onClick={() => handleLike()} />}
            <p className='hp_fandics-CommentCount'>25</p>
            <img src="CommentsIcon.png" alt="" 
            className='allnewsCommentIcon'/>
          </div>
        </div>
     </div>
-  </div>
-  <button onClick={()=>navigate(`/fanficpage/${post.id}`)}>Начать читать</button>
-          <button onClick={() => handleLike()}>
+  <button onClick={()=>navigate(`/fanficpage/${post.id}`)} className="fanfic-read-btn">Начать читать</button>
+          {/* <button onClick={() => handleLike()}>
             {like ? <p> лайкнуто ежже</p> : <p> не лайкнуто ежже</p>}
-          </button>
+          </button> */}
   <Button onClick={handleOpen}>Open modal</Button>
             <Modal
               open={open}
@@ -157,7 +158,8 @@ const navigate =  useNavigate()
                 </Typography>
               </Box>
             </Modal>
-            <button onClick={() => deletePost(post.id)}>Delete</button>
+            <button onClick={() => deletePost(post.id)}className="fanfic-read-btn">Delete</button>
+  </div>
   </div>
   
  

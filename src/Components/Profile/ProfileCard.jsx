@@ -75,9 +75,9 @@ const navigate = useNavigate
           <div className="profile-username">
             {localStorage.getItem("username")}
           </div>
-          <div className="profile-edit">
-            <img src="./Profile/ProfileImg/vector.svg" alt="" />
-          </div>
+          
+            <img className="profile-edit" src="https://cdn-icons-png.flaticon.com/512/4555/4555474.png" alt="" />
+    
         </div>
 
         <button className="addfanfic" onClick={handleOpen}>Фанфики</button>

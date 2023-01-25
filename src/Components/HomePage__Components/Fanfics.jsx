@@ -94,20 +94,23 @@ const navigate =  useNavigate()
         <p className='hp_fanfics-desc'>
         {post.description}
         </p>
+        <p className='hp_fanfics-desc'>
+        {post.date_created}
+        </p>
       <img src={post.image}  alt=""  className='hp_fanfics-mainImg'/>
 
        <div className='hp_fandics-CardBottom'>
 
         <div className='hp-fanfics-account'>
            <img src="/accountIMG.png" alt=""   className='hp_fandics-accImg'/>
-           <p className='hp_fandics-User'>{localStorage.getItem("username")}</p>
+           <p className='hp_fandics-User'>{post.owner}</p>
         </div>
   
          <div className='hp_fandics-LikeComment'>
-           <p className='hp_fandics-LikeCount'>10к</p>
+           <p className='hp_fandics-LikeCount'>{post.likes}</p>
            {/* <img src="https://cdn-icons-png.flaticon.com/512/4202/4202475.png" alt="" className='Allnewslikeicon'onClick={() => handleLike()} /> */}
            {like ?  <img src="https://cdn-icons-png.flaticon.com/512/4202/4202475.png"className='Allnewslikeicon' onClick={() => handleLike()} /> :  <img src="https://cdn-icons-png.flaticon.com/512/4202/4202509.png"className='Allnewslikeicon' onClick={() => handleLike()} />}
-           <p className='hp_fandics-CommentCount'>25</p>
+           <p className='hp_fandics-CommentCount'>{post.commentaries_count}</p>
            <img src="CommentsIcon.png" alt="" 
            className='allnewsCommentIcon'/>
          </div>

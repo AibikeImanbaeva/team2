@@ -53,7 +53,7 @@ const PostCard = ({ post }) => {
   const [like, setLike] = useState(true);
 
 
-
+console.log(post)
 
 
 

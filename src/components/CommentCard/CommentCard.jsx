@@ -11,13 +11,20 @@ const CommentCard = ({ comment }) => {
     text.append("text",comment.text)
     deleteComment(id,text);
   }
-
+console.log(comment)
   return (
     <div>
       <br />
       <div>
+  
+      </div>
+      <div className='comments-div'>
+       
+        <div className='comments-text'>
+        <p className='owner-title'>@{comment.owner_username}</p>
         {comment.text}
-        <DeleteIcon style={{ cursor: "pointer" }} onClick={handleDelete} />
+        </div>
+        <DeleteIcon style={{ cursor: "pointer", marginLeft: "93%" }} onClick={handleDelete} />
       </div>
       <br />
     </div>

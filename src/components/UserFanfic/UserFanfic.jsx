@@ -10,17 +10,20 @@ import FanficChaptersList from '../FanficChapters/FanficChaptersList';
 import AddIcon from '@mui/icons-material/Add';
 import './FanficRead.css'
 
+
 const UserFanfic = () => {
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const { onePost, getPostDetails } = useContext(postContext);
+  const { onePost, getPostDetails, post } = useContext(postContext);
   const { fanficDetails, setFanficDetails } = useState({})
   const { id } = useParams()
+  
   const navigate = useNavigate();
 
   useEffect(() => {
     getPostDetails(id);
   }, [])
+  // console.log(onePost)
 
   // function handleCom() {
   //   let newCom = new FormData()
@@ -28,35 +31,42 @@ const UserFanfic = () => {
   //     addComment(newCom, id)
   // }
 
+// function isOwner (){
+//   const login = localStorage.getItem("username") 
+//   if (login == id) {
+//     return true
+//   }
+// }
+
+console.log(onePost)
+
+
   return (
     <>
-      {/* 
-      <div>
+      isOwner()? true :{
 
-        <img src="  " alt="" />
-        <p>{fanficDetails.genre}</p>
-        <p>{fanficDetails.title}</p>
-
-      </div> */}
-
-
-
-
+<div className='chapterTitle'>Начать писать главы<button onClick={() => navigate(`/fanficpage/${onePost.id}/create-fanfic`)} className="addChapter-btn"><AddIcon/></button>
+ </div> 
+ }
       {
         onePost ? (
           <>
             <div className='fanficPage-fanficCard'>
+            
               <img src={onePost.image} alt="" />
               <div className='fanficPage-fanficCard-desc'>
+              <p className='data-created-fanficPost'>{onePost.date_created}
+                </p>
               <p>{onePost.genre}</p>
               <p>{onePost.title}</p>
               </div>
              
             </div>
+         
+
             <hr />
             {/* Chapters */}
-           <div className='chapterTitle'>Начать писать главы<button onClick={() => navigate(`/fanficpage/${onePost.id}/create-fanfic`)} className="addChapter-btn"><AddIcon/></button>
-            </div> 
+          
             {/* <FanficChaptersList /> */}
             <hr />
 
@@ -64,7 +74,6 @@ const UserFanfic = () => {
             
     
              
-              {/* <CreateComment key={onePost.id} /> */}
 
               <div>
                 <CommentList onePost={onePost} />

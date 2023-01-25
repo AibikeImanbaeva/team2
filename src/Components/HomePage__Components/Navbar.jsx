@@ -54,7 +54,7 @@ function idinah(){
 }
 
 //register modal
-const { handleRegister, error, setError, handleLogin } = useAuth();
+const { handleRegister, error, setError, handleLogin, handleLogout } = useAuth();
 const navigate = useNavigate();
 const [name, setName] = useState("");
 const [lastName, setLastName] = useState("");
@@ -139,8 +139,10 @@ useEffect(() => {
           <img src={Instagram} alt="" /></li>
           
           <li className='setting'>
-            <img src={Settings} alt="" />
+            <img src="https://cdn-icons-png.flaticon.com/512/6807/6807188.png"alt="" className="logout" onClick={handleLogout}  />
           <img src={Ellipse} alt="" onClick={handleOpen}/></li>
+
+          
      
           <Modal
        

@@ -58,13 +58,7 @@ line-height: 48px;
 color: #FFFFFF;
 }
 
-.profile-edit{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #FFFFFF;
-    /* padding-right: 7%; */
-}
+
 
 .addfanfic {
     display: block;
@@ -125,4 +119,19 @@ height: 290px;
     top: 10%;
     /* left: 50%; */
     margin-left: 80%;
+}
+
+
+.hp_fanfics-mainImg{
+    margin-top: 22px;
+}
+
+
+.hp_fanfics{
+    min-height: 420px;
+}
+
+.profile-edit{
+    width: 49px;
+    height: 49px;
 }

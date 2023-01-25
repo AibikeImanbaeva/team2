@@ -92,6 +92,14 @@ display: flex;
 align-items: center;
 transition: 0.5s;
 }
+
+.setting {
+  width: 40px;
+  height: 40px
+}
+.logout {
+  margin-right: 20px;
+}
 .novosty{
   position: absolute;
   left: 50px;

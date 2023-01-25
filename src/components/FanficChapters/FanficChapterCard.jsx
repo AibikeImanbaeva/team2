@@ -10,7 +10,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 const FanficChapterCard = ({ page }) => {
   const navigate = useNavigate();
   const { getChapter } = useContext(fanficContext);
-
+// console.log(getChapter)
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea onClick={() => {

@@ -309,17 +309,18 @@ body{
 
 .fanfic-read-btn{
     
-background: #FFA41C;
+    background: linear-gradient(90deg, #d9ae94,#ffcb69,#d08c60);
 border-radius: 20px;
-width: 113px;
+width: 115px;
 height: 39px;
 color:#FFFFFF;
 border-color:  #FFA41C;
-/* margin-left: 15px; */
+/* padding-left: 18px; */
+/* margin-left: 10px; */
 }
 .hp_fanfics-cont{
   margin-top: 18px;
-  margin-left: 18px;
+  padding-left: 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

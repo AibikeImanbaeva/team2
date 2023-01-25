@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { useNavigate } from "react-router-dom";
+import logo from '../../assets/Лого.svg'
 // Modal
 
 
@@ -125,26 +126,29 @@ const navigate =  useNavigate()
             >
               <Box sx={style}>
                 <Typography id="modal-modal-title" variant="h6" component="h2">
-                  Text in a modal
-                </Typography>
+              
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                {/* <li className='Navbar__logo register-logo'><img src="../../" alt="" /></li> */}
                   <input
                     type="text"
                     placeholder="title"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
+                    className="profile-inp"
                   />
                   <input
                     type="text"
                     placeholder="desc"
                     value={desc}
                     onChange={(e) => setDesc(e.target.value)}
+                    className="profile-inp"
                   />
                   <input
                     type="text"
                     placeholder="genre"
                     value={genre}
                     onChange={(e) => setGenre(e.target.value)}
+                    className="profile-inp"
                   />
                   <input
                     type="file"
@@ -153,8 +157,10 @@ const navigate =  useNavigate()
                     multiple
                     accept=".jpg"
                     onChange={(e) => setImage(e.target.files[0])}
+                    className="profile-inp"
                   />
-                  <button onClick={handleEditInp}>Сохранить</button>
+                  <button onClick={handleEditInp}className="profile-inp btn-submit" >Сохранить</button>
+                </Typography>
                 </Typography>
               </Box>
             </Modal>

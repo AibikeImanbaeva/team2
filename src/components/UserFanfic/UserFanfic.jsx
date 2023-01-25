@@ -8,6 +8,7 @@ import CreateComment from '../CommentCard/CreateComment';
 import FanficChapterCreate from '../FanficChapters/FanficChapterCreate';
 import FanficChaptersList from '../FanficChapters/FanficChaptersList';
 import AddIcon from '@mui/icons-material/Add';
+import './FanficRead.css'
 
 const UserFanfic = () => {
 
@@ -44,23 +45,31 @@ const UserFanfic = () => {
       {
         onePost ? (
           <>
-            <div>
+            <div className='fanficPage-fanficCard'>
               <img src={onePost.image} alt="" />
+              <div className='fanficPage-fanficCard-desc'>
               <p>{onePost.genre}</p>
               <p>{onePost.title}</p>
+              </div>
+             
             </div>
             <hr />
             {/* Chapters */}
-            Главы <button onClick={() => navigate(`/fanficpage/${onePost.id}/create-fanfic`)}><AddIcon/></button>
-            <FanficChaptersList />
+           <div className='chapterTitle'>Начать писать главы<button onClick={() => navigate(`/fanficpage/${onePost.id}/create-fanfic`)} className="addChapter-btn"><AddIcon/></button>
+            </div> 
+            {/* <FanficChaptersList /> */}
             <hr />
 
             <div className='comments'>
-              <CreateComment key={onePost.id} />
+            
+    
+             
+              {/* <CreateComment key={onePost.id} /> */}
 
               <div>
                 <CommentList onePost={onePost} />
               </div>
+              <CreateComment key={onePost.id} />
             </div>
           </>
 

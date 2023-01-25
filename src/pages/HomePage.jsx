@@ -27,7 +27,7 @@ const HomePage = () => {
       </div>
     </div>
       <div className='FanficsAndAnime F-A_HomePage'>
-          <Fanfics/>
+          {/* <Fanfics/> */}
           <Animes/>
         </div>
     <Saidbar/>

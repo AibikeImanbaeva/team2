@@ -25,18 +25,8 @@ const UserFanfic = () => {
   }, [])
   // console.log(onePost)
 
-  // function handleCom() {
-  //   let newCom = new FormData()
-  //   newCom.append("title", comment),
-  //     addComment(newCom, id)
-  // }
 
-// function isOwner (){
-//   const login = localStorage.getItem("username") 
-//   if (login == id) {
-//     return true
-//   }
-// }
+ 
 
 console.log(onePost)
 
@@ -44,6 +34,7 @@ console.log(onePost)
   return (
     <>
       isOwner()? true :{
+
 
 <div className='chapterTitle'>Начать писать главы<button onClick={() => navigate(`/fanficpage/${onePost.id}/create-fanfic`)} className="addChapter-btn"><AddIcon/></button>
  </div> 

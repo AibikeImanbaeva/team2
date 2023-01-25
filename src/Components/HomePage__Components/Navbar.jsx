@@ -125,20 +125,21 @@ useEffect(() => {
 }, []);
 
 
-    return (
-        <div>
-             <header >
+  return (
+    <div>
+      <header >
         <ul className='navbar'>
-        <Link to="/Admin">
-          <li className='Navbar__logo'><img src={logo} alt="" /></li>
+          <Link to="/Admin">
+            <li className='Navbar__logo'><img src={logo} alt="" /></li>
           </Link>
           <li><input type="text" placeholder='Поиск аниме,манга,фанфики' /></li>
-        
+
           <li className='soc'><img src={FaceBook} alt="" />
-          <img src={Twitter} alt="" />
-          <img src={Instagram} alt="" /></li>
-          
+            <img src={Twitter} alt="" />
+            <img src={Instagram} alt="" /></li>
+
           <li className='setting'>
+
             <img src="https://cdn-icons-png.flaticon.com/512/6807/6807188.png"alt="" className="logout" onClick={handleLogout}  />
           <img src={Ellipse} alt="" onClick={handleOpen}/></li>
 
@@ -214,8 +215,8 @@ onChange={(e) => setPassLog(e.target.value)}/>
      </Modal>
 
       </header>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Navbar;

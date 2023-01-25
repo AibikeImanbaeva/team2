@@ -6,29 +6,34 @@ import PostsContextProvider from './contexts/PostsContextProvider';
 import FanficContextProvider from './contexts/FanficContextProvider';
 import AnimeContextProveder from './contexts/AnimeContextProveder';
 import NewsContextProvider from './contexts/NewsContextProvider';
+import MangaContextProvider from './contexts/MangaContextProvider';
+
 
 
 function App() {
   return (
     <>
-<AuthContextProvider>
-  <NewsContextProvider>
-  <FanficContextProvider>
-  <AnimeContextProveder>
-    <PostsContextProvider>
 
-    <BrowserRouter>
-    <MainRoutes />
-    </BrowserRouter>
-    
-    </PostsContextProvider>
-    </AnimeContextProveder>
-  </FanficContextProvider>
-  </NewsContextProvider>
-  
-</AuthContextProvider>
+      <AuthContextProvider>
+          <NewsContextProvider>
+        <MangaContextProvider>
+          <FanficContextProvider>
+            <AnimeContextProveder>
+              <PostsContextProvider>
 
- 
+                <BrowserRouter>
+                  <MainRoutes />
+                </BrowserRouter>
+
+              </PostsContextProvider>
+            </AnimeContextProveder>
+          </FanficContextProvider>
+        </MangaContextProvider>
+        </NewsContextProvider>
+      </AuthContextProvider>
+
+
+
 
     </>
   );

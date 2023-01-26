@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react';
-import PostList from '../Components/PostList/PostList'
+import React, { useContext, useEffect, useState } from 'react';
+import PostList from '../Components/AddEpisodes/PostList/PostList'
 import { animeContext } from '../contexts/AnimeContextProveder';
 
 import InputLabel from '@mui/material/InputLabel';
@@ -16,6 +16,10 @@ const AdminPage =() =>{
   const { createPost, getPost } = useContext(animeContext)
 
 
+  useEffect(() => {
+    getPost()
+     }, []);
+
   function handleCreateAnime(){
 
     let edittedAnimePost = new FormData();
@@ -24,7 +28,7 @@ const AdminPage =() =>{
     edittedAnimePost.append("genre", genre);
 
     createPost(edittedAnimePost)
-    getPost()
+    getPost() 
   }
 
   const handleChangeGenre = (event) => {
@@ -46,10 +50,11 @@ const AdminPage =() =>{
                  label="Жанр"
                  onChange={handleChangeGenre}
                >
-                 <MenuItem value={"horror"}>horror</MenuItem>
+                 <MenuItem value={"test"}>horror</MenuItem>
                  <MenuItem value={"romance"}>Romance</MenuItem>
                  <MenuItem value={"fantasy"}>Fantasy</MenuItem>
                  <MenuItem value={"comedy"}>Comedy</MenuItem>
+                 <MenuItem value={"test"}>test</MenuItem>
 
                </Select>
              </FormControl>

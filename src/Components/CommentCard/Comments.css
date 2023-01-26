@@ -58,3 +58,10 @@ color: #000000;
     border: aliceblue;
     border-radius: 24px;
 }
+
+
+
+.comments {
+    overflow: auto;
+    height: 500px;
+}

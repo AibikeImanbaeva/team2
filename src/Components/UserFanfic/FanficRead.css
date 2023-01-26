@@ -73,3 +73,11 @@
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
+.FanficsAndAnime.F-A_HomePage.profilePage-top {
+    z-index: -1;
+}
+
+.profile-fanfics-card{
+    flex-wrap: wrap;
+}

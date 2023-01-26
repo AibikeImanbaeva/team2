@@ -15,9 +15,9 @@ function App() {
     <>
 
       <AuthContextProvider>
+          <FanficContextProvider>
           <NewsContextProvider>
         <MangaContextProvider>
-          <FanficContextProvider>
             <AnimeContextProveder>
               <PostsContextProvider>
 
@@ -27,9 +27,9 @@ function App() {
 
               </PostsContextProvider>
             </AnimeContextProveder>
-          </FanficContextProvider>
         </MangaContextProvider>
         </NewsContextProvider>
+          </FanficContextProvider>
       </AuthContextProvider>
 
 

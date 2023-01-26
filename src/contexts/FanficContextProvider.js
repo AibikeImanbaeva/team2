@@ -45,14 +45,14 @@ const FanficContextProvider = ({ children }) => {
       const res = await axios(
         `${API}/fanfic/${id}/${window.location.search}`, config);
 
-      console.log(res)
+      // console.log(res)
       dispatch({
         type: "GET_FANFIC",
         payload: res.data,
       });
 
       const { data } = await axios(`${API}/fanfic/${id}/pages/`)
-      console.log(data)
+      // console.log(data)
     } catch (err) {
       console.log(err);
     }
@@ -117,8 +117,8 @@ const FanficContextProvider = ({ children }) => {
 
       getFanfic(id)
 
-    } catch (error) {
-      console.log(error)
+    } catch (err) {
+      console.log(err)
     }
   }
 

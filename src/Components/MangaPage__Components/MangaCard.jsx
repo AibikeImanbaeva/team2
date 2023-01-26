@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const MangaCard = ({ manga }) => {
   const navigate = useNavigate();
 
+
   return (
     <>
       <div className='Manga__CatalogCard' onClick={() => navigate(`/manga/${manga.id}`)}>
@@ -27,11 +28,11 @@ const MangaCard = ({ manga }) => {
         <div className='Manga__Catalog-shadowTop'></div>
         <div className='Manga__Catalog-shadowBottom'></div>
 
-        <div className='Manga__Catalog-ChaptersCont'>
+        {/* <div className='Manga__Catalog-ChaptersCont'>
           <div className='Manga__Catalog-OneChapter'>
             <h3 className='Manga__CatalogsChaptersTitle'> Глава 45  </h3>
             <p className='Manga__CatalogChaptersData'> 23.12.2018</p>
-          </div>
+          </div> */}
           {/* 
             <div className='Manga__Catalog-OneChapter'>
               <h3 className='Manga__CatalogsChaptersTitle'> Глава 45  </h3>
@@ -43,7 +44,7 @@ const MangaCard = ({ manga }) => {
               <p className='Manga__CatalogChaptersData'> 23.12.2018</p>
             </div> */}
 
-        </div>
+        {/* </div> */}
       </div>
     </>
   );

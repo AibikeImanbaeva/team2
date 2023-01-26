@@ -8,27 +8,30 @@ import AnimeContextProveder from './contexts/AnimeContextProveder';
 import MangaContextProvider from './contexts/MangaContextProvider';
 
 
+
 function App() {
   return (
     <>
-      <AuthContextProvider>
-        <MangaContextProvider>
-          <FanficContextProvider>
-            <AnimeContextProveder>
-              <PostsContextProvider>
+<AuthContextProvider>
+  <NewsContextProvider>
+   <MangaContextProvider>
+  <FanficContextProvider>
+  <AnimeContextProveder>
+    <PostsContextProvider>
 
-                <BrowserRouter>
-                  <MainRoutes />
-                </BrowserRouter>
+    <BrowserRouter>
+    <MainRoutes />
+    </BrowserRouter>
+    
+    </PostsContextProvider>
+    </AnimeContextProveder>
+  </FanficContextProvider>
+  </MangaContextProvider>
+  </NewsContextProvider>
+  
+</AuthContextProvider>
 
-              </PostsContextProvider>
-            </AnimeContextProveder>
-          </FanficContextProvider>
-        </MangaContextProvider>
-      </AuthContextProvider>
-
-
-
+ 
     </>
   );
 }

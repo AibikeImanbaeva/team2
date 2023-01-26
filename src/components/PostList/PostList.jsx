@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { postContext } from '../../contexts/PostsContextProvider';
 import PostCard from '../PostCard/PostCard';
+import Fanfics from '../HomePage__Components/Fanfics'
 
 const PostList = () => {
   const { getPost, post } = useContext(postContext)
@@ -25,8 +26,10 @@ const PostList = () => {
   return (
     <>
 
-      {post?.map(post => (
-        <PostCard key={post.id} post={post}></PostCard>
+{post?.map(post => (
+  <Fanfics key={post.id} post={post}></Fanfics>
+        // <PostCard key={post.id} post={post}></PostCard>
+ 
       ))}
 
     </>

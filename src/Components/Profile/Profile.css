@@ -29,7 +29,7 @@ margin: auto;
     margin-top: 26px;
     padding-top: 19px;
     padding-bottom: 20px;
-    background-color: #181818;
+    background: linear-gradient(90deg, #202020,#1e1a5f,#414141,#202020);
     display: flex;
     justify-content: space-between;
     padding-right: 20px;
@@ -58,13 +58,7 @@ line-height: 48px;
 color: #FFFFFF;
 }
 
-.profile-edit{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #FFFFFF;
-    /* padding-right: 7%; */
-}
+
 
 .addfanfic {
     display: block;
@@ -82,4 +76,62 @@ font-size: 20px;
 line-height: 24px;
 
 color: #FFFFFF;
+}
+
+.MuiBox-root.css-3vruuw {
+    /* background: linear-gradient(209.8deg, rgba(0, 0, 0, 0) 3.14%, rgba(0, 0, 0, 0.6) 29.31%, #000000 97.93%); */
+    background: linear-gradient(209.8deg, rgba(0, 0, 0, 0) 3.14%, rgba(0, 0, 0, 0.6) 29.31%, #000000 97.93%), url('./ProfileImg/bg.png')  center  no-repeat;
+border: 1px solid #FFFFFF;
+border-radius: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+}
+
+.profile-inp {
+    width: 100%;
+    height: 15%;
+    margin-top: 15px;
+}
+
+
+.btn-submit {
+    margin-top: 20px;
+    background: #AD4E4A;
+border-radius: 20px;
+width: 100%;
+height: 39px;
+color: #FFFFFF;
+}
+
+.MuiBox-root.css-1wnsr1i{
+    background: linear-gradient(209.8deg, rgba(0, 0, 0, 0) 3.14%, rgba(0, 0, 0, 0.6) 29.31%, #000000 97.93%), url('./ProfileImg/bg.png')  center  no-repeat;
+border: 1px solid #FFFFFF;
+border-radius: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+height: 290px;  
+}
+
+.profilePage-top{
+    top: 10%;
+    /* left: 50%; */
+    margin-left: 80%;
+}
+
+
+.hp_fanfics-mainImg{
+    margin-top: 22px;
+}
+
+
+.hp_fanfics{
+    min-height: 420px;
+}
+
+.profile-edit{
+    width: 49px;
+    height: 49px;
 }

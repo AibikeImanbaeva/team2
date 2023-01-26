@@ -1,0 +1,60 @@
+.comments-title{
+    margin-top: 19px;
+    margin-left: 37px;
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+color: #FFFFFF;
+}
+
+.comments-div {
+    width: 624px;
+height: 63px;
+
+
+background: #FFFFFF;
+border-radius: 10px;
+margin: 0 auto;
+margin-bottom: 35px;
+}
+
+/* .comments-text */
+
+
+.owner-title {
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 12px;
+line-height: 15px;
+/* identical to box height */
+
+
+color: #000000;
+}
+
+.comments-text {
+    padding-left: 10px;
+
+    padding-top: 3px;
+}
+
+
+.inp-addComment{
+    width: 94%;
+    padding: 12px 20px;
+    margin: 11px auto;
+    border: 2px solid rgb(202, 202, 202);
+}
+
+.btn-addComment {
+    background: linear-gradient(90deg, #3a4270,#5cc3ca);
+    margin-left: 67%;
+    width: 179px;
+    height: 38px;
+    color: #ffff;
+    border: aliceblue;
+    border-radius: 24px;
+}

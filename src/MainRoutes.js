@@ -22,7 +22,7 @@ const MainRoutes = () => {
       element: <HomePage />,
       id: 1,
     },
-    
+
     {
       link: "/fanfic",
       element: <FanficMainPage />,
@@ -43,26 +43,26 @@ const MainRoutes = () => {
       element: <FanficChapter />,
       id: 5,
     },
-         {
-        link: "/News",
-        element: <NewsPage />,
-        id:6
+    {
+      link: "/News",
+      element: <NewsPage />,
+      id: 6
     },
     {
       link: "/manga",
       element: <MangaPage />,
-            id:7
-  },
-  {
-  link: "/friends",
-  element: <FriendsPage />,
-  id:8
-},
-{
-  link: "/chat",
-  element: <ChatPage />,
-  id:9
-},
+      id: 7
+    },
+    {
+      link: "/friends",
+      element: <FriendsPage />,
+      id: 8
+    },
+    {
+      link: "/chat",
+      element: <ChatPage />,
+      id: 9
+    },
     {
       link: "/manga/:id",
       element: <MangaDetail />,
@@ -98,7 +98,7 @@ const MainRoutes = () => {
       element: <MangaRead />,
       id: 16
     },
-    ]
+  ]
 
   return (
     <Routes>

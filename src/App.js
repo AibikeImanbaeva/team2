@@ -5,7 +5,8 @@ import AuthContextProvider from './contexts/AuthContextProvider';
 import PostsContextProvider from './contexts/PostsContextProvider';
 import FanficContextProvider from './contexts/FanficContextProvider';
 import AnimeContextProveder from './contexts/AnimeContextProveder';
-import NewsContextProvider from './contexts/NewsContextProvider';
+import MangaContextProvider from './contexts/MangaContextProvider';
+
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <>
 <AuthContextProvider>
   <NewsContextProvider>
+   <MangaContextProvider>
   <FanficContextProvider>
   <AnimeContextProveder>
     <PostsContextProvider>
@@ -24,12 +26,12 @@ function App() {
     </PostsContextProvider>
     </AnimeContextProveder>
   </FanficContextProvider>
+  </MangaContextProvider>
   </NewsContextProvider>
   
 </AuthContextProvider>
 
  
-
     </>
   );
 }

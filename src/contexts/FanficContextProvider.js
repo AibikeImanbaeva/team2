@@ -100,7 +100,8 @@ const FanficContextProvider = ({ children }) => {
     }
   }
 
-  const deleteComment = async (text, id) => {
+  const deleteComment = async (id) => {
+
     try {
       const tokens = JSON.parse(localStorage.getItem("token"));
       const Authorization = `Bearer ${tokens.access}`;
@@ -109,52 +110,19 @@ const FanficContextProvider = ({ children }) => {
           Authorization,
         },
       };
+
       let res = await axios.delete(`${API}/fanfic/${id}/comment/`,text, config)  // * Отсутсвовало /fanfic/
       console.log(res);
-          
-
-            getFanfic(id)
-      
-          } catch (error) {
-            console.log(error)
-          }
-        }
 
 
-      // let deleteCommentForm = new FormData();
-      // deleteCommentForm.append("id",)
+      getFanfic(id)
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
 
-      // let { data } = await axios.delete(`${API}/fanfic/${fanficId}/comment/`, deleteCommentForm, config)
-
-      // fetch('https://example.com/profile', {
-      //   method: 'DELETE', // or 'PUT'
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //     "Authorization": Authorization,
-      //   },
-      //   body: JSON.stringify(deleteCommentForm),
-      // })
-
-      // await fetch('http://httpbin.org/delete', {
-      //   method: 'DELETE',
-      //   body: JSON.stringify(deleteCommentForm),
-      //   headers: {
-      //     "Authorization": Authorization
-      //   }
-      // })
-      // await axios.delete(`${API}/fanfic/${fanficId}/comment/`, {
-      //   headers: {
-      //     "Authorization": Authorization,
-      //   },
-      //   body: {
-      //     "text": text,
-      //     "id": `${commentId}`
-      //   }
-      // });
-
-
-      // console.log(data)
 
   const addChapter = async (newPage, id) => {
     try {

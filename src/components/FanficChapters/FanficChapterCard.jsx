@@ -12,37 +12,37 @@ import FanficChapter from './FanficChapter';
 const FanficChapterCard = ({ page }) => {
   const navigate = useNavigate();
   const { getChapter } = useContext(fanficContext);
-// console.log(getChapter)
-console.log(page)
-const {id} = useParams()
+  // console.log(getChapter)
+  console.log(page)
+  const { id } = useParams()
   return (
 
 
     <>
 
 
-    {
+      {
 
-// page?.map(chapter=> <FanficChapter chapter={chapter} key={chapter.id}   />)
-
-
-    }
-    <div>
+        // page?.map(chapter=> <FanficChapter chapter={chapter} key={chapter.id}   />)
 
 
+      }
+      <div>
 
 
-{/* 
+
+
+        {/* 
   <a onClick={() => navigate(`/readchapter/${id}/${page.owner_id}/${page.fanfic_id}`)} style={{ cursor: "pointer" }}> */}
-  <p>номер главы:{page.chapter}</p>
-  описание: {page.text}
-  {/* </a> */}
+        <p>номер главы:{page.chapter}</p>
+        описание: {page.text}
+        {/* </a> */}
 
-    </div>
-    
-    
-    
-    
+      </div>
+
+
+
+
     </>
     // <Card sx={{ maxWidth: 345 }}>
     //   {/* <CardActionArea onClick={() => {

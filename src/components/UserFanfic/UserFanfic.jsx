@@ -35,17 +35,17 @@ const UserFanfic = () => {
   // }
 
 
-const isOwner = () => {
-  return localStorage.getItem("username") ? true : false
-}
+  const isOwner = () => {
+    return localStorage.getItem("username") ? true : false
+  }
 
 
   return (
     <>
-       {isOwner() ?  
-<div className='chapterTitle'>Начать писать главы<button onClick={() => navigate(`/fanficpage/${onePost.id}/create-fanfic`)} className="addChapter-btn"><AddIcon/></button>
- </div> : null          
- }
+      {isOwner() ?
+        <div className='chapterTitle'>Начать писать главы<button onClick={() => navigate(`/fanficpage/${onePost.id}/create-fanfic`)} className="addChapter-btn"><AddIcon /></button>
+        </div> : null
+      }
       {
         onePost ? (
           <>
@@ -60,39 +60,17 @@ const isOwner = () => {
               <p>{onePost.title}
               {/* <div className='chapter-read' style={{overlow: 'auto'}}> */}
 
-              {/* </div> */}
-              
-              </p>
+            {/* </div> */}
+
+            {/* </p> */}
 
 
-              
-       
-          <div>
-       <FanficChaptersList chapter={onePost}  />
-          </div>
-   
-        
-      
-              
-       
-           
-              
-              </div>
-
-        
-
-
-             
-            </div>
-         
-
-          
 
 
             <div>
-              <CommentList onePost={onePost} />
+              <FanficChaptersList chapter={onePost} />
             </div>
-            <CreateComment key={onePost.id} />
+
           </>
 
         ) : (

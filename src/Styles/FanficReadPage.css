@@ -1,0 +1,18 @@
+.fanfic-main {
+  font-family: "Inter";
+  color: #FFF;
+  background-color: #414141;
+  box-sizing: border-box;
+  padding: 20px 40px 30px;
+}
+
+.fanfic-main__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fanfic-main__head-right {
+  display: flex;
+  align-items: center;
+}

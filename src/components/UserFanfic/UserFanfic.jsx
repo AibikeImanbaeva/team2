@@ -9,6 +9,7 @@ import FanficChapterCreate from '../FanficChapters/FanficChapterCreate';
 import FanficChaptersList from '../FanficChapters/FanficChaptersList';
 import AddIcon from '@mui/icons-material/Add';
 import './FanficRead.css'
+import FanficText from '../FanficRead/FanficText';
 
 
 const UserFanfic = () => {
@@ -17,7 +18,7 @@ const UserFanfic = () => {
   const { onePost, getPostDetails, post } = useContext(postContext);
   const { fanficDetails, setFanficDetails } = useState({})
   const { id } = useParams()
-  
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -31,49 +32,49 @@ const UserFanfic = () => {
   //     addComment(newCom, id)
   // }
 
-// function isOwner (){
-//   const login = localStorage.getItem("username") 
-//   if (login == id) {
-//     return true
-//   }
-// }
+  // function isOwner (){
+  //   const login = localStorage.getItem("username") 
+  //   if (login == id) {
+  //     return true
+  //   }
+  // }
 
-console.log(onePost)
+  console.log(onePost)
 
 
   return (
     <>
       isOwner()? true :{
 
-<div className='chapterTitle'>Начать писать главы<button onClick={() => navigate(`/fanficpage/${onePost.id}/create-fanfic`)} className="addChapter-btn"><AddIcon/></button>
- </div> 
- }
+        <div className='chapterTitle'>Начать писать главы<button onClick={() => navigate(`/fanficpage/${onePost.id}/create-fanfic`)} className="addChapter-btn"><AddIcon /></button>
+        </div>
+      }
       {
         onePost ? (
           <>
-            <div className='fanficPage-fanficCard'>
-            
+            {/* <div className='fanficPage-fanficCard'>
+
               <img src={onePost.image} alt="" />
               <div className='fanficPage-fanficCard-desc'>
-              <p className='data-created-fanficPost'>{onePost.date_created}
+                <p className='data-created-fanficPost'>{onePost.date_created}
                 </p>
-              <p>{onePost.genre}</p>
-              <p>{onePost.title}</p>
+                <p>{onePost.genre}</p>
+                <p>{onePost.title}</p>
               </div>
-             
-            </div>
-         
+
+            </div> */}
+            <FanficText />
 
             <hr />
             {/* Chapters */}
-          
+
             {/* <FanficChaptersList /> */}
             <hr />
 
             <div className='comments'>
-            
-    
-             
+
+
+
 
               <div>
                 <CommentList onePost={onePost} />

@@ -44,11 +44,9 @@ const UserFanfic = () => {
 
   return (
     <>
-      isOwner()? true :{
 
         <div className='chapterTitle'>Начать писать главы<button onClick={() => navigate(`/fanficpage/${onePost.id}/create-fanfic`)} className="addChapter-btn"><AddIcon /></button>
         </div>
-      }
       {
         onePost ? (
           <>
@@ -65,22 +63,15 @@ const UserFanfic = () => {
             </div> */}
             <FanficText />
 
-            <hr />
             {/* Chapters */}
 
             {/* <FanficChaptersList /> */}
-            <hr />
-
-            <div className='comments'>
 
 
-
-
-              <div>
-                <CommentList onePost={onePost} />
-              </div>
-              <CreateComment key={onePost.id} />
+            <div>
+              <CommentList onePost={onePost} />
             </div>
+            <CreateComment key={onePost.id} />
           </>
 
         ) : (

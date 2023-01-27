@@ -1,9 +1,21 @@
+body {
+  position: relative;
+}
+
 .fanfic-main {
   font-family: "Inter";
   color: #FFF;
   background-color: #414141;
   box-sizing: border-box;
   padding: 20px 40px 30px;
+  font-size: 20px;
+}
+
+.rebekka {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
 }
 
 .fanfic-main__head {
@@ -12,7 +24,66 @@
   justify-content: space-between;
 }
 
-.fanfic-main__head-right {
+.fanfic-main__head-left {
   display: flex;
   align-items: center;
+  margin-left: 3.5px;
+}
+
+.fanfic-main__back-btn {
+  cursor: pointer;
+}
+
+.fanfic-main__name,
+.fanfic-main__date {
+  color: #828282;
+  line-height: 24px;
+  font-weight: 600;
+  cursor: default;
+}
+
+.fanfic-main__name {
+  margin-left: 30px;
+}
+
+.fanfic-main__content {
+  margin-top: 25px;
+  margin-bottom: 30px;
+  line-height: 15px;
+  font-size: 14px;
+}
+
+
+.fanfic-main__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fanfic-main__user {
+  font-weight: 700;
+  line-height: 24px;
+  cursor: pointer;
+  z-index: 11;
+}
+
+.fanfic-main__like {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 11;
+  padding-right: 2%;
+}
+
+.fanfic-main__like_counter {
+  color: #828282;
+  font-weight: 600;
+  margin-right: 7px;
+}
+
+.fanfic-main__icon_like {
+  background-color: transparent;
+  border: 0;
+
+  cursor: pointer;
 }

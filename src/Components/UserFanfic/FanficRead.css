@@ -56,19 +56,6 @@
     margin: 0 auto;
 }
 
-.comments {
-    width: 776px;
-    min-width: 600px;
-    background: #414141;
-}
-
-.bg-rebbeka{
-    z-index: -1;
-    position: absolute;
-    left: 76%;
-    top: 300px; 
-}
-
 .fanficPage-fanficCard{
     margin-top: 50px;
     margin-bottom: 50px;

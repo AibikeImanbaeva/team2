@@ -4,8 +4,10 @@ import Navbar from "../components/HomePage__Components/Navbar";
 import ProfileCard from "../components/Profile/ProfileCard";
 import Saidbar from "../components/HomePage__Components/Saidbar";
 import Animes from "../components/HomePage__Components/Animes";
-import  bg from "../components/UserFanfic/Rebekka.png"
+import bg from "../components/UserFanfic/Rebekka.png"
 import "../components/UserFanfic/FanficRead.css"
+
+
 const FanficPage = () => {
   const stylebg = {
     zIndex: '-1',
@@ -14,19 +16,19 @@ const FanficPage = () => {
     top: '300px',
   }
   return (
-    
+
     <>
       <Navbar />
       <ProfileCard />
       <Saidbar />
-      <div className="bg-rebekka" style={stylebg}>
+      <div
+        style={stylebg}>
 
-      <img src={bg} alt=""  />
       </div>
       <div className="fanfic-page-col">
         <UserFanfic />
       </div>
-    
+
     </>
   );
 };

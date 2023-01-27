@@ -20,7 +20,7 @@ const CreateComment = () => {
       <div>
 
         {/* Create comment */}
-        <input  className="inp-addComment" type="text" placeholder='comment' value={text} onChange={(e) => setText(e.target.value)} />
+        <input  className="inp-addComment" maxlength="255" type="text" placeholder='comment' value={text} onChange={(e) => setText(e.target.value)} />
         <button className='btn-addComment' onClick={() => handleCreateComment()}>Добавить комментарий</button>
         {/* Create comment */}
       </div>

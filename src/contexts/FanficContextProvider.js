@@ -45,14 +45,14 @@ const FanficContextProvider = ({ children }) => {
       const res = await axios(
         `${API}/fanfic/${id}/${window.location.search}`, config);
 
-      console.log(res)
+      // console.log(res)
       dispatch({
         type: "GET_FANFIC",
         payload: res.data,
       });
 
       const { data } = await axios(`${API}/fanfic/${id}/pages/`)
-      console.log(data)
+      // console.log(data)
     } catch (err) {
       console.log(err);
     }
@@ -100,6 +100,7 @@ const FanficContextProvider = ({ children }) => {
     }
   }
 
+
   const deleteComment = async (id) => {
 
     try {
@@ -115,10 +116,11 @@ const FanficContextProvider = ({ children }) => {
       console.log(res);
 
 
+
       getFanfic(id)
 
-    } catch (error) {
-      console.log(error)
+    } catch (err) {
+      console.log(err)
     }
   }
 
@@ -142,25 +144,38 @@ const FanficContextProvider = ({ children }) => {
     }
   }
 
-  const getChapter = async (page) => {
+  const getChapter = async (id) => {
     try {
+      const tokens = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+      const {data} = await axios(
+        `${API}/fanfic/${id}/pages/`, config);
+
+      // console.log(res)
       dispatch({
         type: "GET_FANFIC_CHAPTER",
-        payload: page,
-      })
+        payload: data,
+      });
 
-    } catch (error) {
-      console.log(error)
+     
+      // console.log(data)
+    } catch (err) {
+      console.log(err);
     }
   }
 
-  const deleteChapter = async (id) => {
-    try {
+  // const deleteChapter = async (id) => {
+  //   try {
 
-    } catch (error) {
+  //   } catch (error) {
 
-    }
-  }
+  //   }
+  // }
 
 
 

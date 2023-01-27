@@ -5,20 +5,24 @@ import AuthContextProvider from './contexts/AuthContextProvider';
 import PostsContextProvider from './contexts/PostsContextProvider';
 import FanficContextProvider from './contexts/FanficContextProvider';
 import AnimeContextProveder from './contexts/AnimeContextProveder';
-import MangaContextProvider from './contexts/MangaContextProvider';
 import NewsContextProvider from './contexts/NewsContextProvider';
+import MangaContextProvider from './contexts/MangaContextProvider';
+
+
 
 
 
 function App() {
   return (
     <>
+
       <AuthContextProvider>
         <NewsContextProvider>
           <MangaContextProvider>
             <FanficContextProvider>
               <AnimeContextProveder>
                 <PostsContextProvider>
+
 
                   <BrowserRouter>
                     <MainRoutes />
@@ -31,6 +35,7 @@ function App() {
         </NewsContextProvider>
 
       </AuthContextProvider>
+
 
 
     </>

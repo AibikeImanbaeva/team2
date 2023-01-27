@@ -10,7 +10,7 @@ import logo from '../../assets/Лого.svg'
 // Modal
 
 
-const Fanfics =  ( {post}) => {
+const Fanfics =  ({post}) => {
   const style = {
     position: "absolute",
     top: "50%",
@@ -50,13 +50,20 @@ const Fanfics =  ( {post}) => {
   };
 
   // like
-  console.log(post)
+  // console.log(post)
 
   const [like, setLike] = useState(true);
 
 
+  const [owner, setOwner] = useState(false)
 
 
+function isOwner (){
+  const login = (localStorage.getItem("username"))
+  if (login == post.owner){
+    setOwner(true)
+  }
+}
 
 
   function handleLike(){
@@ -76,7 +83,7 @@ const Fanfics =  ( {post}) => {
 
   // Edit
 
-
+// console.log(post)
 
 
   //navigate 
@@ -120,6 +127,9 @@ const navigate =  useNavigate()
           {/* <button onClick={() => handleLike()}>
             {like ? <p> лайкнуто ежже</p> : <p> не лайкнуто ежже</p>}
           </button> */}
+
+
+        
   <Button onClick={handleOpen}>Open modal</Button>
             <Modal
               open={open}

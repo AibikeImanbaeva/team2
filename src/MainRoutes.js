@@ -14,6 +14,7 @@ import ProfilePage from './pages/ProfilePage';
 import AdminPage from './pages/AdminPage';
 import MangaDetail from "./components/MangaPage__Components/MangaDetail";
 import MangaRead from "./components/MangaPage__Components/MangaRead";
+import FanficChapterCard from "./components/FanficChapters/FanficChapterCard";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -40,9 +41,10 @@ const MainRoutes = () => {
     },
     {
       link: "/fanfic/chapter/:chName",
-      element: <FanficChapter />,
+      element: <FanficChapterCard />,
       id: 5,
     },
+
     {
       link: "/News",
       element: <NewsPage />,
@@ -51,18 +53,15 @@ const MainRoutes = () => {
     {
       link: "/manga",
       element: <MangaPage />,
-      id: 7
-    },
+      id:7
+  },
+
     {
-      link: "/friends",
-      element: <FriendsPage />,
-      id: 8
-    },
-    {
-      link: "/chat",
-      element: <ChatPage />,
+      link: "/manga/:id",
+      element: <MangaDetail />,
       id: 9
     },
+  
     {
       link: "/manga/:id",
       element: <MangaDetail />,
@@ -87,6 +86,7 @@ const MainRoutes = () => {
       link: "/profile",
       element: <ProfilePage />,
       id: 14
+
     },
     {
       link: "/admin",
@@ -98,7 +98,13 @@ const MainRoutes = () => {
       element: <MangaRead />,
       id: 16
     },
+    {
+      link: "/readchapter/:id/:chapter/:page",
+      element: <FanficChapter/>,
+      id: 17,
+    },
   ]
+
 
   return (
     <Routes>

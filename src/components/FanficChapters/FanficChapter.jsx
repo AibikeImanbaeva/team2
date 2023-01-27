@@ -3,22 +3,32 @@ import { useParams } from 'react-router-dom';
 import { fanficContext } from '../../contexts/FanficContextProvider';
 import FanficChapterCard from './FanficChapterCard';
 
-const FanficChapter = () => {
+const FanficChapter = ({chapter}) => {
+  const {getChapter} = useContext(fanficContext)
+ const {id} = useParams()
+// useEffect(()=>{
+// getChapter(id)
+// },[])
 
-  const { chapter } = useContext(fanficContext);
-console.log(chapter)
+
+
   return (
     <>
-      
-      <div className='chapter'>
-      <h2 className='chapter-main'>
-        {chapter.chapter}
-      </h2>
-        <div className='chapter-text'>
 
-        {chapter.text}
-        </div>
+
+    
+      
+      <div>
+
+      <p>
+
+
+
+
+      </p>
       </div>
+      
+      
     </>
   );
 };

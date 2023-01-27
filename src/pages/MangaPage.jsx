@@ -20,6 +20,7 @@ const MangaPage = () => {
             <MangaCatalog />
             <div className='FanficsAndAnime'>
                 {/* <Fanfics /> */}
+
                 <Animes />
             </div>
         </>

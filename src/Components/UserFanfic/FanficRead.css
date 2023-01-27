@@ -59,4 +59,14 @@
 .fanficPage-fanficCard{
     margin-top: 50px;
     margin-bottom: 50px;
+    overflow: auto;
+    height: 300px;
+}
+
+.FanficsAndAnime.F-A_HomePage.profilePage-top {
+    z-index: -1;
+}
+
+.profile-fanfics-card{
+    flex-wrap: wrap;
 }

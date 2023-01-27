@@ -8,6 +8,7 @@ import CreateComment from '../CommentCard/CreateComment';
 import FanficChapterCreate from '../FanficChapters/FanficChapterCreate';
 import FanficChaptersList from '../FanficChapters/FanficChaptersList';
 import AddIcon from '@mui/icons-material/Add';
+import FanficChapterCard from '../FanficChapters/FanficChapterCard';
 import './FanficRead.css'
 import FanficText from '../FanficRead/FanficText';
 
@@ -26,27 +27,25 @@ const UserFanfic = () => {
   }, [])
   // console.log(onePost)
 
+
   // function handleCom() {
   //   let newCom = new FormData()
   //   newCom.append("title", comment),
   //     addComment(newCom, id)
   // }
 
-  // function isOwner (){
-  //   const login = localStorage.getItem("username") 
-  //   if (login == id) {
-  //     return true
-  //   }
-  // }
 
-  console.log(onePost)
+const isOwner = () => {
+  return localStorage.getItem("username") ? true : false
+}
 
 
   return (
     <>
-
-        <div className='chapterTitle'>Начать писать главы<button onClick={() => navigate(`/fanficpage/${onePost.id}/create-fanfic`)} className="addChapter-btn"><AddIcon /></button>
-        </div>
+       {isOwner() ?  
+<div className='chapterTitle'>Начать писать главы<button onClick={() => navigate(`/fanficpage/${onePost.id}/create-fanfic`)} className="addChapter-btn"><AddIcon/></button>
+ </div> : null          
+ }
       {
         onePost ? (
           <>
@@ -56,16 +55,38 @@ const UserFanfic = () => {
               <div className='fanficPage-fanficCard-desc'>
                 <p className='data-created-fanficPost'>{onePost.date_created}
                 </p>
-                <p>{onePost.genre}</p>
-                <p>{onePost.title}</p>
+
+              <p>{onePost.genre}</p>
+              <p>{onePost.title}
+              {/* <div className='chapter-read' style={{overlow: 'auto'}}> */}
+
+              {/* </div> */}
+              
+              </p>
+
+
+              
+       
+          <div>
+       <FanficChaptersList chapter={onePost}  />
+          </div>
+   
+        
+      
+              
+       
+           
+              
               </div>
 
-            </div> */}
-            <FanficText />
+        
 
-            {/* Chapters */}
 
-            {/* <FanficChaptersList /> */}
+             
+            </div>
+         
+
+          
 
 
             <div>

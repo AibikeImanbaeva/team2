@@ -5,7 +5,7 @@ import PostCard from '../PostCard/PostCard';
 import Fanfics from '../HomePage__Components/Fanfics'
 
 const PostList = () => {
-  const { getPost, post } = useContext(postContext)
+  const { getPost,post} = useContext(postContext)
 
   const [searchParams, setSearchParams] = useSearchParams();
   useEffect(() => {
@@ -13,6 +13,7 @@ const PostList = () => {
     console.log(post)
   }, [])
 
+  console.log(post)
   // useEffect(()=>{
   //     getPost()
   //     console.log(posts)
@@ -24,15 +25,15 @@ const PostList = () => {
   }, [searchParams])
 
   return (
-    <>
+   <>
 
 {post?.map(post => (
-  <Fanfics key={post.id} post={post}></Fanfics>
+  <Fanfics key={post.id} post={post}/>
         // <PostCard key={post.id} post={post}></PostCard>
  
       ))}
 
-    </>
+   </>
   )
 }
 

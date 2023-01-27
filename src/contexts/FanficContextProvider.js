@@ -102,6 +102,7 @@ const FanficContextProvider = ({ children }) => {
 
 
   const deleteComment = async (id) => {
+
     try {
       const tokens = JSON.parse(localStorage.getItem("token"));
       const Authorization = `Bearer ${tokens.access}`;
@@ -110,9 +111,10 @@ const FanficContextProvider = ({ children }) => {
           Authorization,
         },
       };
- await axios.delete(`${API}/fanfic/${id}/comment/`, config)  // * Отсутсвовало /fanfic/
 
-      // console.log(res);
+      let res = await axios.delete(`${API}/fanfic/${id}/comment/`, config)  // * Отсутсвовало /fanfic/
+      console.log(res);
+
 
 
       getFanfic(id)
@@ -154,13 +156,13 @@ const FanficContextProvider = ({ children }) => {
     }
   }
 
-  const deleteChapter = async (id) => {
-    try {
+  // const deleteChapter = async (id) => {
+  //   try {
 
-    } catch (error) {
+  //   } catch (error) {
 
-    }
-  }
+  //   }
+  // }
 
 
 

@@ -8,7 +8,7 @@ const INIT_STATE = {
   mangaGenres: [],
   mangaDetail: {},
   mangaChapters: [],
-  mangaChapter: {}
+  mangaChapterImgs: {}
 }
 
 function reducer(state = INIT_STATE, action) {
@@ -28,16 +28,16 @@ function reducer(state = INIT_STATE, action) {
         ...state,
         mangaDetail: action.payload,
       }
-    case "GET_MANGA_CHAPTER":
+    case "GET_MANGA_CHAPTERS":
       return {
         ...state,
         mangaChapters: action.payload,
       }
-      case "SET_MANGA_CHAPTER_READ":
-        return {
-          ...state,
-          mangaChapter: action.payload,
-        }
+    case "SET_MANGA_CHAPTER_READ":
+      return {
+        ...state,
+        mangaChapterImgs: action.payload,
+      }
   }
 }
 
@@ -172,9 +172,9 @@ const MangaContextProvider = ({ children }) => {
     try {
 
       const { data } = await axios(`${API}/manga/${id}/volumes/`);
-      
+      console.log(data)
       dispatch({
-        type: "GET_MANGA_CHAPTER",
+        type: "GET_MANGA_CHAPTERS",
         payload: data
       })
 
@@ -183,6 +183,19 @@ const MangaContextProvider = ({ children }) => {
     }
   }
 
+  async function setMangaToRead(id) {
+    try {
+      const { data } = await axios(`${API}/mangachapter/${id}/`);
+      console.log(data)
+
+      dispatch({
+        type: "SET_MANGA_CHAPTER_READ",
+        payload: data,
+      })
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <mangaContext.Provider
@@ -191,7 +204,7 @@ const MangaContextProvider = ({ children }) => {
         mangaGenres: state.mangaGenres,
         mangaDetail: state.mangaDetail,
         mangaChapters: state.mangaChapters,
-        mangaChapter: state.mangaChapter,
+        mangaChapterImgs: state.mangaChapterImgs,
 
         getManga,
         getGenres,
@@ -200,7 +213,8 @@ const MangaContextProvider = ({ children }) => {
         deleteLikeAtManga,
         addComment,
         deleteComment,
-        getMangaChapters
+        getMangaChapters,
+        setMangaToRead
       }}
     >
       {children}

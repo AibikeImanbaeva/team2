@@ -128,7 +128,9 @@ const navigate =  useNavigate()
             {like ? <p> лайкнуто ежже</p> : <p> не лайкнуто ежже</p>}
           </button> */}
 
-{owner? <Button onClick={handleOpen}>Open modal</Button>
+
+        
+  <Button onClick={handleOpen}>Open modal</Button>
             <Modal
               open={open}
               onClose={handleClose}
@@ -175,57 +177,7 @@ const navigate =  useNavigate()
                 </Typography>
               </Box>
             </Modal>
-            <button onClick={() => deletePost(post.id)}className="fanfic-read-btn">Delete</button>: setOwner(false)
-             }
-          
-  {/* <Button onClick={handleOpen}>Open modal</Button>
-           <Modal
-            open={open}
-              onClose={handleClose}
-              aria-labelledby="modal-modal-title"
-              aria-describedby="modal-modal-description"
-            >
-              <Box sx={style}>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-              
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                {/* <li className='Navbar__logo register-logo'><img src="../../" alt="" /></li> */}
-                  {/* <input
-                    type="text"
-                    placeholder="title"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    className="profile-inp"
-                  /> */}
-                  {/* <input
-                    type="text"  
-                    placeholder="desc"
-                    value={desc}
-                    onChange={(e) => setDesc(e.target.value)}
-                    className="profile-inp"
-                  /> */}
-                  {/* <input
-                    type="text"
-                    placeholder="genre"
-                    value={genre}
-                    onChange={(e) => setGenre(e.target.value)}
-                    className="profile-inp"
-                  /> */}
-                  {/* <input
-                    type="file"
-                    name="photo"
-                    id=""
-                    multiple
-                    accept=".jpg"
-                    onChange={(e) => setImage(e.target.files[0])}
-                    className="profile-inp"
-                  /> */}
-                  {/* <button onClick={handleEditInp}className="profile-inp btn-submit" >Сохранить</button>
-                </Typography>
-                </Typography>
-              </Box> */}
-            {/* </Modal> */}
-            {/* <button onClick={() => deletePost(post.id)}className="fanfic-read-btn">Delete</button> */} */}
+            <button onClick={() => deletePost(post.id)}className="fanfic-read-btn">Delete</button>
   </div>
   </div>
   

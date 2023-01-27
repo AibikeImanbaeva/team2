@@ -31,8 +31,6 @@ const PostList = () => {
   <Fanfics key={post.id} post={post}/>
         // <PostCard key={post.id} post={post}></PostCard>
  
-
-
       ))}
 
    </>

@@ -19,7 +19,8 @@ const MangaPage = () => {
             <MangaNewEpisodes />
             <MangaCatalog />
             <div className='FanficsAndAnime'>
-                
+                {/* <Fanfics /> */}
+
                 <Animes />
             </div>
         </>

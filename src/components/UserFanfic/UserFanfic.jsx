@@ -10,6 +10,7 @@ import FanficChaptersList from '../FanficChapters/FanficChaptersList';
 import AddIcon from '@mui/icons-material/Add';
 import FanficChapterCard from '../FanficChapters/FanficChapterCard';
 import './FanficRead.css'
+import FanficText from '../FanficRead/FanficText';
 
 
 const UserFanfic = () => {
@@ -18,7 +19,7 @@ const UserFanfic = () => {
   const { onePost, getPostDetails, post } = useContext(postContext);
   const { fanficDetails, setFanficDetails } = useState({})
   const { id } = useParams()
-  
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,6 +34,7 @@ const UserFanfic = () => {
   //     addComment(newCom, id)
   // }
 
+
 const isOwner = () => {
   return localStorage.getItem("username") ? true : false
 }
@@ -44,16 +46,16 @@ const isOwner = () => {
 <div className='chapterTitle'>Начать писать главы<button onClick={() => navigate(`/fanficpage/${onePost.id}/create-fanfic`)} className="addChapter-btn"><AddIcon/></button>
  </div> : null          
  }
- 
       {
         onePost ? (
           <>
-            <div className='fanficPage-fanficCard'>
-            
+            {/* <div className='fanficPage-fanficCard'>
+
               <img src={onePost.image} alt="" />
               <div className='fanficPage-fanficCard-desc'>
-              <p className='data-created-fanficPost'>{onePost.date_created}
+                <p className='data-created-fanficPost'>{onePost.date_created}
                 </p>
+
               <p>{onePost.genre}</p>
               <p>{onePost.title}
               {/* <div className='chapter-read' style={{overlow: 'auto'}}> */}
@@ -86,16 +88,11 @@ const isOwner = () => {
 
           
 
-            <div className='comments'>
-            
-    
-             
 
-              <div>
-                <CommentList onePost={onePost} />
-              </div>
-              <CreateComment key={onePost.id} />
+            <div>
+              <CommentList onePost={onePost} />
             </div>
+            <CreateComment key={onePost.id} />
           </>
 
         ) : (

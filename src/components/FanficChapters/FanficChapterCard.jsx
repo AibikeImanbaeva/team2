@@ -8,22 +8,36 @@ import { fanficContext } from '../../contexts/FanficContextProvider';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FanficChapter from './FanficChapter';
 
+
 const FanficChapterCard = ({ page }) => {
   const navigate = useNavigate();
   const { getChapter } = useContext(fanficContext);
 // console.log(getChapter)
-const chapter = page.chapter
+console.log(page)
 const {id} = useParams()
   return (
 
 
     <>
+
+
+    {
+
+// page?.map(chapter=> <FanficChapter chapter={chapter} key={chapter.id}   />)
+
+
+    }
     <div>
 
-    <p  onClick={()=> navigate(`/readchapter/${page.id}`)}>{page.chapter}</p>
-  
-    <FanficChapter key={page.id} chapter={chapter} />
-   
+
+
+
+{/* 
+  <a onClick={() => navigate(`/readchapter/${id}/${page.owner_id}/${page.fanfic_id}`)} style={{ cursor: "pointer" }}> */}
+  <p>номер главы:{page.chapter}</p>
+  описание: {page.text}
+  {/* </a> */}
+
     </div>
     
     

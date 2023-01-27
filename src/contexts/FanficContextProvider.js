@@ -144,15 +144,28 @@ const FanficContextProvider = ({ children }) => {
     }
   }
 
-  const getChapter = async (page) => {
+  const getChapter = async (id) => {
     try {
+      const tokens = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+      const {data} = await axios(
+        `${API}/fanfic/${id}/pages/`, config);
+
+      // console.log(res)
       dispatch({
         type: "GET_FANFIC_CHAPTER",
-        payload: page,
-      })
+        payload: data,
+      });
 
-    } catch (error) {
-      console.log(error)
+     
+      // console.log(data)
+    } catch (err) {
+      console.log(err);
     }
   }
 

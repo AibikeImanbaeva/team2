@@ -50,7 +50,7 @@ const Fanfics =  ({post}) => {
   };
 
   // like
-  console.log(post)
+  // console.log(post)
 
   const [like, setLike] = useState(true);
 
@@ -83,7 +83,7 @@ function isOwner (){
 
   // Edit
 
-console.log(post)
+// console.log(post)
 
 
   //navigate 

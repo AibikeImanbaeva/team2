@@ -99,7 +99,7 @@ const MainRoutes = () => {
       id: 16
     },
     {
-      link: "/readchapter/:id",
+      link: "/readchapter/:id/:chapter/:page",
       element: <FanficChapter/>,
       id: 17,
     },

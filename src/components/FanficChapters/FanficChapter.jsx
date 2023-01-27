@@ -7,11 +7,10 @@ const FanficChapter = ({chapter}) => {
   const {getChapter} = useContext(fanficContext)
  const {id} = useParams()
 // useEffect(()=>{
-// getChapter()
+// getChapter(id)
 // },[])
 
 
-console.log(chapter)
 
   return (
     <>
@@ -28,13 +27,7 @@ console.log(chapter)
 
       </p>
       </div>
-      {/* <h2 className='chapter-main'>
-        {page.chapter}
-      </h2>
-        <div className='chapter-text'>
-
-        {page.text}
-        </div> */}
+      
       
     </>
   );

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const FanficChaptersList = () => {
   const { onePost } = useContext(postContext);
 const navigate = useNavigate()
-console.log(onePost)
+// console.log(onePost)
 
   return (
     <div>

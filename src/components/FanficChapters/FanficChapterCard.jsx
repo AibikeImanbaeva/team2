@@ -11,7 +11,7 @@ import FanficChapter from './FanficChapter';
 
 const FanficChapterCard = ({ page }) => {
   const navigate = useNavigate();
-  const { getChapter } = useContext(fanficContext);
+
   // console.log(getChapter)
   console.log(page)
   const { id } = useParams()
@@ -20,23 +20,17 @@ const FanficChapterCard = ({ page }) => {
 
     <>
 
-
-      {
-
-        // page?.map(chapter=> <FanficChapter chapter={chapter} key={chapter.id}   />)
-
-
-      }
       <div>
 
 
 
 
-        {/* 
-  <a onClick={() => navigate(`/readchapter/${id}/${page.owner_id}/${page.fanfic_id}`)} style={{ cursor: "pointer" }}> */}
+        
+  <a onClick={() => navigate(`/readchapter/${id}/${page.id}/${page.chapter}`)} style={{ cursor: "pointer" }}> 
+ 
         <p>номер главы:{page.chapter}</p>
-        описание: {page.text}
-        {/* </a> */}
+        {/* описание: {page.text} */}
+         </a>
 
       </div>
 
@@ -44,19 +38,7 @@ const FanficChapterCard = ({ page }) => {
 
 
     </>
-    // <Card sx={{ maxWidth: 345 }}>
-    //   {/* <CardActionArea onClick={() => {
-    //     navigate(`/fanfic/chapter/${page.chapter}`);
-    //     getChapter(page);
-    //   }}> */}
-    //     {/* <CardContent> */}
-    //       <Typography gutterBottom variant="h5" component="div">
-    //         {page.chapter}
-    //       </Typography>
-    //     {/* </CardContent> */}
-    //   </CardActionArea>
-    //   {/* <DeleteIcon style={{ cursor: "pointer" }} /> */}
-    // </Card>
+ 
   );
 };
 

@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { postContext } from '../../contexts/PostsContextProvider';
 import FanficChapterCard from './FanficChapterCard';
 import { useNavigate } from 'react-router-dom';
+import FanficChapter from './FanficChapter';
 
 const FanficChaptersList = () => {
   const { onePost } = useContext(postContext);
@@ -11,8 +12,11 @@ const navigate = useNavigate()
   return (
     <div>
       {
-        onePost.page?.map(page => (
+        onePost?.page.map(page => (
+          
           <FanficChapterCard page={page} key={page.id}  />
+         
+        
         ))
       }
     </div>

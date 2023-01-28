@@ -13,8 +13,10 @@ const navigate = useNavigate()
     <div>
       {
         onePost?.page.map(page => (
-          
+          <>
           <FanficChapterCard page={page} key={page.id}  />
+          <FanficChapter page={page} key={page.id} />
+          </>
          
         
         ))

@@ -52,7 +52,7 @@ const FanficContextProvider = ({ children }) => {
       });
 
       const { data } = await axios(`${API}/fanfic/${id}/pages/`)
-      // console.log(data)
+      console.log(data)
     } catch (err) {
       console.log(err);
     }

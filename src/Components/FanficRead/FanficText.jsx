@@ -6,7 +6,7 @@ import CommentList from '../CommentCard/CommentList';
 import CreateComment from '../CommentCard/CreateComment';
 import bg from "../UserFanfic/Rebekka.png"
 
-const FanficText = () => {
+const FanficText = ({chapter}) => {
   const navigate = useNavigate();
   const { onePost} = useContext(postContext);
 

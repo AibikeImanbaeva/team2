@@ -26,8 +26,8 @@ const FanficChapterCard = ({ page }) => {
 
 
         
-  <a onClick={() => navigate(`/readchapter/${id}/${page.id}/${page.chapter}`)} style={{ cursor: "pointer" }}> 
- 
+  <a onClick={() => navigate(`/readchapter/${page.id}/`)} style={{ cursor: "pointer" }}> 
+{/* <FanficChapter page={page} key={page.id} /> */}
         <p>номер главы:{page.chapter}</p>
         {/* описание: {page.text} */}
          </a>

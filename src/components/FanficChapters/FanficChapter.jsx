@@ -1,40 +1,47 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
 import { fanficContext } from '../../contexts/FanficContextProvider';
 import FanficChapterCard from './FanficChapterCard';
 import { postContext } from '../../contexts/PostsContextProvider';
+import FanficText from '../FanficRead/FanficText';
 
-const FanficChapter = ({page}) => {
-  
+
+const FanficChapter = () => {
+
   const {getChapter, chapter} = useContext(fanficContext)
-  const [searchParams, setSearchParams] = useSearchParams();
 
  const {id} = useParams()
 
+//  useEffect(() => {
 
- console.log(chapter)
+//   getChapter();
+// }, [chapter])
 
 useEffect(()=>{
 getChapter(id)
 
 },[])
+console.log(chapter)
+
+// console.log(page)
+// const getChap = () => {
+//   chapter.forEach((chap) => {
+//     if (chap.id == id) {
+//       setOneChap(chap)
+//     }
+//   })
+// }
 
 
 
-
-
-
-// console.log(getChapter)
 
   return (
     <>
 
-
    
 
-  
-  
+
 
   
       

@@ -12,6 +12,7 @@ const AuthContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
 
   const [user, setUser] = useState("");
+  const [errorTextRegContext, setErrorTextRegContext] = useState("")
 
   async function handleRegister(formData, navigate) {
     setLoading(true);
@@ -19,10 +20,13 @@ const AuthContextProvider = ({ children }) => {
       const res = await axios.post(`${API}/accounts/register/`, formData);
       console.log(res);
       navigate("/login");
+      setError("")
     } catch (err) {
       console.log("ERROR", err);
       console.log("ERROR DATA", err.response.data);
       setError(Object.values(err.response.data).flat(2));
+      console.log(error)
+      // setErrorTextReg()
     } finally {
       setLoading(false);
     }
@@ -68,6 +72,7 @@ const AuthContextProvider = ({ children }) => {
         currentUser,
         error,
         loading,
+        errorTextRegContext,
         setError,
         handleRegister,
         handleLogin,

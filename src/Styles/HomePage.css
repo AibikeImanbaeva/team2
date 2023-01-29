@@ -19,7 +19,6 @@ body{
 
 .HomePage-BackgroundImg{
     position: absolute;
-    height: 60%;
     width: 40%;
     top: 3%;
     right: 25px;
@@ -490,7 +489,6 @@ border-color:  #FFA41C;
 .MangaPageChainsawman{
     position: absolute;
     width: 25%;
-    height: 75%;
     left: 75%;
     top: 5%;
 }

@@ -7,6 +7,7 @@ import Saidbar from '../components/HomePage__Components/Saidbar';
 import PostList from '../components/PostList/PostList';
 import ProfileCard from '../components/Profile/ProfileCard';
 import Animes from '../components/HomePage__Components/Animes';
+import UserFanfic from '../components/UserFanfic/UserFanfic';
 // import PostCard from '../components/PostCard/PostCard';
 
 
@@ -21,9 +22,13 @@ const ProfilePage = () => {
 
     <Animes/>
         </div>
-        <div className="profile-fanfics-card"> 
+
     <PostList />
-        </div>
+    
+
+      
+
+
   
 
         

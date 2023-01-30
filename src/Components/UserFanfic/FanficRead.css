@@ -70,3 +70,22 @@
 .profile-fanfics-card{
     flex-wrap: wrap;
 }
+
+.chapter-text {
+    margin-top: 20px;
+    background: #414141;
+    color: #ffff;
+    padding: 50px;
+    text-align: center;
+}
+
+
+.chapter-data{
+    margin-left: 90%;
+}
+.chapter-desc{
+    margin-right: 95%;
+    color: #FFFFFF;
+    opacity: 0.5;
+    font-size: 26px;
+}

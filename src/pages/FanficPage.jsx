@@ -6,7 +6,7 @@ import Saidbar from "../components/HomePage__Components/Saidbar";
 import Animes from "../components/HomePage__Components/Animes";
 import bg from "../components/UserFanfic/Rebekka.png"
 import "../components/UserFanfic/FanficRead.css"
-
+import CommentList from "../components/CommentCard/CommentList";
 
 const FanficPage = () => {
   const stylebg = {
@@ -28,6 +28,8 @@ const FanficPage = () => {
       <div className="fanfic-page-col">
         <UserFanfic />
       </div>
+      {/* <CommentList /> */}
+      
 
     </>
   );

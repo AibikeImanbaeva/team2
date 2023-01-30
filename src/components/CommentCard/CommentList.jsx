@@ -3,7 +3,7 @@ import CommentCard from './CommentCard';
 import "./Comments.css"
 
 const CommentList = ({ onePost }) => {
-
+console.log(onePost)
   return (
     <div className='comments'>
       <div className='comments-title'>Комментарии</div>

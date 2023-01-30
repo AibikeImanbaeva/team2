@@ -2,21 +2,19 @@ import { Box, CircularProgress } from '@mui/material';
 import React, { useEffect, useContext, useState } from 'react';
 import { useSearchParams, useParams, useNavigate } from 'react-router-dom';
 import { fanficContext } from '../../contexts/FanficContextProvider';
-import { postContext } from '../../contexts/PostsContextProvider';
+import { postContext } from '../../contexts/PostsContextProvider'
 import CommentList from '../CommentCard/CommentList';
 import CreateComment from '../CommentCard/CreateComment';
 import FanficChapterCreate from '../FanficChapters/FanficChapterCreate';
 import FanficChaptersList from '../FanficChapters/FanficChaptersList';
 import AddIcon from '@mui/icons-material/Add';
-import FanficChapterCard from '../FanficChapters/FanficChapterCard';
+
 import './FanficRead.css'
-import FanficText from '../FanficRead/FanficText';
+
 
 
 const UserFanfic = () => {
-
-  const [searchParams, setSearchParams] = useSearchParams();
-  const { onePost, getPostDetails, post } = useContext(postContext);
+  const { onePost, getPostDetails } = useContext(postContext);
   const { fanficDetails, setFanficDetails } = useState({})
   const { id } = useParams()
 
@@ -25,14 +23,11 @@ const UserFanfic = () => {
   useEffect(() => {
     getPostDetails(id);
   }, [])
-  // console.log(onePost)
 
 
-  // function handleCom() {
-  //   let newCom = new FormData()
-  //   newCom.append("title", comment),
-  //     addComment(newCom, id)
-  // }
+console.log(onePost)
+
+
 
 
   const isOwner = () => {
@@ -40,51 +35,44 @@ const UserFanfic = () => {
   }
 
 
+
+
   return (
     <>
-      {isOwner() ?
-        <div className='chapterTitle'>Начать писать главы<button onClick={() => navigate(`/fanficpage/${onePost.id}/create-fanfic`)} className="addChapter-btn"><AddIcon /></button>
-        </div> : null
-      }
-      {
-        onePost ? (
-          <>
-            {/* <div className='fanficPage-fanficCard'>
-
-              <img src={onePost.image} alt="" />
-              <div className='fanficPage-fanficCard-desc'>
-                <p className='data-created-fanficPost'>{onePost.date_created}
-                </p>
-
-              <p>{onePost.genre}</p>
-              <p>{onePost.title}
-              {/* <div className='chapter-read' style={{overlow: 'auto'}}> */}
-
-            {/* </div> */}
-
-            {/* </p> */}
 
 
 
 
-            <div>
-              <FanficChaptersList chapter={onePost} />
-            </div>
+<FanficChapterCreate />
+    <div className='chapter-text'>
+      {/* <p className='chapter-data'>{onePost.date_created}</p> */}
+<div className='chapter-desc'>
+  {/* #{onePost.description} */}
+</div>
 
-          </>
+{
+   onePost?.page.map(page => (     
+    <div>
 
-        ) : (
-          <Box sx={{ display: 'flex' }}>
-            <CircularProgress />
-            {/* Прикольная фигня */}
-          </Box>
-        )
-      }
+       <FanficChaptersList page={page} key={page.id} />  
+             
+    </div>  
+     ))
+   }
+    
+    </div>
+{/* 
+    <div className='chapter-comments'>
+      <CreateComment />
+<CommentList onePost={onePost} />
+    </div> */}
+     
+     
+     
+     </>
 
-
-
-
-    </>
+    
+  
   )
 }
 

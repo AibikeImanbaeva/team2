@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -11,26 +11,33 @@ import FanficChapter from './FanficChapter';
 
 const FanficChapterCard = ({ page }) => {
   const navigate = useNavigate();
+// const {
+//   getChapter,
+//   chapter
+//  } = useContext(fanficContext)
+//  const { id } = useParams();
 
-  // console.log(getChapter)
-  console.log(page)
-  const { id } = useParams()
+//  useEffect (()=>{
+//   getChapter(id)
+//  })
+
+
+
   return (
 
 
     <>
 
       <div>
+{/* 
+{
+  chapter?.map(chap=> <FanficChapter key={chap.id} chap={chap.text}  />)
+} */}
 
 
-
-
-        
-  <a onClick={() => navigate(`/readchapter/${page.id}/`)} style={{ cursor: "pointer" }}> 
-{/* <FanficChapter page={page} key={page.id} /> */}
         <p>номер главы:{page.chapter}</p>
-        {/* описание: {page.text} */}
-         </a>
+        описание: {page.text}
+     
 
       </div>
 

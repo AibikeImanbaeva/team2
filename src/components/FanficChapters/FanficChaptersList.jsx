@@ -1,28 +1,41 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { postContext } from '../../contexts/PostsContextProvider';
 import FanficChapterCard from './FanficChapterCard';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import FanficChapter from './FanficChapter';
+import FanficChapterCreate from './FanficChapterCreate';
+import CommentList from '../CommentCard/CommentList';
 
 const FanficChaptersList = () => {
-  const { onePost } = useContext(postContext);
-const navigate = useNavigate()
-// console.log(onePost)
+  const {id} = useParams()
 
+  const { onePost, getPostDetails } = useContext(postContext);
+  useEffect(()=>{
+getPostDetails(id)
+  },[])
+const navigate = useNavigate()
+
+// console.log(onePost)
   return (
+    <>
+
+
+
+
+ {
+   onePost?.page.map(page => (     
     <div>
-      {
-        onePost?.page.map(page => (
-          <>
-          <FanficChapterCard page={page} key={page.id}  />
-          <FanficChapter page={page} key={page.id} />
-          </>
-         
-        
-        ))
-      }
-    </div>
-  );
+
+      <FanficChapterCard page={page} key={page.id}  />  
+             
+    </div>  
+     ))
+   }
+
+
+
+    </>
+  )
 };
 
 export default FanficChaptersList;

@@ -17,22 +17,22 @@ function App() {
     <>
 
       <AuthContextProvider>
+                <PostsContextProvider>
         <NewsContextProvider>
           <MangaContextProvider>
             <FanficContextProvider>
               <AnimeContextProveder>
-                <PostsContextProvider>
 
 
                   <BrowserRouter>
                     <MainRoutes />
                   </BrowserRouter>
 
-                </PostsContextProvider>
               </AnimeContextProveder>
             </FanficContextProvider>
           </MangaContextProvider>
         </NewsContextProvider>
+                </PostsContextProvider>
 
       </AuthContextProvider>
 

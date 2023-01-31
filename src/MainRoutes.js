@@ -16,6 +16,9 @@ import ProfilePage from './pages/ProfilePage';
 import AdminPage from './pages/AdminPage';
 import MangaDetail from "./Components/MangaPage__Components/MangaDetail";
 import MangaRead from "./Components/MangaPage__Components/MangaRead";
+import EditAnime from "./pages/EditAnimePage";
+import ProfileBio from "./Components/Profile/ProfileBio";
+import BioEdit from "./Components/Profile/BioEdit";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -97,6 +100,21 @@ const MainRoutes = () => {
     {
       link: "/manga/:id/:chapter/:page",
       element: <MangaRead />,
+      id: 16
+    },
+    {
+      link: "/editAnime/:id",
+      element: <EditAnime/>,
+      id: 16
+    },
+    {
+      link: "/profileBio",
+      element: <ProfileBio/>,
+      id: 16
+    },
+    {
+      link: "/edit",
+      element: <BioEdit/>,
       id: 16
     },
   ]

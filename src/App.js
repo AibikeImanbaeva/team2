@@ -6,6 +6,7 @@ import PostsContextProvider from './contexts/PostsContextProvider';
 import FanficContextProvider from './contexts/FanficContextProvider';
 import AnimeContextProveder from './contexts/AnimeContextProveder';
 import MangaContextProvider from './contexts/MangaContextProvider';
+import BiocontextProvider from "./contexts/BiocontextProvider"
 
 
 function App() {
@@ -16,11 +17,13 @@ function App() {
           <FanficContextProvider>
             <AnimeContextProveder>
               <PostsContextProvider>
+                <BiocontextProvider>
 
                 <BrowserRouter>
                   <MainRoutes />
                 </BrowserRouter>
 
+                </BiocontextProvider>
               </PostsContextProvider>
             </AnimeContextProveder>
           </FanficContextProvider>

@@ -54,7 +54,8 @@ font-style: normal;
 font-weight: 700;
 font-size: 40px;
 line-height: 48px;
-
+position: relative;
+right: 16%;
 color: #FFFFFF;
 }
 
@@ -63,6 +64,9 @@ color: #FFFFFF;
     height: 50px;
     border-radius: 50%;
     background-color: #FFFFFF;
+    justify-content: center;
+    display: flex;
+    align-items: center;
     /* padding-right: 7%; */
 }
 
@@ -82,4 +86,131 @@ font-size: 20px;
 line-height: 24px;
 
 color: #FFFFFF;
+}
+
+.bio_container{
+    position: relative;
+    left: 5em;
+    bottom: 5vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bio_container span {
+    color: #FC41D3;
+    font-family: 'Inter';
+    font-size: 15px;
+}
+.bio_container p {
+    color: #FFFFFF;
+    font-size: 20px;
+}
+.modal{
+    display: flex;
+    /* width: 275px;*/
+     /* height: 270px; */
+    /* padding-top: 8em ;
+    padding-left: 6.5em; */
+    /* border-radius: 20px; */
+    border: 1px solid transparent;
+    /* filter: brightness(40%) */
+}
+
+  
+
+.modal{
+    width: 400px;
+    height: 400px;
+    transform: translate(185%, 45%);
+border-radius: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 20px;
+border: 1px solid transparent;
+box-shadow: 24;
+background-image: url("../../assets/Rectangle 36.png");
+filter: brightness(80%);
+z-index: -1;
+}
+
+
+
+
+
+
+
+
+.modal input {
+    padding: 0.8em;
+    margin: 1em;
+    width: 15vw;
+    border-radius: 10px;
+    border: 1px solid white;
+    /* text-align: center; */position: relative;
+
+    
+}
+.modal .bioLogo{
+    position: relative;
+    left:3.8em;
+}
+.modal .Title{
+    position: relative;
+    left:7em;
+    color: #FFFFFF;
+    font-family: 'Inter';
+    font-weight: 700;
+
+}
+.modal .Title1{
+    position: relative;
+    left:4.5em;
+    color: #FFFFFF;
+    font-family: 'Inter';
+    font-weight: 700;
+
+}
+
+.modal .button {
+    background-color: #AD4E4A;
+    border: 1px solid #AD4E4A;
+    border-radius: 20px;
+    position: relative;
+    left: 4.5em;
+   width: 200px;
+   color: #FFFFFF;
+   font-family: 'Inter';
+   font-weight: 700;
+font-size: 13px;
+transition: 0.5s;
+}
+
+
+.modal .button:hover{
+    background-color: #FFFFFF;
+    color: #AD4E4A;
+    border: 1px solid #ffff;
+}
+.info{
+    color: #FFFFFF;
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 1px;;
+position: relative;
+left: 1.2em;
+margin-top: 2em;
+}
+.info1{
+    color: #FFFFFF;
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 1px;;
+position: relative;
+left: 1.2em;
+margin-top: 1em;
 }

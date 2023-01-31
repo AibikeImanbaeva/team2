@@ -1,13 +1,15 @@
-import React, { useReducer } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 import axios from "axios";
 
 
-export const animeContext = React.createContext();
+export const animeContext = createContext();
+export const useAnime = () => useContext(animeContext);
 
 const INIT_STATE = {
   posts: [],
   pages: 0,
-  onePost: null,
+  onePost: [],
+  animeDetails:[],
 };
 
 function reducer(state = INIT_STATE, action) {
@@ -25,6 +27,8 @@ function reducer(state = INIT_STATE, action) {
       };
     case "GET_ONE_POST":
       return { ...state, onePost: action.payload };
+      case "GET_ANIME_DETAILS":
+      return { ...state, animeDetails: action.payload };
     default:
       return state;
   }
@@ -78,64 +82,99 @@ const AnimeContextProvider = ({ children }) => {
     }
   }
 
-  // async function getCategories() {
-  //   try {
-  //     const tokens = JSON.parse(localStorage.getItem("token"));
-  //     const Authorization = `Bearer ${tokens.access}`;
-  //     const config = {
-  //       headers: {
-  //         Authorization,
-  //       },
-  //     };
-  //     const res = await axios(`${API}/category/list/`, config);  //RAUF
-  //     dispatch({
-  //       type: "GET_CATEGORIES",
-  //       payload: res.data.results,
-  //     });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }
 
 
-
-//   async function deletePost(id) {
-//     try {
-//       const tokens = JSON.parse(localStorage.getItem("token"));
-//       const Authorization = `Bearer ${tokens.access}`;
-//       const config = {
-//         headers: {
-//           Authorization,
-//         },
-//       };
-//       await axios.delete(`${API}/fanfic/${id}/`, config); //RAUF
-//       getPost();
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   }
+  async function deletePost(id) {
+    try {
+      const tokens = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+      await axios.delete(`${API}/anime/${id}/`, config); 
+      getPost();
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
 
 
   
-//   async function editFanficPost(edittedProduct, id) {
-//     try {
-//       const tokens = JSON.parse(localStorage.getItem("token"));
-//       const Authorization = `Bearer ${tokens.access}`;
-//       const config = {
-//         headers: {
-//           Authorization,
-//         },
-//       };
+  async function editAnime( id, editAnime) {
+    try {
+      const tokens = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
       
-//       await axios.patch(`${API}/fanfic/${id}/`, edittedProduct, config);
-//       getPost();
-//     } catch (error) {
-//       console.log(error)
-//     }
-//   }
-  
+      const edit = await axios.patch(`${API}/anime/${id}/`, editAnime, config);
+      console.log(edit)
+      getPost()
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
+     async function creatLikeAnime(likeAnime, id) {                           // ругается ошибка401
+    try {
+      const tokens = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+      
+     const res = await axios.post(`${API}/anime/${id}/likes/`,likeAnime, config);
+      getPost()
+      console.log(res)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
+  async function deleteLikeAnime(id) {                           // ругается ошибка401
+    try {
+      const tokens = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+      
+     const res =  await axios.delete(`${API}/anime/${id}/likes/`, config);
+      getPost()
+      console.log(res)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
+  async function getSeason(id) {                           // ругается ошибка401
+    try {
+      const tokens = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+      
+     const res =  await axios(`${API}/anime/${id}/likes/`, config);
+      getPost()
+      console.log(res)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
 
 
@@ -150,15 +189,17 @@ const AnimeContextProvider = ({ children }) => {
       value={{
         posts: state.posts,
         pages: state.pages,
-        categories: state.categories,
+        animeDetails: state.animeDetails,
         onePost: state.onePost,
 
 
         getPost,
         createPost,
-        // getCategories,
-        // deletePost,
-        // editFanficPost
+        deletePost,
+        editAnime,
+        creatLikeAnime,
+        deleteLikeAnime,
+        getSeason
       }}
     >
       {children}

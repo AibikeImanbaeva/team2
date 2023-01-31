@@ -80,7 +80,7 @@ transition: 0.5s;
 
 }
 .News_hover:hover .strelka{
-left: 4em;
+left:6em;
 }
 .strelka{
   width: 125.11px;
@@ -101,7 +101,7 @@ transition: 0.5s;
   fill: #FF7171;
 }
 .Manga_hover:hover .strelka1{
-left: 5em;
+left: 6em;
 }
 .strelka1{
   width: 125.11px;
@@ -124,7 +124,7 @@ left: 5em;
 }
 
 .Fanfic_hover:hover .strelka2{
-  left: 4em;
+  left: 6em;
 }
 .strelka2{
   width: 125.11px;
@@ -149,7 +149,7 @@ fill: rgb(0, 110, 255);
 }
 
 .Friends_hover:hover .strelka3{
-  left: 4em;
+  left: 6em;
 }
 .strelka3{
   width: 125.11px;
@@ -173,7 +173,7 @@ fill: rgb(0, 110, 255);
   fill: aqua;
 }
 .Chat_hover:hover .strelka4{
-  left: 5em;
+  left: 6em;
 }
 .strelka4{
   width: 125.11px;
@@ -194,7 +194,7 @@ fill: rgb(0, 110, 255);
   fill: rgb(247, 3, 247);
 }
 .Anime_hover:hover .strelka5{
-  left: 5em;
+  left: 6em;
 }
 .strelka5{
   width: 125.11px;
@@ -214,7 +214,7 @@ fill: rgb(0, 110, 255);
 fill: violet;
 }
 .Profile_hover:hover .strelka6{
-  left: 5em;
+  left: 6em;
 }
 .strelka6{
   width: 125.11px;

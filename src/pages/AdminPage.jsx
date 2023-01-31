@@ -13,7 +13,7 @@ const AdminPage =() =>{
   const [animeTitle, setAnimeTitle] = useState("sdfsd")
   const [genre, setGenre] = React.useState('');
 
-  const { createPost, getPost } = useContext(animeContext)
+  const { createPost, getPost, getSeason } = useContext(animeContext)
 
 
   useEffect(() => {
@@ -29,6 +29,7 @@ const AdminPage =() =>{
 
     createPost(edittedAnimePost)
     getPost() 
+    getSeason()
   }
 
   const handleChangeGenre = (event) => {

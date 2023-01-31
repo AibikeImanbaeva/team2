@@ -18,26 +18,22 @@ import { useSearchParams } from "react-router-dom";
 
 const MangaCatalog = () => {
 
-     const { getManga, getGenres, mangaGenres } = React.useContext(mangaContext);
+     const { getManga, getGenres, mangaGenres, fetchByParams } = React.useContext(mangaContext);
+     const [genre, setGenre] = React.useState('all');
 
      useEffect(() => {
           getManga();
           getGenres();
-     }, [])
-
-
-     const [janr, setJanr] = React.useState('');
-
-     const handleChangeJanr = (event) => {
-          setJanr(event.target.value);
-     };
-   console.log(mangaGenres)
+          fetchByParams("genre", genre);
+     }, [genre])
 
 
 
 
-   // filtr
-const {fetchByParams} = useContext(mangaContext)
+
+
+
+     // filtr
 
 
      return (
@@ -52,19 +48,18 @@ const {fetchByParams} = useContext(mangaContext)
                               <Select
                                    labelId="demo-simple-select-autowidth-label"
                                    id="demo-simple-select-autowidth"
-                                   value={janr}
-                                   onChange={handleChangeJanr}
+                                   value={genre}
+                                   onChange={(e) => setGenre(e.target.value)}
                                    autoWidth
                                    label="Жанр"
+                              // onClick={(e) => fetchByParams("genre", genre)}
                               >
-                                   <MenuItem value=''  onClick={(e)=> fetchByParams("genre", e.target.value)}>Жанры</MenuItem>
-
-                              
+                                   <MenuItem name='all' value="all">Жанры</MenuItem>
                                    {
-                                        mangaGenres?.map(genre => 
-
-                                             
-                                        <MenuItem value={genre.slug} key={genre.slug}>{genre.title}</MenuItem>
+                                        mangaGenres?.map(genre => (
+                                             <MenuItem value={genre.slug} key={genre.slug}>{genre.title}</MenuItem>
+                                             // console.log(genre)
+                                        )
                                         )
                                    }
 
@@ -74,8 +69,8 @@ const {fetchByParams} = useContext(mangaContext)
                </div>
 
                {/* <div className='Manga__CatalogCardContainer'> */}
-                    <MangaList />
-                   
+               <MangaList />
+
                {/* </div> */}
 
 

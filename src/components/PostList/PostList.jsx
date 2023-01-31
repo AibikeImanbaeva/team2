@@ -32,7 +32,7 @@ const PostList = () => {
 
  
   const [page, setPage] = useState(1);
-  const itemsOnPage = 3;
+  const itemsOnPage =4;
 
   const count = Math.ceil(post.length / itemsOnPage);
 

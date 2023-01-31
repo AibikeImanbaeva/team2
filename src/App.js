@@ -8,7 +8,7 @@ import AnimeContextProveder from './contexts/AnimeContextProveder';
 import NewsContextProvider from './contexts/NewsContextProvider';
 import MangaContextProvider from './contexts/MangaContextProvider';
 
-
+import BioContextProvider from './contexts/BioContextProvider';
 
 
 
@@ -18,6 +18,8 @@ function App() {
                   <BrowserRouter>
 
       <AuthContextProvider>
+        <BioContextProvider>
+  
                 <PostsContextProvider>
         <NewsContextProvider>
           <MangaContextProvider>
@@ -32,8 +34,10 @@ function App() {
           </MangaContextProvider>
         </NewsContextProvider>
                 </PostsContextProvider>
-
+              
+                </BioContextProvider>
       </AuthContextProvider>
+
                   </BrowserRouter>
 
 

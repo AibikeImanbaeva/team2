@@ -16,6 +16,7 @@ import AdminPage from './pages/AdminPage';
 import MangaDetail from "./components/MangaPage__Components/MangaDetail";
 import MangaRead from "./components/MangaPage__Components/MangaRead";
 import FanficChapterCard from "./components/FanficChapters/FanficChapterCard";
+import ProfileBio from "./components/Profile/BioCreate";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -107,6 +108,11 @@ const MainRoutes = () => {
   link: "/editAnime/:id",
   element: <EditAnimePage />,
   id:18
+},
+{
+  link: "/profileBio",
+  element: <ProfileBio/>,
+  id: 19
 },
   ]
 

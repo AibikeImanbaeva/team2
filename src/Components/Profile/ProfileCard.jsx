@@ -4,7 +4,7 @@ import "../Profile/Profile.css";
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-
+import ProfileBio from "./ProfileBio";
 import { postContext } from '../../contexts/PostsContextProvider';
 import { useSearchParams } from 'react-router-dom';
 
@@ -56,13 +56,15 @@ const navigate = useNavigate
 //   }
   return (
     <>
+
+    
       <div className="profile-container">
-        <div className="NewsTitle">
+        {/* <div className="NewsTitle">
           <h2 className="newsTitle">Профиль</h2>
           <span className="newsLine"></span>
-        </div>
-        <div className="profile-card">
-          <div className="photo">
+        </div> */}
+        {/* <div className="profile-card"> */}
+          {/* <div className="photo">
             <img
               src="https://openseauserdata.com/files/783914de9a9f69a92df64399de49713c.gif"
               alt=""
@@ -70,15 +72,27 @@ const navigate = useNavigate
             />
 
             {/* <input type="file" accept='image/*' className='photo-upload-inp'/> */}
-          </div>
+          {/* </div>  */}
 
-          <div className="profile-username">
+          {/* <div className="profile-username">
             {localStorage.getItem("username")}
-          </div>
+          </div> */}
           
-            <img className="profile-edit" src="https://cdn-icons-png.flaticon.com/512/4555/4555474.png" alt="" />
+            {/* <img className="profile-edit" src="https://cdn-icons-png.flaticon.com/512/4555/4555474.png" alt="" /> */}
     
-        </div>
+        {/* </div> */}
+
+
+
+
+
+        <ProfileBio/>
+
+
+
+
+
+
 
         <button className="addfanfic" onClick={handleOpen}>Фанфики</button>
         

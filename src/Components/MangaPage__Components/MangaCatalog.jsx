@@ -2,15 +2,18 @@
 import * as React from 'react';
 import '../../Styles/MangaPage.css';
 
+// import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { mangaContext } from '../../contexts/MangaContextProvider';
-import { useEffect } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import MangaList from './MangaList';
 
 
+import { useSearchParams } from "react-router-dom";
 
 
 const MangaCatalog = () => {
@@ -28,6 +31,15 @@ const MangaCatalog = () => {
      const handleChangeJanr = (event) => {
           setJanr(event.target.value);
      };
+   console.log(mangaGenres)
+
+
+
+
+   // filtr
+const {fetchByParams} = useContext(mangaContext)
+
+
      return (
           <div className='Manga__catalogContainer'>
 
@@ -45,9 +57,15 @@ const MangaCatalog = () => {
                                    autoWidth
                                    label="Жанр"
                               >
-                                   <MenuItem value="">Жанры</MenuItem>
+                                   <MenuItem value=''  onClick={(e)=> fetchByParams("genre", e.target.value)}>Жанры</MenuItem>
+
+                              
                                    {
-                                        mangaGenres?.map(genre => <MenuItem value={genre.slug} key={genre.slug}>{genre.title}</MenuItem>)
+                                        mangaGenres?.map(genre => 
+
+                                             
+                                        <MenuItem value={genre.slug} key={genre.slug}>{genre.title}</MenuItem>
+                                        )
                                    }
 
                               </Select>
@@ -55,9 +73,10 @@ const MangaCatalog = () => {
                     </div>
                </div>
 
-               <div className='Manga__CatalogCardContainer'>
+               {/* <div className='Manga__CatalogCardContainer'> */}
                     <MangaList />
-               </div>
+                   
+               {/* </div> */}
 
 
 

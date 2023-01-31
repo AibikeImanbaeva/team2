@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { createContext, useReducer } from 'react';
-
+import { useNavigate, useLocation } from "react-router-dom";
 export const mangaContext = createContext();
 
 const INIT_STATE = {
@@ -45,7 +45,8 @@ const API = "http://34.125.224.223";
 
 const MangaContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
-
+  const navigate = useNavigate();
+  const location = useLocation();
   async function getManga() {
     try {
       const tokens = JSON.parse(localStorage.getItem("token"));
@@ -56,7 +57,7 @@ const MangaContextProvider = ({ children }) => {
         },
       };
 
-      const { data } = await axios(`${API}/manga/`, config);
+      const { data } = await axios(`${API}/manga/${window.location.search}`, config);
 
       dispatch({
         type: "GET_MANGAS",
@@ -68,10 +69,10 @@ const MangaContextProvider = ({ children }) => {
     }
   }
 
-
+ 
   async function getGenres() {
     try {
-      const { data } = await axios(`${API}/mangagenres/`);
+      const { data } = await axios(`${API}/mangagenres/${window.location.search}`);
 
       dispatch({
         type: "GET_MANGA_GENRES",
@@ -195,6 +196,23 @@ const MangaContextProvider = ({ children }) => {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  
+
+
+  const fetchByParams = (query, value) => {
+    const search = new URLSearchParams(location.search);
+    if(value === 'all'){
+      search.delete(query)
+    }else {
+      search.set(query, value)
+    }
+  
+    const url = `${location.pathname}?${search.toString()}`
+    navigate(url)
+
+
   }
 
   return (

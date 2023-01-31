@@ -363,7 +363,10 @@
 }
 
 
-
+.pagination{
+    display: block;
+    width: 100%;
+}
 
 
 

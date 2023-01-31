@@ -15,6 +15,7 @@ import MangaContextProvider from './contexts/MangaContextProvider';
 function App() {
   return (
     <>
+                  <BrowserRouter>
 
       <AuthContextProvider>
                 <PostsContextProvider>
@@ -24,9 +25,7 @@ function App() {
               <AnimeContextProveder>
 
 
-                  <BrowserRouter>
                     <MainRoutes />
-                  </BrowserRouter>
 
               </AnimeContextProveder>
             </FanficContextProvider>
@@ -35,6 +34,7 @@ function App() {
                 </PostsContextProvider>
 
       </AuthContextProvider>
+                  </BrowserRouter>
 
 
 

@@ -12,10 +12,11 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { useAuth } from "../../contexts/AuthContextProvider";
-
+import { useSearchParams } from "react-router-dom";
 import '../../Styles/HomePage2.css'
 import '../../Styles/ModalRegister.css'
-
+import { fanficContext } from "../../contexts/FanficContextProvider";
+import { mangaContext } from "../../contexts/MangaContextProvider";
 const Navbar = () => {
   const { handleRegister, error, setError, handleLogin, handleLogout, errorTextRegContext } = useAuth();
   
@@ -54,6 +55,8 @@ const Navbar = () => {
       ("setError")
     }
   }
+
+
 
   //register modal
   const navigate = useNavigate();
@@ -126,7 +129,33 @@ const Navbar = () => {
   useEffect(() => {
     setError(false);
   }, []);
+//search
 
+const {getManga} = useContext(mangaContext)
+const {getFanfic} = useContext(fanficContext)
+
+const [searchParams, setSearchParams] = useSearchParams();
+const [search, setSearch] = useState(searchParams.get("q") || "");
+
+console.log(search, "search");
+
+useEffect(() => {
+  console.log(
+    "сработал юз эффект для местного состояния установка параметров запроса"
+  );
+  setSearchParams({
+    q: search,
+  });
+}, [search]);
+
+useEffect(() => {
+  console.log(
+    "сработал юзэфф который следит за изменением параметров апроса вызвана фукнция получения всех продуктов(с параметрами запроса)"
+  );
+  getManga();
+  // getFanfic()
+  // setPage(1)
+}, [searchParams]);
 
   return (
     <div>
@@ -135,7 +164,8 @@ const Navbar = () => {
           <Link to="/Admin">
             <li className='Navbar__logo'><img src={logo} alt="" /></li>
           </Link>
-          <li><input type="text" placeholder='Поиск аниме,манга,фанфики' /></li>
+          <li><input type="text" placeholder='Поиск аниме,манга,фанфики' value={search}
+        onChange={(e) => setSearch(e.target.value)}/></li>
 
           <li className='soc'><img src={FaceBook} alt="" />
             <img src={Twitter} alt="" />

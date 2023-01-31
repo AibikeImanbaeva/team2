@@ -1,9 +1,7 @@
-
-
 /* manga episodes component start */
 
 
-.Manga__MainTitle{
+.Manga__MainTitle {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -11,7 +9,8 @@
     margin-left: 17%;
     width: 55%;
 }
-.MangaTitle{
+
+.MangaTitle {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -21,13 +20,13 @@
     width: 12%;
 }
 
-.MangaLine{
+.MangaLine {
     width: 85%;
     height: 1px;
     background-color: #8F8F8F;
 }
 
-.Manga__newEpisodesContainer{
+.Manga__newEpisodesContainer {
     width: 55%;
     margin-left: 17%;
     background: linear-gradient(180deg, #151515 0%, #414141 100%);
@@ -37,7 +36,7 @@
 }
 
 
-.Manga__title{
+.Manga__title {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -47,49 +46,52 @@
     margin: 10px 17px;
 }
 
-.Manga__newEpisodesCardContainer{
+.Manga__newEpisodesCardContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center
 }
 
-.Manga__newEpisodesCard{
+.Manga__newEpisodesCard {
     position: relative;
     margin-top: 1.5%;
     width: 18%;
     height: 200px;
 }
 
-.Manga__NE-cardImg{
+.Manga__NE-cardImg {
     position: absolute;
     z-index: 1;
     width: 100%;
     height: 100%;
-    
+
 }
-.Manga__NE-shadowTop{
+
+.Manga__NE-shadowTop {
     width: 100%;
     height: 100%;
     position: absolute;
     z-index: 2;
-    box-shadow: inset 0px 25px 25px 0px rgba(0,0,0,0.9);
+    box-shadow: inset 0px 25px 25px 0px rgba(0, 0, 0, 0.9);
 }
-.Manga__NE-shadowBottom{
+
+.Manga__NE-shadowBottom {
     width: 100%;
     height: 100%;
     position: absolute;
     z-index: 2;
-    box-shadow: inset 0px -70px 25px 1px rgba(0,0,0,0.8);
+    box-shadow: inset 0px -70px 25px 1px rgba(0, 0, 0, 0.8);
 }
-.Mange__NE-DataTitleRange{
+
+.Mange__NE-DataTitleRange {
     position: absolute;
     width: 100%;
     height: 100%;
     z-index: 3;
 }
 
-.Manga__NE-cardData{
+.Manga__NE-cardData {
     position: absolute;
     left: 10%;
     width: 90%;
@@ -101,7 +103,7 @@
     color: #FFFFFF;
 }
 
-.Manga__NE-cardTitleCont{
+.Manga__NE-cardTitleCont {
     position: absolute;
     height: 30%;
     left: 10%;
@@ -112,7 +114,7 @@
     margin-bottom: 5px;
 }
 
-.Manga__NE-cardTitle{
+.Manga__NE-cardTitle {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -121,21 +123,22 @@
     color: #FFFFFF;
 }
 
-.Manga__NE-rating{
+.Manga__NE-rating {
     position: absolute;
     left: 10%;
     top: 80%;
     width: 90%;
-    background-color:  rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     width: 80%;
 }
+
 /* manga episodes component end */
 
 
 
 
 /* manga catalog component start */
-.Manga__catalogContainer{
+.Manga__catalogContainer {
     width: 55%;
     margin-left: 17%;
     margin-top: 30px;
@@ -145,12 +148,12 @@
 }
 
 
-.Manga__TitleJanr{
+.Manga__TitleJanr {
     display: flex;
-    align-items:center;
+    align-items: center;
 }
 
-.Manga__catalogTitle{
+.Manga__catalogTitle {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -160,20 +163,22 @@
     margin: 10px 17px;
 }
 
-.SelectJanr{
+.SelectJanr {
     position: relative;
     z-index: 6;
     width: 15%;
 }
 
-.Manga__ChooseJanr{
+.Manga__ChooseJanr {
     background-color: #414141;
 }
-.MuiPaper-root{
+
+.MuiPaper-root {
     width: 30%;
     background-color: red;
 }
-.MuiList-root{
+
+.MuiList-root {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -183,29 +188,29 @@
 }
 
 
-.Manga__CatalogCardContainer{
+.Manga__CatalogCardContainer {
     height: 600px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.Manga__CatalogCard{
+.Manga__CatalogCard {
     position: relative;
     margin-top: 1.5%;
     width: 18%;
     height: 100%;
 }
 
-.Manga__Catalog-cardImg{
+.Manga__Catalog-cardImg {
     position: absolute;
     z-index: 1;
     width: 100%;
     height: 100%;
-    
+    object-fit: cover;
 }
 
-.Hover-readCont{
+.Hover-readCont {
     position: absolute;
     z-index: 5;
     width: 100%;
@@ -213,8 +218,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transition: 200ms;
 }
-.Hover-readButton{
+
+.Hover-readButton {
     width: 50%;
     height: 30px;
     text-align: center;
@@ -223,26 +231,32 @@
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-    background-color: #808080;
-    color: black;
+    background-color: transparent;
+    color: #FFF;
     border-radius: 3rem;
+    border: transparent;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 200ms;
 }
 
 
-.Hover-readCont:hover{
-    background-color: rgba(0,0,0,0.5);
+.Hover-readCont:hover {
+    background-color: rgba(0, 0, 0, 0.5);
 }
-.Hover-readCont:hover .Hover-readButton{
+
+.Hover-readCont:hover .Hover-readButton {
     opacity: 1;
 }
 
-.Hover-readButton:active{
-    color:white;
+.Hover-readButton:active {
+    color: white;
     background-color: #424242;
 }
 
 
-.Manga__Catalog-DataTitleRange{
+.Manga__Catalog-DataTitleRange {
     position: absolute;
     width: 80%;
     height: 90%;
@@ -254,7 +268,7 @@
 }
 
 
-.Manga__Catalog-cardTitleCont{
+.Manga__Catalog-cardTitleCont {
     /* position: absolute; */
     height: 30%;
     top: 50%;
@@ -264,9 +278,12 @@
     align-items: flex-end;
     margin-bottom: 5px;
     z-index: 2;
+    text-shadow: #000 0px 0 4px;
+    max-height: 60px;
+    text-overflow: ellipsis;
 }
 
-.Manga__Catalog-cardTitle{
+.Manga__Catalog-cardTitle {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -275,37 +292,38 @@
     color: #FFFFFF;
 }
 
-.Manga__Catalog-rating{
+.Manga__Catalog-rating {
     /* position: absolute; */
     top: 80%;
     left: 10%;
     width: 90%;
-    background-color:  rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     width: 80%;
 }
 
-.Manga__Catalog-shadowTop{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index:2;
-    box-shadow: inset 0px 25px 25px 0px rgba(0,0,0,0.9);
-}
-.Manga__Catalog-shadowBottom{
+.Manga__Catalog-shadowTop {
     width: 100%;
     height: 100%;
     position: absolute;
     z-index: 2;
-    box-shadow: inset 0px -70px 25px 1px rgba(0,0,0,0.8);
+    box-shadow: inset 0px 25px 25px 0px rgba(0, 0, 0, 0.9);
 }
 
-.Manga__CatalogCard{
+.Manga__Catalog-shadowBottom {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    box-shadow: inset 0px -70px 25px 1px rgba(0, 0, 0, 0.8);
+}
+
+.Manga__CatalogCard {
     margin-top: 1.5%;
     width: 18%;
     height: 200px;
 }
 
-.Manga__Catalog-ChaptersCont{
+.Manga__Catalog-ChaptersCont {
     position: absolute;
     margin-top: 1.5%;
     top: 100%;
@@ -317,14 +335,14 @@
     justify-content: space-around;
 }
 
-.Manga__Catalog-OneChapter{
+.Manga__Catalog-OneChapter {
     width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.Manga__CatalogsChaptersTitle{
+.Manga__CatalogsChaptersTitle {
     width: 50%;
     font-family: 'Inter';
     font-style: normal;
@@ -334,7 +352,7 @@
     color: #FFFFFF;
 }
 
-.Manga__CatalogChaptersData{
+.Manga__CatalogChaptersData {
     width: 30%;
     font-family: 'Inter';
     font-style: normal;

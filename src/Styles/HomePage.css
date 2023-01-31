@@ -19,7 +19,6 @@ body{
 
 .HomePage-BackgroundImg{
     position: absolute;
-    height: 60%;
     width: 40%;
     top: 3%;
     right: 25px;
@@ -280,24 +279,69 @@ body{
     margin-left: 10px;
 }
 
+/* news */
+
+.homePage_news-card{
+    background-color: #414141;
+    margin-top: 3%;
+    border-radius: 1rem;
+    height: 120%;
+}
+
+.homePage_NewsMainTitle{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 5%;
+    color: #FFFFFF;
+}
+
+.newsCard_hr, .newsCard-one{
+    width: 90%;
+    margin: 0 auto;
+}
+
 
 
 
 
 /* fancics */
 .hp_fanfics-Cont{
-    margin-left: 15px;
+    margin: 0 auto;
+   display: inline-block;
+   left: 20%,
+   
+}
+
+.profile-fanfics-card {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
 }
 .hp_fanfics{
-    width: 285px;
-    height: 260px;
+    width: 349px;
+    height: 383px;
     background: #414141;
     border-radius: 10px;
 
 }
+
+.fanfic-read-btn{
+    
+    background: linear-gradient(90deg, #d9ae94,#ffcb69,#d08c60);
+border-radius: 20px;
+width: 115px;
+height: 39px;
+color:#FFFFFF;
+border-color:  #FFA41C;
+/* padding-left: 18px; */
+/* margin-left: 10px; */
+}
 .hp_fanfics-cont{
   margin-top: 18px;
-  margin-left: 18px;
+  padding-left: 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -324,7 +368,7 @@ body{
 
 
 .hp_fanfics-mainImg{
-    width: 250px;
+    width: 306px;
 }
 .hp_fandics-CardBottom{
     display: flex;
@@ -333,6 +377,7 @@ body{
     height: 28px;
     align-items: center;
     margin-top: 13px;
+    margin-bottom: 15px;
 }
 .hp-fanfics-account{
     display: flex;
@@ -466,7 +511,6 @@ body{
 .MangaPageChainsawman{
     position: absolute;
     width: 25%;
-    height: 75%;
     left: 75%;
     top: 5%;
 }

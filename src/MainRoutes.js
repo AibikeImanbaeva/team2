@@ -1,89 +1,117 @@
-import React from 'react';
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import RegistrationPage from "./pages/RegistrationPage";
-import HomePage from "./pages/HomePage"
-import LoginPage from './pages/LoginPage';
+import HomePage from "./pages/HomePage";
+import FanficMainPage from "./pages/UserPage";
+import FanficChapterCreate from "./Components/FanficChapters/FanficChapterCreate";
+import FanficChapter from "./Components/FanficChapters/FanficChapter";
 import NewsPage from './pages/NewsPage';
 import MangaPage from './pages/MangaPage';
 import FanficPage from './pages/FanficPage';
 import FriendsPage from './pages/FriendsPage';
-import ChatPage from './pages/ChatPage';
 import AnimePage from './pages/AnimePage';
 import ProfilePage from './pages/ProfilePage';
 import EditAnimePage from './pages/EditAnimePage'
-
 import AdminPage from './pages/AdminPage';
-
+import MangaDetail from "./Components/MangaPage__Components/MangaDetail";
+import MangaRead from "./Components/MangaPage__Components/MangaRead";
+import FanficChapterCard from "./Components/FanficChapters/FanficChapterCard";
 
 const MainRoutes = () => {
-    const ROUTES = [
-        {
-            link: "/",
-            element: <HomePage />,
-            id:1
-        },
-        {
-            link: "/register",
-            element: <RegistrationPage />,
-            id:2
-        },
-        {
-          link: "/login",
-          element: <LoginPage />,
-          id:10
-      },    {
-        link: "/News",
-        element: <NewsPage />,
-        id:3
+  const ROUTES = [
+    {
+      link: "/",
+      element: <HomePage />,
+      id: 1,
+    },
+
+    {
+      link: "/fanfic",
+      element: <FanficMainPage />,
+      id: 2,
+    },
+    {
+      link: "/fanficpage/:id",
+      element: <FanficPage />,
+      id: 3,
+    },
+    {
+      link: "/fanficpage/:id/create-fanfic",
+      element: <FanficChapterCreate />,
+      id: 4,
+    },
+    {
+      link: "/fanfic/chapter/:chName",
+      element: <FanficChapterCard />,
+      id: 5,
+    },
+
+    {
+      link: "/News",
+      element: <NewsPage />,
+      id: 6
     },
     {
       link: "/manga",
       element: <MangaPage />,
-      id:4
+      id:7
   },
-  {
-    link: "/fanfic",
-    element: <FanficPage />,
-    id:5
-},
-{
-  link: "/friends",
-  element: <FriendsPage />,
-  id:6
-},
-{
-  link: "/chat",
-  element: <ChatPage />,
-  id:7
-},
-{
-  link: "/anime",
-  element: <AnimePage />,
-  id:8
-},
-{
-  link: "/profile",
-  element: <ProfilePage />,
-  id:9
-},
-{
-  link: "/admin",
-  element: <AdminPage />,
-  id:12
-},
-{
+    {
+      link: "/manga/:id",
+      element: <MangaDetail />,
+      id: 9
+    },
+  
+    {
+      link: "/manga/:id",
+      element: <MangaDetail />,
+      id: 10
+    },
+    {
+      link: "/friends",
+      element: <FriendsPage />,
+      id: 11
+    },
+    {
+      link: "/anime",
+      element: <AnimePage />,
+      id: 13
+    },
+    {
+      link: "/profile",
+      element: <ProfilePage />,
+      id: 14
+
+    },
+    {
+      link: "/admin",
+      element: <AdminPage />,
+      id: 15
+    },
+    {
+      link: "/manga/:id/:chapter/:page",
+      element: <MangaRead />,
+      id: 16
+    },
+    {
+      link: "/readchapter/:id",
+      element: <FanficChapter/>,
+      id: 17,
+    },
+    {
   link: "/editAnime/:id",
   element: <EditAnimePage />,
-  id:13
+  id:18
 },
-    ]
+  ]
+
+
   return (
     <Routes>
-    {ROUTES.map((item) => (
-      <Route path={item.link} element={item.element} key={item.id} />
-    ))}
-  </Routes>
-  )
-}
+      {ROUTES.map((item) => (
+        <Route path={item.link} element={item.element} key={item.id} />
+      ))}
+    </Routes>
+  );
+};
 
-export default MainRoutes
+export default MainRoutes;

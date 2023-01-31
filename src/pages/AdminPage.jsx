@@ -1,12 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
-import PostList from '../Components/AddEpisodes/PostList/PostList';
 import { animeContext } from '../contexts/AnimeContextProveder';
-
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import  {newsContext} from "../contexts/NewsContextProvider"
+import PostList from '../components/PostList/PostList';
 
 
 const AdminPage =() =>{
@@ -83,7 +82,7 @@ function addNews () {
             <input type="submit" onClick={handleCreateAnime} />
         </div>
 
-        <PostList/>
+        <PostList />
 
 
         <div class="card">

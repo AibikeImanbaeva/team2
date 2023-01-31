@@ -27,9 +27,9 @@ const FanficPage = () => {
       </div>
       <div className="fanfic-page-col">
         <UserFanfic />
+        <CommentList />
       </div>
-      {/* <CommentList /> */}
-      
+
 
     </>
   );

@@ -25,7 +25,6 @@ const UserFanfic = () => {
   }, [])
 
 
-console.log(onePost)
 
 
 

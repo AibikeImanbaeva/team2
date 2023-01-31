@@ -11,6 +11,7 @@ import FriendsPage from './pages/FriendsPage';
 import ChatPage from './pages/ChatPage';
 import AnimePage from './pages/AnimePage';
 import ProfilePage from './pages/ProfilePage';
+import EditAnimePage from './pages/EditAnimePage'
 import AdminPage from './pages/AdminPage';
 import MangaDetail from "./components/MangaPage__Components/MangaDetail";
 import MangaRead from "./components/MangaPage__Components/MangaRead";
@@ -55,7 +56,6 @@ const MainRoutes = () => {
       element: <MangaPage />,
       id:7
   },
-
     {
       link: "/manga/:id",
       element: <MangaDetail />,
@@ -103,6 +103,11 @@ const MainRoutes = () => {
       element: <FanficChapter/>,
       id: 17,
     },
+    {
+  link: "/editAnime/:id",
+  element: <EditAnimePage />,
+  id:18
+},
   ]
 
 

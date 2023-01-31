@@ -2,8 +2,8 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import FanficMainPage from "./pages/UserPage";
-import FanficChapterCreate from "./Components/FanficChapters/FanficChapterCreate";
-import FanficChapter from "./Components/FanficChapters/FanficChapter";
+import FanficChapterCreate from "./components/FanficChapters/FanficChapterCreate"
+import FanficChapter from "./components/FanficChapters/FanficChapter";
 import NewsPage from './pages/NewsPage';
 import MangaPage from './pages/MangaPage';
 import FanficPage from './pages/FanficPage';
@@ -73,12 +73,7 @@ const MainRoutes = () => {
       element: <FriendsPage />,
       id: 11
     },
-    {
 
-      link: "/chat",
-      element: <ChatPage />,
-      id: 12
-    },
     {
 
       link: "/anime",

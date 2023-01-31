@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { bioContext } from '../../contexts/BioContextProvider';
 import "../Profile/Profile.css"; 
@@ -8,18 +8,34 @@ import Typography from '@mui/material/Typography';
 import EditIcon from '@mui/icons-material/Edit';
 import logo from "../../assets/Лого.svg"
 const BioEdit = () => {
-    const {editBio, getBio, bio} = useContext(bioContext) 
+    const {saveEditedBio, getBioDetails, bioDetails} = useContext(bioContext) 
 
-console.log(bio)
-    const [about_me, setBio] = useState()
-    // const { id } = useParams();
-// const id = 10ы
-    function handleSave() {
-        let newBio = new FormData()
-        newBio.append("about_me", about_me)
-        editBio( newBio, 10)
-        console.log("baka")
- }
+const [bio,setBio] = useState(bioDetails)
+const {id} = useParams()
+
+useEffect(()=>{
+  getBioDetails()
+},[id])  
+
+
+
+useEffect(() => {
+  setBio(bioDetails);
+}, [bioDetails]);
+
+
+
+const handleInp = (e) => {
+    let obj = {
+      ...bio,
+      [e.target.name]: e.target.value,
+    };
+    setBio(obj);
+  }
+
+
+
+ 
  const [open, setOpen] = useState(false); 
  const handleOpen = () => setOpen(true); 
  const handleClose = () => setOpen(false); 
@@ -44,10 +60,10 @@ console.log(bio)
             <p className='Title1'>Изменить БИО</p>
             <div>
               <p className='info1'>Bio</p>
-<input type="text" name="" id="" placeholder='about me' value={about_me} onChange={(e) => setBio(e.target.value)} /> 
+<input type="text" name="" id="" placeholder='about me' value='' onChange={handleInp} /> 
 </div>
 <div>
-<input type='submit' onClick={handleSave} value="Отправить" className='button'></input> 
+<input type='submit' onClick={saveEditedBio} value="Отправить" className='button'></input> 
 </div>
           </Typography> 
 

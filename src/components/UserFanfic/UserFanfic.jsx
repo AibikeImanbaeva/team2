@@ -52,8 +52,9 @@ const UserFanfic = () => {
 {
    onePost?.page.map(page => (     
     <div>
-
-       <FanficChaptersList page={page} key={page.id} />  
+{/* <p className='chapter-data'>{onePost.date_created}</p> */}
+       <FanficChaptersList page={page} key={page.id} 
+       />  
              
     </div>  
      ))

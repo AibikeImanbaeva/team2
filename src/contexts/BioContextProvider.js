@@ -7,8 +7,9 @@ export const bioContext = createContext();
 // export const useBio = () => useContext(bioContext); 
 const INIT_STATE = { 
   bio: [], 
+  bioDetails: null
 //   pages: 0, 
-  onePost: null, 
+ 
 }; 
 
 function reducer(state = INIT_STATE, action) { 
@@ -18,7 +19,13 @@ function reducer(state = INIT_STATE, action) {
         ...state, 
         bio: action.payload, 
         // pages: Math.ceil(action.payload.count / 5), 
-      }; 
+      };
+    case "GET_BIO_DETAILS": 
+      return { 
+        ...state, 
+        bioDetails: action.payload, 
+        // pages: Math.ceil(action.payload.count / 5), 
+      };  
  
   } 
 } 
@@ -53,6 +60,33 @@ const BioContextProvider = ({ children }) => {
 
   } 
 
+
+  async function getBioDetails(id) { 
+    try { 
+      const tokens = JSON.parse(localStorage.getItem("token")); 
+      const Authorization = `Bearer ${tokens.access}`; 
+      const config = { 
+        headers: { 
+          Authorization, 
+        }, 
+      }; 
+
+      const res = await axios( 
+       `${API}/${id}`, config 
+      ); 
+
+      dispatch({ 
+        type: "GET_BIO_DETAILS", 
+        payload: res.data, 
+      }); 
+    } catch (err) { 
+      console.log(err); 
+    } 
+
+  } 
+  
+
+
   async function createBio(newBio, navigate) { 
     try { 
       const tokens = JSON.parse(localStorage.getItem("token")); 
@@ -70,22 +104,22 @@ const BioContextProvider = ({ children }) => {
       console.log(err); 
     } 
   } 
-  async function editBio(newBio , id){ 
-    try{ 
-        const tokens = JSON.parse(localStorage.getItem('token')); 
-        const Authorization = `Bearer ${tokens.access}`; 
-        const config = { 
-            headers: { 
-                Authorization 
-            }, 
-        }; 
-        const res = await axios.put(`${API}/biography/${id}`,newBio, config) 
-        console.log(res) 
-        getBio() 
+
+  const saveEditedBio = async(newBio) => {
+    try { const tokens = JSON.parse(localStorage.getItem('token')); 
+    const Authorization = `Bearer ${tokens.access}`; 
+    const config = { 
+        headers: { 
+            Authorization 
+        }, 
+    };
+
+      await axios.patch(`${API}/${newBio.id}, newBio`)
+      getBio()
     }catch (err){ 
-        console.log(err) 
-    } 
+      console.log(err) 
   } 
+  }
 
    async function deleteBio(id) { 
     try{ 
@@ -120,9 +154,11 @@ const BioContextProvider = ({ children }) => {
     <bioContext.Provider 
     value={{ 
         bio: state.bio, 
+        bioDetails:state.bioDetails,
         getBio, 
         createBio, 
-        editBio, 
+        saveEditedBio, 
+        getBioDetails,
         deleteBio 
 
 

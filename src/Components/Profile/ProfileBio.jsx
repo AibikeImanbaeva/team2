@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'; 
+import React, { useContext, useState, useEffect } from 'react'; 
 import "../Profile/Profile.css"; 
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
@@ -6,11 +6,18 @@ import Typography from '@mui/material/Typography';
 import { bioContext } from '../../contexts/BioContextProvider';
 import BioCreate from "./BioCreate"
 import BioEdit from './BioEdit';
+import AboutMe from './AboutMe';
 
 
 const ProfileBio = () => { 
-  const {getBio} = useContext(bioContext) 
+  const {getBio, bio} = useContext(bioContext) 
 
+
+console.log(bio)
+
+  useEffect(()=>{
+    getBio()
+  },[])
 
 
 
@@ -54,13 +61,8 @@ const ProfileBio = () => {
 
 
         </div> 
-        <div className='bio_container'> 
-<span>{getBio}<p></p></span> 
-
-
-
-
-          </div> 
+        {bio ?.map(bio => (
+    <AboutMe key={bio.id} bio={bio}/>))}
         </div> 
         </div>
     ); 

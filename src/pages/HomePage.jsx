@@ -1,15 +1,21 @@
 import React from 'react'
-import News from '../Components/HomePage__Components/News'
-import AllNews from '../Components/HomePage__Components/AllNews'
-import Fanfics from '../Components/HomePage__Components/Fanfics'
-import Animes from '../Components/HomePage__Components/Animes'
-import Saidbar from '../Components/HomePage__Components/Saidbar'
-import Navbar from '../Components/HomePage__Components/Navbar'
+import News from '../components/HomePage__Components/News'
+import AllNews from '../components/HomePage__Components/AllNews'
+import Fanfics from '../components/HomePage__Components/Fanfics'
+import Animes from '../components/HomePage__Components/Animes'
+import Saidbar from '../components/HomePage__Components/Saidbar'
+import Navbar from '../components/HomePage__Components/Navbar'
+
 
 import "../Styles/HomePage.css"
 
 
+
 const HomePage = () => {
+  const bodyColor = {
+  backgroundColor: '#202020'
+
+  }
   return (
     <>
     <img src="/homePageBackImg.png" alt="" className='HomePage-BackgroundImg' />
@@ -21,7 +27,7 @@ const HomePage = () => {
       </div>
     </div>
       <div className='FanficsAndAnime F-A_HomePage'>
-          <Fanfics/>
+          {/* <Fanfics/> */}
           <Animes/>
         </div>
     <Saidbar/>

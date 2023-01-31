@@ -57,42 +57,12 @@ const navigate = useNavigate
   return (
     <>
 
-    
-      <div className="profile-container">
-        {/* <div className="NewsTitle">
-          <h2 className="newsTitle">Профиль</h2>
-          <span className="newsLine"></span>
-        </div> */}
-        {/* <div className="profile-card"> */}
-          {/* <div className="photo">
-            <img
-              src="https://openseauserdata.com/files/783914de9a9f69a92df64399de49713c.gif"
-              alt=""
-              className="photo-upload"
-            />
-
-            {/* <input type="file" accept='image/*' className='photo-upload-inp'/> */}
-          {/* </div>  */}
-
-          {/* <div className="profile-username">
-            {localStorage.getItem("username")}
-          </div> */}
-          
-            {/* <img className="profile-edit" src="https://cdn-icons-png.flaticon.com/512/4555/4555474.png" alt="" /> */}
-    
-        {/* </div> */}
-
-
 
 
 
         <ProfileBio/>
 
-
-
-
-
-
+    
 
         <button className="addfanfic" onClick={handleOpen}>Фанфики</button>
         
@@ -117,7 +87,7 @@ const navigate = useNavigate
         </Box>
       </Modal>
 
-      </div>
+   
     </>
   );
 };

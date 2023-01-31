@@ -2,13 +2,12 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import FanficMainPage from "./pages/UserPage";
-import FanficChapterCreate from "./components/FanficChapters/FanficChapterCreate";
-import FanficChapter from "./components/FanficChapters/FanficChapter";
+import FanficChapterCreate from "./Components/FanficChapters/FanficChapterCreate";
+import FanficChapter from "./Components/FanficChapters/FanficChapter";
 import NewsPage from './pages/NewsPage';
 import MangaPage from './pages/MangaPage';
 import FanficPage from './pages/FanficPage';
 import FriendsPage from './pages/FriendsPage';
-import ChatPage from './pages/ChatPage';
 import AnimePage from './pages/AnimePage';
 import ProfilePage from './pages/ProfilePage';
 import EditAnimePage from './pages/EditAnimePage'
@@ -17,6 +16,7 @@ import MangaDetail from "./components/MangaPage__Components/MangaDetail";
 import MangaRead from "./components/MangaPage__Components/MangaRead";
 import FanficChapterCard from "./components/FanficChapters/FanficChapterCard";
 import ProfileBio from "./components/Profile/BioCreate";
+
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -74,11 +74,13 @@ const MainRoutes = () => {
       id: 11
     },
     {
+
       link: "/chat",
       element: <ChatPage />,
       id: 12
     },
     {
+
       link: "/anime",
       element: <AnimePage />,
       id: 13
@@ -109,11 +111,13 @@ const MainRoutes = () => {
   element: <EditAnimePage />,
   id:18
 },
+
 {
   link: "/profileBio",
   element: <ProfileBio/>,
   id: 19
 },
+
   ]
 
 

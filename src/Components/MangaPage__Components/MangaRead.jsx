@@ -1,3 +1,4 @@
+
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { mangaContext } from '../../contexts/MangaContextProvider';
@@ -16,23 +17,6 @@ const MangaRead = () => {
   }, [])
 
 
-// console.log(mangaChapterImgs)
-
-// const [pages, setPages] = useState(1);
-// const itemsOnPage =4;
-
-// const count = Math.ceil(mangaChapterImgs.images.length / itemsOnPage);
-
-// const handlePage = (e,p) => {
-//   setPages(p)
-// };
-
-// function currentData(){
-//   const begin = (pages-1) * itemsOnPage;
-//   const end = begin + itemsOnPage;
-//   return mangaChapterImgs.images.slice(begin, end)
-// }
-
 
 
   return (
@@ -45,6 +29,7 @@ const MangaRead = () => {
    
     </>
   
+
   );
 };
 

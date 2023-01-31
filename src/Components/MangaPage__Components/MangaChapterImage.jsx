@@ -5,6 +5,7 @@ import Stack from '@mui/material/Stack';
 import { mangaContext } from '../../contexts/MangaContextProvider';
 
 const MangaChapterImage = ({ page }) => {
+
   // const {mangaChapterImgs } = useContext(mangaContext);
 // console.log(mangaChapterImgs)
 // console.log(page)
@@ -18,7 +19,7 @@ const MangaChapterImage = ({ page }) => {
    <img src={page.url} alt="" />
  </div>
 
-  
+
          
     
 </>

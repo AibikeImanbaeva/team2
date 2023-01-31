@@ -148,6 +148,7 @@ height: 290px;
 .css-wjh20t-MuiPagination-ul{
     background-color: #FFFFFF;
     text-align: center;
+
 }
 
 .bio_container{
@@ -231,6 +232,7 @@ z-index: -1;
     color: #FFFFFF;
     font-family: 'Inter';
     font-weight: 700;
+    width: 53%;
 
 }
 
@@ -275,4 +277,5 @@ line-height: 1px;;
 position: relative;
 left: 1.2em;
 margin-top: 1em;
+
 }

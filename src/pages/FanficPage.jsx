@@ -9,6 +9,7 @@ import "../components/UserFanfic/FanficRead.css"
 import CommentList from "../components/CommentCard/CommentList";
 import CreateComment from "../components/CommentCard/CreateComment";
 
+
 const FanficPage = () => {
   const stylebg = {
     zIndex: '-1',
@@ -28,9 +29,11 @@ const FanficPage = () => {
       </div>
       <div className="fanfic-page-col">
         <UserFanfic />
+
         
         <CommentList />
         <CreateComment />
+
       </div>
 
 

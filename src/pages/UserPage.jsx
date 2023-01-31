@@ -1,6 +1,7 @@
 import React from 'react'
 // import AddPost from '../components/AddPost.jsx/AddPost'
-import PostList from '../components/PostList/PostList'
+
+import PostList from '../Components/PostList/PostList'
 
 const FanficMainPage = () => {
   return (

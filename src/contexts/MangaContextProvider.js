@@ -69,7 +69,7 @@ const MangaContextProvider = ({ children }) => {
     }
   }
 
- 
+
   async function getGenres() {
     try {
       const { data } = await axios(`${API}/mangagenres/${window.location.search}`);
@@ -198,20 +198,20 @@ const MangaContextProvider = ({ children }) => {
     }
   }
 
-  
+
 
 
   const fetchByParams = (query, value) => {
     const search = new URLSearchParams(location.search);
-    if(value === 'all'){
+    console.log(value)
+    if (value === 'all') {
       search.delete(query)
-    }else {
+    } else {
       search.set(query, value)
     }
-  
+
     const url = `${location.pathname}?${search.toString()}`
     navigate(url)
-
 
   }
 
@@ -232,7 +232,8 @@ const MangaContextProvider = ({ children }) => {
         addComment,
         deleteComment,
         getMangaChapters,
-        setMangaToRead
+        setMangaToRead,
+        fetchByParams
       }}
     >
       {children}

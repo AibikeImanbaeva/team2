@@ -45,9 +45,10 @@ const API = "http://34.125.224.223";
 
 const MangaContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
+
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   async function getManga() {
     try {
       const tokens = JSON.parse(localStorage.getItem("token"));
@@ -57,6 +58,7 @@ const MangaContextProvider = ({ children }) => {
           Authorization,
         },
       };
+
 
       const { data } = await axios(`${API}/manga/${window.location.search}`, config);
 
@@ -73,7 +75,9 @@ const MangaContextProvider = ({ children }) => {
 
   async function getGenres() {
     try {
+
       const { data } = await axios(`${API}/mangagenres/${window.location.search}`);
+
 
       dispatch({
         type: "GET_MANGA_GENRES",
@@ -202,6 +206,7 @@ const MangaContextProvider = ({ children }) => {
 
 
 
+
   const fetchByParams = (query, value) => {
     const search = new URLSearchParams(location.search);
     console.log(value)
@@ -215,6 +220,7 @@ const MangaContextProvider = ({ children }) => {
     navigate(url)
 
   }
+
 
   return (
     <mangaContext.Provider

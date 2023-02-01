@@ -8,7 +8,8 @@ import PostList from '../components/PostList/PostList';
 import ProfileCard from '../components/Profile/ProfileCard';
 import Animes from '../components/HomePage__Components/Animes';
 import UserFanfic from '../components/UserFanfic/UserFanfic';
-// import PostCard from '../components/PostCard/PostCard';
+// import PostCard from '../Components/PostCard/PostCard';
+
 
 
 const ProfilePage = () => {

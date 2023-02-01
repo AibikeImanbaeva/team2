@@ -1,8 +1,7 @@
 import React from 'react'
 import Navbar from '../components/HomePage__Components/Navbar'
-import Saidbar from '../components/HomePage__Components/Saidbar'
-// import AddPost from '../components/AddPost.jsx/AddPost'
 import PostList from '../components/PostList/PostList'
+import Saidbar from '../components/HomePage__Components/Saidbar'
 
 const FanficMainPage = () => {
   return (
@@ -15,6 +14,7 @@ const FanficMainPage = () => {
       <Saidbar />
 
     </>
+
   )
 }
 

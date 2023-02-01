@@ -1,12 +1,16 @@
+
 import React, {useState} from 'react';
 import { mangaContext } from '../../contexts/MangaContextProvider';
 import MangaCard from './MangaCard';
 import Typography from '@mui/material/Typography';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+
+
 const MangaList = () => {
 
   const { mangas } = React.useContext(mangaContext);
+
 
   //pagination 
 
@@ -28,7 +32,7 @@ const MangaList = () => {
   }
   return (
     <>
-     <div className='Manga__CatalogCardContainer'>
+     {/* <div className='Manga__CatalogCardContainer'> */}
 
    
       {
@@ -46,7 +50,8 @@ const MangaList = () => {
 <Pagination count={count} page={page} onChange={handlePage} />
 </Stack>
 </div>
-</div>
+{/* </div> */}
+
     </>
   );
 };

@@ -6,6 +6,8 @@ import { mangaContext } from '../../contexts/MangaContextProvider';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import MangaCommentCard from './MangaCommentCard';
 import MangaChaptersList from './MangaChaptersList';
+import Navbar from '../HomePage__Components/Navbar';
+import Saidbar from '../HomePage__Components/Saidbar';
 
 const MangaDetail = () => {
 
@@ -51,6 +53,9 @@ const MangaDetail = () => {
   }, []);
 
   return (
+    <>
+   <Navbar />
+   <Saidbar />
     <div>
       <p>
         Название: {mangaDetail.title}
@@ -89,6 +94,7 @@ const MangaDetail = () => {
 
       <br /><br /><br /><br />
     </div>
+    </>
   );
 };
 

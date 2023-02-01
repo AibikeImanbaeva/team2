@@ -14,16 +14,9 @@ const NewsPage = () => {
 
         <div className='news-card'>
         <h2 className='AllNewsMainTitle'>Лента новостей</h2>
-<NewsList/>
-
-
+           <NewsList/>
         </div>
-        
 
-       
-     
-        
-        
         </>
     );
 };

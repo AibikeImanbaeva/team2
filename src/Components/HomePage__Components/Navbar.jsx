@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect, useContext } from "react";
-
 import logo from '../../assets/Лого.svg'
 import FaceBook from '../../assets/Facebook.png'
 import Twitter from '../../assets/Twitter.png'
@@ -13,10 +12,10 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { useAuth } from "../../contexts/AuthContextProvider";
 import { useSearchParams } from "react-router-dom";
-import '../../Styles/HomePage2.css'
-import '../../Styles/ModalRegister.css'
 import { fanficContext } from "../../contexts/FanficContextProvider";
 import { mangaContext } from "../../contexts/MangaContextProvider";
+import '../../Styles/HomePage2.css'
+import '../../Styles/ModalRegister.css'
 const Navbar = () => {
   const { handleRegister, error, setError, handleLogin, handleLogout, errorTextRegContext } = useAuth();
   
@@ -55,7 +54,6 @@ const Navbar = () => {
       ("setError")
     }
   }
-
 
 
   //register modal
@@ -129,6 +127,7 @@ const Navbar = () => {
   useEffect(() => {
     setError(false);
   }, []);
+
 //search
 
 const {getManga} = useContext(mangaContext)
@@ -151,15 +150,15 @@ useEffect(() => {
   // setPage(1)
 }, [searchParams]);
 
+
+
   return (
     <div>
       <header >
         <ul className='navbar'>
           <Link to="/Admin">
             <li className='Navbar__logo'><img src={logo} alt="" /></li>
-          </Link>
-          <li><input type="text" placeholder='Поиск аниме,манга,фанфики' value={search}
-        onChange={(e) => setSearch(e.target.value)}/></li>
+          </Link><li><input type="text" placeholder='Поиск аниме,манга,фанфики' /></li>
 
           <li className='soc'><img src={FaceBook} alt="" />
             <img src={Twitter} alt="" />

@@ -7,17 +7,21 @@ import FanficContextProvider from './contexts/FanficContextProvider';
 import AnimeContextProveder from './contexts/AnimeContextProveder';
 import NewsContextProvider from './contexts/NewsContextProvider';
 import MangaContextProvider from './contexts/MangaContextProvider';
-
-
-
+import BioContextProvider from './contexts/BioContextProvider';
 
 
 function App() {
   return (
     <>
+
                   <BrowserRouter>
 
       <AuthContextProvider>
+        <BioContextProvider>
+  
+
+
+   
                 <PostsContextProvider>
         <NewsContextProvider>
           <MangaContextProvider>
@@ -25,15 +29,19 @@ function App() {
               <AnimeContextProveder>
 
 
+
                     <MainRoutes />
+
 
               </AnimeContextProveder>
             </FanficContextProvider>
           </MangaContextProvider>
         </NewsContextProvider>
                 </PostsContextProvider>
-
+              
+                </BioContextProvider>
       </AuthContextProvider>
+
                   </BrowserRouter>
 
 

@@ -63,15 +63,17 @@ const MangaCatalog = () => {
                                         )
                                    }
 
+
                               </Select>
                          </FormControl>
                     </div>
                </div>
 
-               {/* <div className='Manga__CatalogCardContainer'> */}
-               <MangaList />
+          
+               <div className='Manga__CatalogCardContainer'>
+                    <MangaList />
+               </div>
 
-               {/* </div> */}
 
 
 

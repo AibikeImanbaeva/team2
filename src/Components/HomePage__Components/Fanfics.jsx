@@ -102,19 +102,20 @@ const Fanfics = ({ post }) => {
     {
       owner ? (
         <div className='hp_fanfics-Cont '>
-          <h2 className='AllNewsMainTitle'>{post.genre}</h2>
 
           <div className='hp_fanfics'>
+          {/* <h2 className='AllNewsMainTitle'>{post.genre}</h2> */}
             <div className='hp_fanfics-cont'>
-              <p className='hp_fanfecs-hesh'>{post.title}</p>
-              <p className='hp_fanfics-desc'>
-                {post.description}
-              </p>
-              <p className='hp_fanfics-desc'>
+              <p className='hp_fanfecs-hesh'>#{post.title}</p>
+              <div className='hp_fanfics-desc'>
+                #{post.description} 
+              <p className='hp_fanfics-data'>
                 {post.date_created}
               </p>
+              </div>
               <img src={post.image} alt="" className='hp_fanfics-mainImg' />
 
+    <button onClick={() => navigate(`/fanficpage/${post.id}`)} className="fanfic-read-btn">Начать читать</button>
               <div className='hp_fandics-CardBottom'>
 
                 <div className='hp-fanfics-account'>
@@ -128,15 +129,15 @@ const Fanfics = ({ post }) => {
                   {like ? <img src="https://cdn-icons-png.flaticon.com/512/4202/4202475.png" className='Allnewslikeicon' onClick={() => handleLike()} /> : <img src="https://cdn-icons-png.flaticon.com/512/4202/4202509.png" className='Allnewslikeicon' onClick={() => handleLike()} />}
                   <p className='hp_fandics-CommentCount'>{post.commentaries_count}</p>
                   <img src="CommentsIcon.png" alt=""
-                    className='allnewsCommentIcon' />
+                    className='allnewsCommentIcon' onClick={()=> navigate(`/fanficpage/${post.id}`)} />
                 </div>
               </div>
             </div>
-            <button onClick={() => navigate(`/fanficpage/${post.id}`)} className="fanfic-read-btn">Начать читать</button>
+        
             {/* <button onClick={() => handleLike()}>
             {like ? <p> лайкнуто ежже</p> : <p> не лайкнуто ежже</p>}
           </button> */}
-            <Button onClick={handleOpen}>Open modal</Button>
+            <Button className="modal-btn" onClick={handleOpen}>Open modal</Button>
             <Modal
               open={open}
               onClose={handleClose}
@@ -183,7 +184,7 @@ const Fanfics = ({ post }) => {
                 </Typography>
               </Box>
             </Modal>
-            <button onClick={() => deletePost(post.id)} className="fanfic-read-btn">Delete</button>
+            <img src="https://cdn-icons-png.flaticon.com/512/484/484560.png" onClick={() => deletePost(post.id)} className="fanfic-delete-btn"/>
           </div>
         </div>
       ) : (

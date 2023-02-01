@@ -14,7 +14,7 @@ import './FanficRead.css'
 
 
 const UserFanfic = () => {
-  const { onePost, getPostDetails, post } = useContext(postContext);
+  const { onePost, getPostDetails } = useContext(postContext);
   const { fanficDetails, setFanficDetails } = useState({})
   const { id } = useParams()
 
@@ -24,24 +24,14 @@ const UserFanfic = () => {
     getPostDetails(id);
   }, [])
 
-const [owner, setOwner] = useState(false)
 
 
-  function isOwner() {
-    const login = (localStorage.getItem("username"));
-    console.log(window.location.pathname)
-    if (window.location.pathname == "/profile") {
-      if (login == post.owner) {
-        setOwner(true)
-      }
-    } else if (window.location.pathname == "/fanfic") {
-      setOwner(true);
-    }
+
+
+
+  const isOwner = () => {
+    return localStorage.getItem("username") ? true : false
   }
-
-  useEffect(() => {
-    isOwner()
-  }, [])
 
 
 
@@ -50,11 +40,9 @@ const [owner, setOwner] = useState(false)
     <>
 
 
-owner ? (
 
-<FanficChapterCreate /> 
-)
 
+<FanficChapterCreate />
     <div className='chapter-text'>
       {/* <p className='chapter-data'>{onePost.date_created}</p> */}
 <div className='chapter-desc'>
@@ -64,9 +52,8 @@ owner ? (
 {
    onePost?.page.map(page => (     
     <div>
-{/* <p className='chapter-data'>{onePost.date_created}</p> */}
-       <FanficChaptersList page={page} key={page.id} 
-       />  
+
+       <FanficChaptersList page={page} key={page.id} />  
              
     </div>  
      ))

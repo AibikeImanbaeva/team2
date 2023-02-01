@@ -8,9 +8,6 @@ import logo from "../../assets/Лого.svg"
 // import Rectangle from "../../assets/Rectangle 36.png"
 
 const ProfileBio = () => { 
-
-
-
     const {createBio, getBio} = useContext(bioContext) 
     const [bio, setBio] = useState("") 
 
@@ -19,7 +16,7 @@ const ProfileBio = () => {
         newBio.append("about_me", bio); 
         createBio(newBio);
         getBio() 
-        console.log(getBio)
+        console.log(bio)
 
     } 
     const [open, setOpen] = useState(false); 
@@ -37,6 +34,8 @@ const ProfileBio = () => {
         p: 4,
       };
 
+     
+    
 
     return ( 
 

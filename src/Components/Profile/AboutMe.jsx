@@ -1,17 +1,28 @@
 import React,{useContext, useEffect} from 'react';
 import { bioContext } from '../../contexts/BioContextProvider';
+import BioEdit from './BioEdit';
+import { useSearchParams } from 'react-router-dom';
 
+const AboutMe = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+    const { getBio, bio} = useContext(bioContext)
 
-const AboutMe = ({ bio }) => {
-
-    // const { getBio} = useContext(bioContext)
-
-    // useEffect(() => {
-    //     getBio();
-    //     console.log(bio)
-    //   }, [])
+    useEffect(() => {
+        getBio();
+        console.log(bio)
+      }, [])
+      useEffect(() => {
+        getBio();
+    
+      }, [searchParams])
   return (
-    <div>{bio.about_me}</div>
+ <>
+ 
+
+<BioEdit key={bio.id} bio={bio} />
+  
+ 
+ </>
   )
 }
 

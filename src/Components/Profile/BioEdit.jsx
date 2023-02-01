@@ -7,31 +7,21 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import EditIcon from '@mui/icons-material/Edit';
 import logo from "../../assets/Лого.svg"
-const BioEdit = () => {
+const BioEdit = ({ bio }) => {
     const {saveEditedBio, getBioDetails, bioDetails} = useContext(bioContext) 
+    const [bioED, setBioED] = useState("");
+    
+  
+    const handleEdit = () => {
+      let edittedBio = new FormData();
+  
+      edittedBio.append("about_me", bioED);
 
-const [bio,setBio] = useState(bioDetails)
-const {id} = useParams()
-
-useEffect(()=>{
-  getBioDetails()
-},[id])  
-
-
-
-useEffect(() => {
-  setBio(bioDetails);
-}, [bioDetails]);
-
-
-
-const handleInp = (e) => {
-    let obj = {
-      ...bio,
-      [e.target.name]: e.target.value,
+  
+      saveEditedBio(edittedBio, bio.id);
     };
-    setBio(obj);
-  }
+
+
 
 
 
@@ -43,7 +33,7 @@ const handleInp = (e) => {
 
     return (
         <div>
-                <div className="profile-edit"> 
+                
             <EditIcon
 
             onClick={handleOpen}/> 
@@ -60,17 +50,17 @@ const handleInp = (e) => {
             <p className='Title1'>Изменить БИО</p>
             <div>
               <p className='info1'>Bio</p>
-<input type="text" name="" id="" placeholder='about me' value='' onChange={handleInp} /> 
+<input type="text" name="" id="" placeholder='about me'  onChange={(e)=> setBioED(e.target.value)} /> 
 </div>
 <div>
-<input type='submit' onClick={saveEditedBio} value="Отправить" className='button'></input> 
+<input type='submit' onClick={handleEdit} value="Отправить" className='button' />
 </div>
           </Typography> 
 
         </Box> 
       </Modal> 
           </div> 
-        </div>
+      
     );
 };
 

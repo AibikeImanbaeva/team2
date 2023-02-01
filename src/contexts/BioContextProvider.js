@@ -87,7 +87,7 @@ const BioContextProvider = ({ children }) => {
   
 
 
-  async function createBio(newBio, navigate) { 
+  async function createBio(newBio) { 
     try { 
       const tokens = JSON.parse(localStorage.getItem("token")); 
       const Authorization =`Bearer ${tokens.access}`; 
@@ -98,7 +98,7 @@ const BioContextProvider = ({ children }) => {
       }; 
       const res = await axios.post(`${API}/biography/`, newBio, config); 
       console.log(res); 
-      navigate("/"); 
+ 
       getBio(); 
     } catch (err) { 
       console.log(err); 
@@ -106,15 +106,15 @@ const BioContextProvider = ({ children }) => {
   } 
 
   const saveEditedBio = async(newBio) => {
-    try { const tokens = JSON.parse(localStorage.getItem('token')); 
+    try {
+     const tokens = JSON.parse(localStorage.getItem('token')); 
     const Authorization = `Bearer ${tokens.access}`; 
     const config = { 
         headers: { 
             Authorization 
         }, 
     };
-
-      await axios.patch(`${API}/${newBio.id}, newBio`)
+      await axios.patch(`${API}/${newBio.id}`, newBio, config)
       getBio()
     }catch (err){ 
       console.log(err) 

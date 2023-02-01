@@ -57,12 +57,15 @@ console.log(bio)
           <div className="profile-username"> 
             {localStorage.getItem("username")} 
           </div>
-          <BioEdit/>
+          <div className='edited-bio'>
+
+    <AboutMe/>
+          {/* <BioEdit/> */}
+          </div>
 
 
         </div> 
-        {bio ?.map(bio => (
-    <AboutMe key={bio.id} bio={bio}/>))}
+       
         </div> 
         </div>
     ); 

@@ -12,9 +12,9 @@ const MangaRead = () => {
   }, [])
 
   return (
-    <div>
+    <div className='mangaReadContainer'>
       {
-        mangaChapterImgs.images?.map(page => <MangaChapterImage page={page} key={page.id}/>)
+        mangaChapterImgs.images? (<MangaChapterImage page={page} key={page.id}/>) : ("")
       }
     </div>
   );

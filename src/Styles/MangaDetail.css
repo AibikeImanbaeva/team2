@@ -1,0 +1,128 @@
+.mangaDetailContainer{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.mangaDetailContent{
+    height: 100vh;
+    display: flex;
+}
+
+
+.mangaDetailMainInfo{
+    position: relative;
+    width: 50%;
+    background-color: rgb(92, 92, 92);
+    border-radius: 0 3rem 0 0 ;
+}
+
+
+.mangaDetailImageBox{
+    width: 50%;
+    height: 100vh;
+}
+
+.mangaDetailImage{
+    border-radius: 3rem 0 0 3rem ;
+    object-fit:  cover;
+}
+
+.mangaDetailTitle{
+    font-size: xx-large;
+    font-weight: bolder;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    background-color: #000;
+    border-radius: 0 3rem 0 0;
+}
+
+
+.mangaDetailsGenre, .mangaDetailsVolTitle{
+    font-size:medium;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+    padding: 15px 0;
+    text-align: center;
+}
+
+.mangaDetailsLikeButton{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+
+.volumes{
+    background-color: #fff;
+    border-radius: 1rem;
+    display: inline-block;
+    height: 60px;
+    padding: 0 10px;
+    margin-left: 20px;
+}
+
+
+
+.mangaDetailCommentsContainer{
+    width: 50%;
+    margin: 100px auto;
+
+    background-color: rgb(92, 92, 92);
+    border-radius: 1rem;
+}
+
+
+.mangaDetailCommentTitle{
+    font-size: x-large;
+    font-weight: bolder;
+    color: black;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.MangaComentText{
+    background-color: #fff;
+    border-radius: 1rem;
+    display: inline-block;
+    padding: 10px 10px;
+    margin-left: 20px;
+}
+
+
+.mangaDetailsInpBut{
+    display: flex;
+    justify-content: space-between;
+}
+.mangaDetalsComInp{
+    width: 70%;
+    padding: 0 20px;
+    height: 40px;
+    border-radius: 5em;
+}
+
+.mangaDetalsComButton{
+    height: 40px;
+    background-color: rgb(107, 102, 204);
+    border-radius: 5em;
+    width: 15%;
+}
+
+.mangaReadContainer{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.MuiPagination-ul{
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    margin: 0 auto !important;
+    padding: 10px 0 !important;
+    border-radius: 2rem;
+}
+
+.MuiPaginationItem-root{
+    background-color: black !important;
+    color: white !important;
+}

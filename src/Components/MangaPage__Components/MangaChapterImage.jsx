@@ -3,6 +3,7 @@ import Typography from '@mui/material/Typography';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { mangaContext } from '../../contexts/MangaContextProvider';
+import '../../Styles/MangaDetail.css'
 
 const MangaChapterImage = ({ page }) => {
   const {mangaChapterImgs } = useContext(mangaContext);
@@ -27,13 +28,16 @@ function currentData(){
 
   return (
 <>
-{mangaChapterImgs.images? (
+<div className='mangaReadContainer'>
+  {mangaChapterImgs.images? (
   currentData().map(el=> (
     <div className='mangaChapter-img'>
    <img src={el.url} alt="" />
  </div>))): (
   <h3>loading...</h3>
 )}
+</div>
+
       
       <div className='pagination'>
 
@@ -43,11 +47,6 @@ function currentData(){
     </Stack>
       </div>
 
-  
- 
-  
-         
-    
 </>
   
 

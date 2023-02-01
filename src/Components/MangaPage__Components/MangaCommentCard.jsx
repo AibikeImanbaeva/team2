@@ -4,6 +4,8 @@ import { useContext } from 'react';
 import { mangaContext } from '../../contexts/MangaContextProvider';
 import { useParams } from 'react-router-dom';
 
+import '../../Styles/MangaDetail.css'
+
 const MangaCommentCard = ({ comments }) => {
 
   const { deleteComment } = useContext(mangaContext);
@@ -20,7 +22,7 @@ const MangaCommentCard = ({ comments }) => {
   return (
     <div>
       <br />
-      {comments.text}
+       <p className='MangaComentText'>{comments.text}</p>
       <button onClick={() => commentDel()}>
         <DeleteIcon />
       </button>

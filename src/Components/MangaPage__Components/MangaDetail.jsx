@@ -6,6 +6,9 @@ import { mangaContext } from '../../contexts/MangaContextProvider';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import MangaCommentCard from './MangaCommentCard';
 import MangaChaptersList from './MangaChaptersList';
+import { motion } from 'framer-motion'
+
+import '../../Styles/MangaDetail.css'
 
 const MangaDetail = () => {
 
@@ -38,10 +41,16 @@ const MangaDetail = () => {
   }
 
   function handleComment() {
-    let newComment = new FormData();
+    if(comment==""){
+      return
+    }else{
+          let newComment = new FormData();
     newComment.append("text", comment);
 
     addComment(newComment, id)
+    setComment("")
+    }
+
   }
 
   useEffect(() => {
@@ -51,44 +60,61 @@ const MangaDetail = () => {
   }, []);
 
   return (
-    <div>
-      <p>
-        Название: {mangaDetail.title}
+    <>
+    <div className='mangaDetailContainer'>
+
+      <div className='mangaDetailContent'>
+        <motion.img
+    initial={{ x: -700}}
+    animate={{ x: 0,}}
+    transition={{ duration: 1}}
+    className='mangaDetailImage mangaDetailImageBox' src={mangaDetail.image} alt="" />
+
+      <motion.div 
+          initial={{ x: 700}}
+          animate={{ x: 0,}}
+          transition={{ duration: 1}}
+          className="mangaDetailMainInfo">
+        <p className='mangaDetailTitle'>
+        {mangaDetail.title}
       </p>
-      <p>
+      <div className='sldf'></div>
+
+      <p className='mangaDetailsGenre'>
         Жанр: {mangaDetail.genre}
       </p>
-      <img src={mangaDetail.image} alt="" />
-      <button onClick={() => handleLike()}>
-        <FavoriteIcon />
-      </button>
-
+  
       <hr />
-      <br />
-
-      <p>Главы:</p>
+      <p className='mangaDetailsVolTitle'>Главы:</p>
       <div className="volumes">
         {
           mangaChapters?.map(volume => <MangaChaptersList key={volume.slug} volume={volume} />)
         }
+      </div> 
+      <button onClick={() => handleLike()} className="mangaDetailsLikeButton">
+        Нравится:
+        <FavoriteIcon />
+      </button>
+      </motion.div>
       </div>
 
-      <hr />
-      <br />
 
-      <p>Комментарии:</p>
+      <div className='mangaDetailCommentsContainer'>
+      <p className='mangaDetailCommentTitle' >Комментарии:</p>
       <br />
-      <div>
-        <input type="text" placeholder='Комментарий' value={comment} onChange={(e) => setComment(e.target.value)} />
-        <button onClick={() => handleComment()} >Добавить комментарий</button>
-      </div>
 
       {
         mangaDetail.commentaries?.map(comments => <MangaCommentCard key={comments.id} comments={comments} />)
       }
+      <div className='mangaDetailsInpBut'>
+        <input type="text"  className='mangaDetalsComInp' placeholder='Оставить комментарий...' value={comment} onChange={(e) => setComment(e.target.value)} />
+        <button onClick={() => handleComment()} className="mangaDetalsComButton" >Отправить</button>
+      </div>
+      </div>
 
-      <br /><br /><br /><br />
     </div>
+
+    </>
   );
 };
 

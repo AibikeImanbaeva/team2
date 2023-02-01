@@ -1,14 +1,14 @@
 import React from 'react'
 
-import News from '../components/HomePage__Components/News'
-import AllNews from '../components/HomePage__Components/News'
-import Fanfics from '../components/HomePage__Components/Fanfics'
-import Animes from '../components/HomePage__Components/Animes'
-import Saidbar from '../components/HomePage__Components/Saidbar'
-import Navbar from '../components/HomePage__Components/Navbar'
+import News from '../Components/HomePage__Components/News'
+import AllNews from '../Components/HomePage__Components/News'
+import Fanfics from '../Components/HomePage__Components/Fanfics'
+import Animes from '../Components/HomePage__Components/Animes'
+import Saidbar from '../Components/HomePage__Components/Saidbar'
+import Navbar from '../Components/HomePage__Components/Navbar'
 import { motion } from 'framer-motion'
 
-import NewsListHP from '../components/HomePage__Components/NewsListHP'
+import NewsListHP from '../Components/HomePage__Components/NewsListHP'
 
 
 
@@ -52,8 +52,8 @@ const HomePage = () => {
     animate={{ y: 0,}}
     transition={{ duration: 1.7}}
     >
-       <div className='homePage_news-card'>
         <h2 className='homePage_NewsMainTitle'>Лента новостей</h2>
+       <div className='homePage_news-card'>
            <NewsListHP/>
 
         </div>
@@ -65,6 +65,7 @@ const HomePage = () => {
     {/* </div> */}
       <div className='FanficsAndAnime F-A_HomePage'>
           {/* <Fanfics/> */}
+      <Animes/>
           
 
           <motion.div
@@ -72,7 +73,6 @@ const HomePage = () => {
     animate={{ x: 0,}}
     transition={{ duration: 2}}
     >
-      <Animes/>
     </motion.div>
 
 

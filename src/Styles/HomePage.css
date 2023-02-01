@@ -284,6 +284,8 @@ body {
   margin-top: 3%;
   border-radius: 1rem;
   height: 120%;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 .homePage_NewsMainTitle {
@@ -292,14 +294,25 @@ body {
   font-weight: 400;
   margin-left: 5%;
   color: #ffffff;
+  margin-top: 2em;
 }
 
 .newsCard_hr,
 .newsCard-one {
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto; color: #424242;
+  
 }
-
+.newsCard_hr{
+  width: 82.5%;
+  margin-top: 1em;
+  color: #424242;
+}
+.news-img
+ img {
+  width: 285px;
+  height: 340px;
+ }
 /* fancics */
 
 .hp_fanfics-Cont {

@@ -46,6 +46,7 @@ const PostList = () => {
     return post.slice(begin, end)
   }
   return (
+
     <>
       <div className="profile-fanfics-card">
         {post ? (
@@ -66,6 +67,7 @@ const PostList = () => {
         </Stack>
       </div>
     </>
+
   )
 }
 

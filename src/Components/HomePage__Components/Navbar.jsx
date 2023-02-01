@@ -139,20 +139,14 @@ const [search, setSearch] = useState(searchParams.get("q") || "");
 console.log(search, "search");
 
 useEffect(() => {
-  console.log(
-    "сработал юз эффект для местного состояния установка параметров запроса"
-  );
   setSearchParams({
     q: search,
   });
 }, [search]);
 
 useEffect(() => {
-  console.log(
-    "сработал юзэфф который следит за изменением параметров апроса вызвана фукнция получения всех продуктов(с параметрами запроса)"
-  );
   getManga();
-  // getFanfic()
+  getFanfic()
   // setPage(1)
 }, [searchParams]);
 

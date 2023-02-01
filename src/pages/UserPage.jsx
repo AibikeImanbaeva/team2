@@ -5,16 +5,16 @@ import Saidbar from '../components/HomePage__Components/Saidbar'
 
 const FanficMainPage = () => {
   return (
-<>
-{/* <AddPost /> */}
-<Navbar />
-<Saidbar />
+    <>
+      {/* <AddPost /> */}
+      <Navbar />
+      <div className='homePage__container'>
+        <PostList />
+      </div>
+      <Saidbar />
 
-<PostList/>
+    </>
 
-
-
-</>
   )
 }
 

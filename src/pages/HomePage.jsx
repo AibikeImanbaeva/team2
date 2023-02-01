@@ -18,11 +18,12 @@ import "../Styles/HomePage.css"
 
 const HomePage = () => {
   const bodyColor = {
-  backgroundColor: '#202020'
+    backgroundColor: '#202020'
 
   }
   return (
     <>
+
     <motion.div
     initial={{ y: -700,}}
     animate={{ y: 0,}}

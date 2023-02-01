@@ -309,24 +309,32 @@ body {
 }
 
 .profile-fanfics-card {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+.hp_fanfics{
+    width: 349px;
+    background: #414141;
+    border-radius: 10px;
+
 }
 
-.fanfic-read-btn {
-  background: linear-gradient(90deg, #d9ae94, #ffcb69, #d08c60);
-  border-radius: 20px;
-  width: 115px;
-  height: 39px;
-  color: #ffffff;
-  border-color: #ffa41c;
-  /* padding-left: 18px; */
-  /* margin-left: 10px; */
+.fanfic-read-btn{
+    
+    background: linear-gradient(90deg, #d9ae94,#ffcb69,#d08c60);
+border-radius: 20px;
+width: 115px;
+height: 39px;
+color:#FFFFFF;
+border-color:  #FFA41C;
+/* padding-left: 18px; */
+/* margin-left: 10px; */
 }
-.hp_fanfics-cont {
+.hp_fanfics-cont{
+
   margin-top: 18px;
 
   display: flex;

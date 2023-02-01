@@ -11,15 +11,15 @@ import "../../Styles/FanficReadPage.css";
 
 const FanficChapterCard = ({ page }) => {
   const navigate = useNavigate();
-// const {
-//   getChapter,
-//   chapter
-//  } = useContext(fanficContext)
-//  const { id } = useParams();
+  // const {
+  //   getChapter,
+  //   chapter
+  //  } = useContext(fanficContext)
+  //  const { id } = useParams();
 
-//  useEffect (()=>{
-//   getChapter(id)
-//  })
+  //  useEffect (()=>{
+  //   getChapter(id)
+  //  })
 
 
 
@@ -29,26 +29,25 @@ const FanficChapterCard = ({ page }) => {
     <>
 
       <div>
-{/* 
+        {/* 
 {
   chapter?.map(chap=> <FanficChapter key={chap.id} chap={chap.text}  />)
 } */}
 
 
         <p>номер главы:{page.chapter}</p>
+
         <div className="fanfic-main__content" style={{ lineHeight: "2", whiteSpace: "pre-line", color: "#FFF" }}>
         {page.text}
           </div>
         
-     
-
       </div>
 
 
 
 
     </>
- 
+
   );
 };
 

@@ -1,14 +1,15 @@
-import React, { useReducer} from "react";
+import React, { useReducer } from "react";
 import axios from "axios";
+import { ContactSupportOutlined } from "@mui/icons-material";
 
 
 export const postContext = React.createContext();
 // export const usePost = useContext(postContext)
 
 const INIT_STATE = {
-  posts: [],
+  post: [],
   pages: 0,
-//   categories: [],
+  //   categories: [],
   onePost: null,
 };
 
@@ -17,7 +18,7 @@ function reducer(state = INIT_STATE, action) {
     case "GET_POST":
       return {
         ...state,
-        posts: action.payload,
+        post: action.payload,
         // pages: Math.ceil(action.payload.count / 5),
       };
     case "GET_CATEGORIES":
@@ -37,7 +38,7 @@ const API = "http://34.125.224.223";
 const PostsContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
-  async function getPost(){
+  async function getPost() {
     try {
       const tokens = JSON.parse(localStorage.getItem("token"));
       const Authorization = `Bearer ${tokens.access}`;
@@ -61,6 +62,7 @@ const PostsContextProvider = ({ children }) => {
       console.log(err);
     }
     console.log('jessica')
+ 
 
   }
 
@@ -117,7 +119,45 @@ const PostsContextProvider = ({ children }) => {
     }
   }
 
-  async function toggleLike(id) {
+  async function toggleLike(likedProduct, id) {
+    try {
+      const tokens = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+      const res = await axios.post(`${API}/fanfic/${id}/likes/`, likedProduct, config);
+      console.log(res)
+
+      const { data } = await axios(`${API}/fanfic/${id}/`)
+      console.log(data)
+      getPost();
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+
+  async function deleteLike(id) {
+    try {
+      const tokens = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+      const res = await axios.delete(`${API}/fanfic/${id}/likes/`, config);
+      console.log(res)
+      getPost();
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async function editFanficPost(edittedProduct, id) {
     try {
       const tokens = JSON.parse(localStorage.getItem("token"));
       const Authorization = `Bearer ${tokens.access}`;
@@ -127,27 +167,49 @@ const PostsContextProvider = ({ children }) => {
         },
       };
 
-      const res = await axios(`${API}/fanfic/${id}/likes/`, config);
+      await axios.patch(`${API}/fanfic/${id}/`, edittedProduct, config);
       getPost();
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error)
     }
   }
+
+
+  const getPostDetails = async (id) => {
+    try {
+      console.log(id)
+
+      const { data } = await axios(`${API}/fanfic/${id}`);
+
+      dispatch({
+        type: "GET_ONE_POST",
+        payload: data,
+      });
+
+      // console.log(data)
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
+
 
   return (
     <postContext.Provider
       value={{
-        posts: state.posts,
+        post: state.post,
         pages: state.pages,
         categories: state.categories,
         onePost: state.onePost,
 
+        getPostDetails,
         getPost,
         createPost,
         // getCategories,
         deletePost,
-        toggleLike
-        
+        toggleLike,
+        editFanficPost,
+        deleteLike
       }}
     >
       {children}
@@ -156,3 +218,4 @@ const PostsContextProvider = ({ children }) => {
 };
 
 export default PostsContextProvider;
+

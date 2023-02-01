@@ -1,16 +1,21 @@
 import React from 'react'
-import AddPost from '../components/AddPost.jsx/AddPost'
-import PostList from '../components/PostList/PostList'
+import Navbar from '../Components/HomePage__Components/Navbar'
+import PostList from '../Components/PostList/PostList'
+import Saidbar from '../Components/HomePage__Components/Saidbar'
 
-const UserPage = () => {
+const FanficMainPage = () => {
   return (
-<>
-<AddPost />
+    <>
+      {/* <AddPost /> */}
+      <Navbar />
+      <div className='homePage__container'>
+        <PostList />
+      </div>
+      <Saidbar />
 
-<PostList/>
+    </>
 
-</>
   )
 }
 
-export default UserPage
+export default FanficMainPage

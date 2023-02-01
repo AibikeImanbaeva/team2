@@ -9,29 +9,29 @@ import FanficText from '../FanficRead/FanficText';
 
 const FanficChapter = () => {
 
-  const { getChapter, chapter } = useContext(fanficContext)
+  const {getChapter, chapter} = useContext(fanficContext)
 
-  const { id } = useParams()
+ const {id} = useParams()
 
-  //  useEffect(() => {
+//  useEffect(() => {
 
-  //   getChapter();
-  // }, [chapter])
+//   getChapter();
+// }, [chapter])
 
-  useEffect(() => {
-    getChapter(id)
+useEffect(()=>{
+getChapter(id)
 
-  }, [])
-  console.log(chapter)
+},[])
+console.log(chapter)
 
-  // console.log(page)
-  // const getChap = () => {
-  //   chapter.forEach((chap) => {
-  //     if (chap.id == id) {
-  //       setOneChap(chap)
-  //     }
-  //   })
-  // }
+// console.log(page)
+// const getChap = () => {
+//   chapter.forEach((chap) => {
+//     if (chap.id == id) {
+//       setOneChap(chap)
+//     }
+//   })
+// }
 
 
 
@@ -39,13 +39,13 @@ const FanficChapter = () => {
   return (
     <>
 
+   
 
 
 
-
-
-
-
+  
+      
+      
     </>
   )
 };

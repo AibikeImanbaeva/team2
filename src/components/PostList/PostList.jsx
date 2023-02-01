@@ -46,17 +46,23 @@ const PostList = () => {
     return post.slice(begin, end)
   }
   return (
-   <>
-        <div className="profile-fanfics-card"> 
-{post ? (
-  currentData().map(post => (
-    <Fanfics key={post.id} post={post}/>
-          // <PostCard key={post.id} post={post}></PostCard>
+
    
-        ))
-): (
-  <h3>loading...</h3>
-)}
+       
+
+
+    <>
+      <div className="profile-fanfics-card">
+        {post ? (
+          currentData().map(post => (
+            <Fanfics key={post.id} post={post} />
+            // <PostCard key={post.id} post={post}></PostCard>
+
+          ))
+        ) : (
+          <h3>loading...</h3>
+        )}
+
       </div>
       <div className='pagination'>
 
@@ -65,7 +71,9 @@ const PostList = () => {
       <Pagination count={count} page={page} onChange={handlePage} />
     </Stack>
       </div>
+
    </>
+
   )
 }
 

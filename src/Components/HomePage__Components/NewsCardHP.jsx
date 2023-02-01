@@ -26,7 +26,7 @@ useEffect(() => {
     <div className='newsCard-one hello anim-items active'>
 
     <div className='news-img'>
-        <img src={cardImg}alt="hello" />
+        <img src={news.image}alt="hello" />
     </div>
     <div className='news-body'>
         <h6 className='news-title'>{news.title}</h6>
@@ -34,6 +34,8 @@ useEffect(() => {
     </div>
     </div>
    </div>
+
+   
 
 
 

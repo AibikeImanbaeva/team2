@@ -16,7 +16,7 @@ const {getNews} = useContext(newsContext)
     <div className='newsCard-one'>
 
     <div className='news-img'>
-        <img src={cardImg}alt="" />
+        <img src={news.image}alt="" />
     </div>
     <div className='news-body'>
         <h6 className='news-title'>{news.title}</h6>

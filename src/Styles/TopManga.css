@@ -1,6 +1,3 @@
-/* manga episodes component start */
-
-
 .Manga__MainTitle {
     display: flex;
     align-items: center;
@@ -10,11 +7,6 @@
     width: 55%;
 }
 
-.top{
-    color: #FFFFFF;
-    position: relative;
-    bottom: 63em;
-}
 .MangaTitle {
     font-family: 'Inter';
     font-style: normal;
@@ -68,7 +60,7 @@
 .Manga__NE-cardImg {
     position: absolute;
     z-index: 1;
-    width: 100%;
+    width: 100pz;
     height: 100%;
 
 }
@@ -87,14 +79,6 @@
     position: absolute;
     z-index: 2;
     box-shadow: inset 0px -70px 25px 1px rgba(0, 0, 0, 0.8);
-}
-
-
-.news__CatalogCard{
-    position: relative;
-    /* margin-top: 1.5%; */
-    width: 100%;
-    height: 100%;
 }
 
 .Mange__NE-DataTitleRange {
@@ -201,35 +185,33 @@
 }
 
 
-.Manga__CatalogCardContainer {
+.TopManga__CatalogCardContainer {
     height: 600px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    /* margin: 5em */
 }
 
 .TopManga__CatalogCard {
     position: relative;
-    top: -62em;
-    margin-top: 6%;
-    width: 250px;
-    height: 300px;
+    top: -46vh;
+    width: 50%;
+    height: 200%;
+    left: 1em;
+    margin-bottom: 1em;
 }
 
-.Manga__Catalog-cardImg {
+.MangaHome__Catalog-cardImg {
     position: absolute;
     z-index: 1;
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    height: 100px;
     object-fit: cover;
 }
-
-.TopManga__Catalog-cardImg{
-    position: absolute;
-    z-index: 1;
-    width: 100px;
+.TopManga__CatalogCard img{
+    width: 100%;
     height: 100%;
-    object-fit: cover; 
 }
 
 .Hover-readCont {
@@ -339,13 +321,12 @@
     box-shadow: inset 0px -70px 25px 1px rgba(0, 0, 0, 0.8);
 }
 
-.Manga__CatalogCard {
-    position: relative;
-    top: 6em;
-    margin-top: 1.5%;
-    width: 18%;
-    height: 200px;
-}
+/* .MangaHome__CatalogCard {
+ 
+    width: 100%;
+    height: 100%;
+   
+} */
 
 .Manga__Catalog-ChaptersCont {
     position: absolute;
@@ -386,13 +367,9 @@
     color: #FFFFFF;
 }
 
-
-.pagination{
-    display: block;
-    width: 100%;
+.top{
+    color: white;
+    position: relative;
+    left: 1em;
+    padding: 1em;
 }
-
-
-
-
-/* manga catalog components end */

@@ -54,14 +54,14 @@ const MainRoutes = () => {
     {
       link: "/manga",
       element: <MangaPage />,
-      id:7
-  },
+      id: 7
+    },
     {
       link: "/manga/:id",
       element: <MangaDetail />,
       id: 9
     },
-  
+
     {
       link: "/manga/:id",
       element: <MangaDetail />,
@@ -100,14 +100,14 @@ const MainRoutes = () => {
     },
     {
       link: "/readchapter/:id",
-      element: <FanficChapter/>,
+      element: <FanficChapter />,
       id: 17,
     },
     {
-  link: "/editAnime/:id",
-  element: <EditAnimePage />,
-  id:18
-},
+      link: "/editAnime/:id",
+      element: <EditAnimePage />,
+      id: 18
+    },
   ]
 
 

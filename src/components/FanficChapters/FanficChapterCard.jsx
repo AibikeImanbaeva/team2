@@ -11,15 +11,15 @@ import FanficChapter from './FanficChapter';
 
 const FanficChapterCard = ({ page }) => {
   const navigate = useNavigate();
-// const {
-//   getChapter,
-//   chapter
-//  } = useContext(fanficContext)
-//  const { id } = useParams();
+  // const {
+  //   getChapter,
+  //   chapter
+  //  } = useContext(fanficContext)
+  //  const { id } = useParams();
 
-//  useEffect (()=>{
-//   getChapter(id)
-//  })
+  //  useEffect (()=>{
+  //   getChapter(id)
+  //  })
 
 
 
@@ -29,7 +29,7 @@ const FanficChapterCard = ({ page }) => {
     <>
 
       <div>
-{/* 
+        {/* 
 {
   chapter?.map(chap=> <FanficChapter key={chap.id} chap={chap.text}  />)
 } */}
@@ -37,7 +37,7 @@ const FanficChapterCard = ({ page }) => {
 
         <p>номер главы:{page.chapter}</p>
         описание: {page.text}
-     
+
 
       </div>
 
@@ -45,7 +45,7 @@ const FanficChapterCard = ({ page }) => {
 
 
     </>
- 
+
   );
 };
 

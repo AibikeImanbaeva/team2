@@ -13,24 +13,24 @@ import "../Styles/HomePage.css"
 
 const HomePage = () => {
   const bodyColor = {
-  backgroundColor: '#202020'
+    backgroundColor: '#202020'
 
   }
   return (
     <>
-    <img src="/homePageBackImg.png" alt="" className='HomePage-BackgroundImg' />
-      <Navbar/>
-    <div className='homePage__container'>
-      <News/>
-      <div className='homePage__AllNews-FanfAnime'>
-      <AllNews/>
-      </div>
-    </div>
-      <div className='FanficsAndAnime F-A_HomePage'>
-          {/* <Fanfics/> */}
-          <Animes/>
+      <img src="/homePageBackImg.png" alt="" className='HomePage-BackgroundImg' />
+      <Navbar />
+      <div className='homePage__container'>
+        <News />
+        <div className='homePage__AllNews-FanfAnime'>
+          <AllNews />
         </div>
-    <Saidbar/>
+      </div>
+      <div className='FanficsAndAnime F-A_HomePage'>
+        {/* <Fanfics/> */}
+        <Animes />
+      </div>
+      <Saidbar />
     </>
   )
 }

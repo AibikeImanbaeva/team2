@@ -47,6 +47,7 @@ const MangaContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
   const navigate = useNavigate();
   const location = useLocation();
+  
   async function getManga() {
     try {
       const tokens = JSON.parse(localStorage.getItem("token"));

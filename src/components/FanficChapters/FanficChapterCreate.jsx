@@ -38,9 +38,9 @@ const FanficChapterCreate = () => {
 
   return (
     <>
-      <input type="text" placeholder='chapter-name' value={chapter} onChange={(e) => setChapter(e.target.value)} />
-      <input type="text" placeholder='text' value={text} onChange={(e) => setChapterText(e)} />
-      <button onClick={handleAddChapter}>Добавить главу</button>
+      <input className='inp-addComment chap-inp' type="text" placeholder='chapter-name' value={chapter} onChange={(e) => setChapter(e.target.value)} />
+      <input className='inp-addComment chap-inp' type="text" placeholder='text' value={text} onChange={(e) => setChapterText(e)} />
+      <button className='btn-add-chapter' onClick={handleAddChapter}>Добавить главу</button>
     </>
   );
 };

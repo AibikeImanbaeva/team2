@@ -169,7 +169,7 @@ body {
 }
  
 .inp-addComment{
-  background: linear-gradient(70deg, #5d7aff, #bb7bb2);
+  background: linear-gradient(70deg, #9d9d9f, #ffff);
   border-radius:20px;
   width: 60%;
   height:  20px;
@@ -181,24 +181,22 @@ body {
 
 
 .btn-addComment {
-  --glow-color: rgb(217, 176, 255);
-  --glow-spread-color: rgba(191, 123, 255, 0.781);
-  --enhanced-glow-color: rgb(231, 206, 255);
-  --btn-color: rgb(100, 61, 136);
-  border: .25em solid var(--glow-color);
-  padding: 1em 3em;
-  color: var(--glow-color);
-  font-size: 15px;
-  font-weight: bold;
-  background-color: var(--btn-color);
-  border-radius: 1em;
-  outline: none;
-  box-shadow: 0 0 1em .25em var(--glow-color),
-         0 0 4em 1em var(--glow-spread-color),
-         inset 0 0 .75em .25em var(--glow-color);
-  text-shadow: 0 0 .5em var(--glow-color);
-  position: relative;
-  transition: all 0.3s;
+  --glow-color: rgb(150 148 153);
+    --glow-spread-color: rgba(191, 123, 255, 0.781);
+    --enhanced-glow-color: rgb(94 6 179);
+    --btn-color: rgb(100, 61, 136);
+    border: 0.25em solid rgb(131 120 141);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0 4em 1em rgb(0 0 0 / 78%), inset 0 0 0.75em 0.25em var(--glow-color);
+    text-shadow: 0 0 0.5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
  }
  
  .btn-addComment::after {
@@ -251,3 +249,23 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin-top: 50px;}
+
+
+  .hp_fanfics-desc{
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .hp_fanfics-data{
+    margin-top: 20px;
+  }
+
+  .hp_fanfecs-hesh, .hp_fandics-User, .hp_fandics-LikeCount, .hp_fandics-CommentCount{
+    margin-left: 30px;
+  }
+
+
+  .chap-inp{
+    width: 100%;
+  }

@@ -87,7 +87,10 @@ const navigate =  useNavigate()
         <div className="card-body">
           <h5 className="card-title">{post.title}</h5>
           <h5 className="card-title">{post.genre}</h5>
+         
+
           <p className="card-text">{post.description}</p>
+      
           <button onClick={()=>navigate(`/fanficpage/${post.id}`)}>Начать читать</button>
           <button onClick={() => handleLike()}>
             {like ? <p> лайкнуто ежже</p> : <p> не лайкнуто ежже</p>}

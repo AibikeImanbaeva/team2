@@ -6,7 +6,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import  {newsContext} from "../contexts/NewsContextProvider"
 
-import PostList from '../Components/PostList/PostList';
+import PostList from '../components/PostList/PostList';
 
 
 const AdminPage =() =>{

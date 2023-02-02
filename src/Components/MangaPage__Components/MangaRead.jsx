@@ -22,13 +22,13 @@ const MangaRead = () => {
   return (
     <>
       <div>
-     <MangaChapterImage page={page} key={page.id}/>
-    </div>
+        {mangaChapterImgs.images?.map(page => <MangaChapterImage page={page} key={page.id} />)}
+      </div>
 
 
-   
+
     </>
-  
+
 
   );
 };

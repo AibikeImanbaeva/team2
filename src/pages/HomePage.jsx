@@ -1,14 +1,14 @@
 import React from 'react'
 
-import News from '../Components/HomePage__Components/News'
-import AllNews from '../Components/HomePage__Components/News'
-import Fanfics from '../Components/HomePage__Components/Fanfics'
-import Animes from '../Components/HomePage__Components/Animes'
-import Saidbar from '../Components/HomePage__Components/Saidbar'
-import Navbar from '../Components/HomePage__Components/Navbar'
+import News from '../components/HomePage__Components/News'
+import AllNews from '../components/HomePage__Components/News'
+import Fanfics from '../components/HomePage__Components/Fanfics'
+import Animes from '../components/HomePage__Components/Animes'
+import Saidbar from '../components/HomePage__Components/Saidbar'
+import Navbar from '../components/HomePage__Components/Navbar'
 import { motion } from 'framer-motion'
 
-import NewsListHP from '../Components/HomePage__Components/NewsListHP'
+import NewsListHP from '../components/HomePage__Components/NewsListHP'
 
 
 

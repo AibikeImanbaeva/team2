@@ -54,46 +54,49 @@ const MangaDetail = () => {
 
   return (
     <>
-   <Navbar />
-   <Saidbar />
-    <div>
-      <p>
-        Название: {mangaDetail.title}
-      </p>
-      <p>
-        Жанр: {mangaDetail.genre}
-      </p>
-      <img src={mangaDetail.image} alt="" />
-      <button onClick={() => handleLike()}>
-        <FavoriteIcon />
-      </button>
+      <Navbar />
+      <div className="mangaDetail__content">
 
-      <hr />
-      <br />
+        <Saidbar />
+        <div className='mangaDetail'>
+          <p>
+            Название: {mangaDetail.title}
+          </p>
+          <p>
+            Жанр: {mangaDetail.genre}
+          </p>
+          <img src={mangaDetail.image} alt="" />
+          <button onClick={() => handleLike()}>
+            <FavoriteIcon />
+          </button>
 
-      <p>Главы:</p>
-      <div className="volumes">
-        {
-          mangaChapters?.map(volume => <MangaChaptersList key={volume.slug} volume={volume} />)
-        }
+          <hr />
+          <br />
+
+          <p>Главы:</p>
+          <div className="volumes">
+            {
+              mangaChapters?.map(volume => <MangaChaptersList key={volume.slug} volume={volume} />)
+            }
+          </div>
+
+          <hr />
+          <br />
+
+          <p>Комментарии:</p>
+          <br />
+          <div>
+            <input type="text" placeholder='Комментарий' value={comment} onChange={(e) => setComment(e.target.value)} />
+            <button onClick={() => handleComment()} >Добавить комментарий</button>
+          </div>
+
+          {
+            mangaDetail.commentaries?.map(comments => <MangaCommentCard key={comments.id} comments={comments} />)
+          }
+
+          <br /><br /><br /><br />
+        </div>
       </div>
-
-      <hr />
-      <br />
-
-      <p>Комментарии:</p>
-      <br />
-      <div>
-        <input type="text" placeholder='Комментарий' value={comment} onChange={(e) => setComment(e.target.value)} />
-        <button onClick={() => handleComment()} >Добавить комментарий</button>
-      </div>
-
-      {
-        mangaDetail.commentaries?.map(comments => <MangaCommentCard key={comments.id} comments={comments} />)
-      }
-
-      <br /><br /><br /><br />
-    </div>
     </>
   );
 };

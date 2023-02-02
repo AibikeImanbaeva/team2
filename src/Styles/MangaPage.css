@@ -10,11 +10,12 @@
     width: 55%;
 }
 
-.top{
+.top {
     color: #FFFFFF;
     position: relative;
     bottom: 63em;
 }
+
 .MangaTitle {
     font-family: 'Inter';
     font-style: normal;
@@ -90,7 +91,7 @@
 }
 
 
-.news__CatalogCard{
+.news__CatalogCard {
     position: relative;
     /* margin-top: 1.5%; */
     width: 100%;
@@ -224,12 +225,12 @@
     object-fit: cover;
 }
 
-.TopManga__Catalog-cardImg{
+.TopManga__Catalog-cardImg {
     position: absolute;
     z-index: 1;
     width: 100px;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
 }
 
 .Hover-readCont {
@@ -387,12 +388,16 @@
 }
 
 
-.pagination{
+.pagination {
     display: block;
     width: 100%;
 }
 
-
+.mangaDetail {
+    display: block;
+    position: absolute;
+    left: 200px;
+}
 
 
 /* manga catalog components end */

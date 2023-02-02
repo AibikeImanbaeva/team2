@@ -21,9 +21,9 @@ const MangaCommentCard = ({ comments }) => {
     <div>
       <br />
       {comments.text}
-      <button onClick={() => commentDel()}>
+      {/* <button onClick={() => commentDel()}>
         <DeleteIcon />
-      </button>
+      </button> */}
       <br />
       <br />
     </div>

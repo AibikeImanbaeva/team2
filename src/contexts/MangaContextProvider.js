@@ -192,7 +192,7 @@ const MangaContextProvider = ({ children }) => {
   async function setMangaToRead(id) {
     try {
       const { data } = await axios(`${API}/mangachapter/${id}/`);
-      console.log(data)
+      console.log(data);
 
       dispatch({
         type: "SET_MANGA_CHAPTER_READ",

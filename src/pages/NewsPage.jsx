@@ -1,8 +1,8 @@
 import React from 'react';
-import Navbar from '../Components/HomePage__Components/Navbar';
-import Saidbar from '../Components/HomePage__Components/Saidbar'
+import Navbar from '../components/HomePage__Components/Navbar';
+import Saidbar from '../components/HomePage__Components/Saidbar'
 import "../Styles/HomePage.css"
-import NewsList from '../Components/NewsList/NewsList';
+import NewsList from '../components/NewsList/NewsList';
 import "../Styles/NewsPage.css"
 const NewsPage = () => {
     return (

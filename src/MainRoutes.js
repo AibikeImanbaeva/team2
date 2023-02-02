@@ -2,8 +2,8 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import FanficMainPage from "./pages/UserPage";
-import FanficChapterCreate from "./Components/FanficChapters/FanficChapterCreate"
-import FanficChapter from "./Components/FanficChapters/FanficChapter";
+import FanficChapterCreate from "./components/FanficChapters/FanficChapterCreate"
+import FanficChapter from "./components/FanficChapters/FanficChapter";
 import NewsPage from './pages/NewsPage';
 import MangaPage from './pages/MangaPage';
 import FanficPage from './pages/FanficPage';
@@ -12,10 +12,10 @@ import AnimePage from './pages/AnimePage';
 import ProfilePage from './pages/ProfilePage';
 import EditAnimePage from './pages/EditAnimePage'
 import AdminPage from './pages/AdminPage';
-import MangaDetail from "./Components/MangaPage__Components/MangaDetail";
-import MangaRead from "./Components/MangaPage__Components/MangaRead";
-import FanficChapterCard from "./Components/FanficChapters/FanficChapterCard";
-import ProfileBio from "./Components/Profile/BioCreate";
+import MangaDetail from "./components/MangaPage__Components/MangaDetail";
+import MangaRead from "./components/MangaPage__Components/MangaRead";
+import FanficChapterCard from "./components/FanficChapters/FanficChapterCard";
+import ProfileBio from "./components/Profile/BioCreate";
 
 
 const MainRoutes = () => {

@@ -1,13 +1,13 @@
 import React from "react";
-import UserFanfic from "../Components/UserFanfic/UserFanfic";
-import Navbar from "../Components/HomePage__Components/Navbar";
-import ProfileCard from "../Components/Profile/ProfileCard";
-import Saidbar from "../Components/HomePage__Components/Saidbar";
-import Animes from "../Components/HomePage__Components/Animes";
-import bg from "../Components/UserFanfic/Rebekka.png"
-import "../Components/UserFanfic/FanficRead.css"
-import CommentList from "../Components/CommentCard/CommentList";
-import CreateComment from "../Components/CommentCard/CreateComment";
+import UserFanfic from "../components/UserFanfic/UserFanfic";
+import Navbar from "../components/HomePage__Components/Navbar";
+import ProfileCard from "../components/Profile/ProfileCard";
+import Saidbar from "../components/HomePage__Components/Saidbar";
+import Animes from "../components/HomePage__Components/Animes";
+import bg from "../components/UserFanfic/Rebekka.png"
+import "../components/UserFanfic/FanficRead.css"
+import CommentList from "../components/CommentCard/CommentList";
+import CreateComment from "../components/CommentCard/CreateComment";
 
 
 const FanficPage = () => {
